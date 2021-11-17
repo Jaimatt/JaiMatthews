@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home ~ Stress Detector</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">-->
+        <link rel="stylesheet" href="w3-theme-teal.css">
+        <style>
+            body {font-family: "Roboto", sans-serif}
+            .w3-bar-block .w3-bar-item {
+                padding: 16px;
+                font-weight: bold;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <nav class="w3-sidebar w3-bar-block w3-collapse w3-card" style="z-index:3;width:300px;" id="mySidebar">
+            <img src="Assets/abhs.png" style="height:220px">
+
+            <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()">Close <i class="fa fa-remove"></i></a>
+            <a class="w3-bar-item w3-button w3-purple" href="index.html">Home</a>
+            <a class="w3-bar-item w3-button" href="stress.html">What is Stress</a>
+            <a class="w3-bar-item w3-button" href="arduino.html">Arduino Sensor</a>
+            <a class="w3-bar-item w3-button" href="data.html">My Data</a>
+            <a class="w3-bar-item w3-button" href="about_me.html">About Me</a>
+            <a class="w3-bar-item w3-button" href="tour.html">Take a Tour</a>
+            <a class="w3-bar-item w3-button" href="home.html">Exit Webpage</a>
+
+            
+        </nav>
+
+        <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+        <div class="w3-main" style="margin-left:300px;">
+
+            <div id="myTop" class="w3-container w3-top w3-theme w3-large">
+                <p><i class="fa fa-bars w3-button w3-teal w3-hide-large w3-xlarge" onclick="w3_open()"></i>
+                    <!--                <p><i class="fa fa-bars w3-button w3-teal w3-xlarge" onclick="w3_open()"></i>-->
+                    <span id="myIntro" class="w3-hide">Stress Detector</span></p>
+            </div>
+
+            <header class="w3-container w3-theme" style="padding:64px 32px">
+                <h1 class="w3-xxxlarge">Stress Detector</h1>
+            </header>
+
+            <div class="w3-container" style="padding:32px">
+
+                <h2>Home</h2>
+
+                <img src="Assets/SIK_Arduino_Uno.jpg" style="height:220px">
+                <p>WARNING: this is not acually my stress detector. <br> See my one <a href="arduino.html">Here</a> </p>
+
+                <br><br>
+                <h4>The Website</h4>
+                <p>This website's purpsoe is to document the process went through to create the stress detector. The website also educates about stress. You'll find this information on various sub-pages.</p>
+                <br><br>
+                <h4>Features</h4>
+                <p>What can you find on this site?</p>
+                <br>
+                <p>What is Stress?</p>
+                    <li>Learn all about stress with some handy-dandy facts!</li>
+                <p>Arduino Sensor</p>
+                    <li>Discover the power of an Arduino sensor in sensing stress.</li>
+                <p>My data</p>
+                    <li>Read about data I collected about stress.</li>
+                <p>Wellness Plan</p>
+                    <li>Read about wellness...? (good luck finding this page though!).</li>
+                <p>About Me</p>
+                    <li>Read about...   ...me? but, why?</li>
+                <p>Take a Tour</p>
+                    <li>Take a quick tour of the website!</li>
+                <p>Exit Webpage</p>
+                    <li>HOW COULD YOU DO THIS TO ME!</li>
+
+                <br>
+
+
+                <hr>
+
+            </div>
+
+            <footer class="w3-container w3-theme" style="padding:32px">
+
+                <p>W3.CSS is free to use. No license is necessary.</p>
+                <a href = "https://www.w3schools.com/w3css/tryw3css_examples_material.htm"> w3Schools Template</a>
+
+            </footer>
+            
+        </div>
+
+
+        <script src="IncludedJavaScript.js"></script>
+
+    </body>
+</html> 
