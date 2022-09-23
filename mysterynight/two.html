@@ -1,34 +1,36 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Mystery Nights</title>
-<link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
+<title>Mystery Night Two</title>
+<link rel="icon" type="image/x-icon" href="assets/icon.png">
+<header>
+    <ul class="navbar">
+        <a href="index.html"><li>Home</li></a>
+        <a href="one.html"><li>One</li></a>
+        <a href="two.html"><li class="selected">Two</li></a>
+        <a href="three.html"><li>Three</li></a>
+        <a href="four.html"><li>Four</li></a>
+        <a href="info.html"><li class="end">Info</li></a>
+    </ul>
+</header>
 <html>
-    <img src="../assets/iconR-01.png" class="logo">
-    <br>
-    <header>
-        <a href="../index.html"><div>Launchpad</div></a>
-        <a href="../ai.html"><div>Illustrations</div></a>
-        <a href="../mysterynight.html"><div class="selected">Mystery Night</div></a>
-        <a href="../decimal.html"><div>Decimal Time</div></a>
-        <a href="../about.html"><div>More Info</div></a>
-    </header>
-    <br><br><br>
     <div class="body body-small">
-        <img src="../assets/mn2-saxon.png" width="180px">
+        <br><br><br><br><br>
+        
+        <img src="assets/mn2-saxon.png" width="180px">
         <h1 style="line-height: 0.3">Mystery Night Two</h1>
         <h2 style="line-height: 0.3;">The Sequel</h2>
         <i>By Jai Matthews <br>& Aidan de Sousa</i>
         <br><br>
         <div style="height: 600px;">
-            <img src="../assets/MN2.png" style="width: 400px; float: left;">
-            <img src="../assets/MNIcon-07.png" width="300px" style="margin-top: 100px;">
-            <a><button onclick="scrollToItem()">Read More</button></a><br><br>
-            <a href="howto.html?pageId=2"><button>How to Play</button></a><br><br>
-            <a href="howto.html?pageId=3"><button>Resources</button></a><br><br>
-            <a href="../mysterynight.html"><button>Other Mystery Nights</button></a><br><br>
+            <img src="assets/MN2.png" style="width: 400px; float: left;">
+            <img src="assets/MNIcon-07.png" width="300px" style="margin-top: 100px;">
+            <a><button class="but2" onclick="scrollToItem()">Read More</button></a><br><br>
+            <a href="play.html?pageId=2"><button class="but2">How to Play</button></a><br><br>
+            <a href="resources.html?pageId=2"><button class="but2">Resources</button></a><br><br>
+            <a href="explore.html"><button class="but2">Other Mystery Nights</button></a><br><br>
         </div>
-        <h1>About Mystery Night Two</h1>
+        <h1 id="more">About Mystery Night Two</h1>
         <table class="mn-table" style="margin: auto; text-align: left;">
             <tr>
                 <td style="width: 170px;">Authors:</td>
@@ -47,20 +49,20 @@
                 <td>Medium</td>
             </tr>
         </table>
-        <p id="more">
+        <p>
             <br>
-            <div class="quotes">
+            <div class="quotes quotes2">
                 <i>“If the curator finds out this happened I’ll be arrested immediately. You've only got until 8:45 before the curator arrives for work.”</i>
                 <p>-Danny, Mystery Night Two</p>
             </div>
             With a wealth of characters and split into 7 parts, Mystery Night two was the epic sequel to the original.
-            <div class="quotes">
+            <div class="quotes quotes2">
                 <br>
                 <i>“All I remember was that there was a diamond to the left of a spade and that there was an ace to the left of a heart.”</i>
                 <p>-Lady Shaw, Mystery Night Two</p>
             </div>
             In Mystery Night two, the famous "Starry Night" painting by Vincent Van Gogh has gone missing! And, of course, it's up to you to find it and bring it back to the Museum of Modern Art. Mystery Night two is similar to the first one structurally, but also manages to expand upon the gameplay. This time split into 7 parts, Mystery Night two has a much more story-based gameplay. You will meet many characters, travel all across New York, and hunt down the thieves that have taken the painting. And Mystery Night Two still has the puzzles you know and love from Mystery Night One, this time with motifs and references to Doctor Who. The epic sequel to Mystery Night has a fun narrative, some epic puzzles, and a shock ending that will leave your jaw on the floor.
-            <div class="quotes">
+            <div class="quotes quotes2">
                 <br>
                 <i>“But just as you’re ready to give up, you notice a piece of paper sitting on the table.”</i>
                 <p>-Mystery Night Two</p>
@@ -69,22 +71,9 @@
         <div style="overflow: hidden; width: 700px; height: 200px; margin: auto; border-radius: 30px;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" width="100%">
         </div>
-        <img src="../assets/MNIcon-07.png" width="300px">
+        <img src="assets/MNIcon-07.png" width="300px">
+
     </div>
     <br><br>
-    <footer>
-        <div class="footer">
-            <div style="margin: auto; width: fit-content" class="footerLinks">
-                <a href="../about.html?window=0#scrollto">Terms & Conditions</a>
-                <a href="../about.html?window=1#scrollto">Sitemap</a>
-                <a href="../about.html?window=2#scrollto">Contact</a>
-                <a href="../about.html?window=3#scrollto">News/ Updates</a>
-            </div>
-            <div style="margin: auto; width: fit-content;">
-            <span style="color: white;"><i>Jai Matthews, 2022</i> ⋅ </span><a onclick="topFunction()" id="myBtn" style="text-decoration: underline;">Back to Top</a>
-            </div>
-            <br><br>
-        </div>
-    </footer>
 </html>
-<script src="../script.js"></script>
+<script src="script.js"></script>

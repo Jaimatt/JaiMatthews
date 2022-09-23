@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Currently Playing Mystery Night Two</title>
+<link rel="icon" type="image/x-icon" href="../assets/icon.png"><header>
+<header>
+    <ul class="navbar">
+        <li class="selected wide">Currently Playing: Mystery Night Two.</li>
+        <a id="exit" onclick="toggle()"><li class="end">Exit.</li></a>
+        <div id="sure">
+            <a onclick="toggle()"><li class="end">No.</li></a>
+            <a href="../two.html"><li class="end">Yes.</li></a>
+            <li class="selected end">Are You Sure?</li>
+        </div>
+        
+    </ul>
+</header>
+<html>
+    <div class="body body-small">
+        <br><br><br><br>
+        <div id="title" style="margin-top: 180px;">
+
+        </div>
+        <div id="brief" class="briefBox" style="display: none;">
+            
+        </div>
+        <img id="logo" src="../assets/MNIcon-07.png" width="300px">
+        <iframe id="iframe"></iframe>
+        <div id="transcript" class="gameTextBox">
+        
+        </div>
+        <div id="hintBox" class="hintBox">
+            <p onclick="hint()" style="cursor: pointer; width: 100px; margin-left: auto; margin-right: auto; font-weight: bold;">Hint?</p>
+            <p id="hint" style="width: 300px; margin-left: auto; margin-right: auto;"></p>
+        </div>
+        
+        <button class="but2" id="button" onclick="nextSlide()">Continue</button>
+        <p id="error" style="color: red;">Incorrect.<br>Please evaluate your solution, then try again.</p>
+        <br><br><br><br>
+    </div>
+</html>
+<footer>
+    <div class="progress_box">
+        <div class="progress but2" id="pBar"><p></p></div>
+    </div>
+</footer>
+<script>
+
+slide = 0
+outcome = ""
+title = document.getElementById('title')
+iframe = document.getElementById('iframe')
+textBox = document.getElementById('transcript')
+button = document.getElementById('button')
+hintBox = document.getElementById('hintBox')
+hintChild = document.getElementById('hint')
+logo = document.getElementById('logo')
+error = document.getElementById('error')
+brief = document.getElementById('brief')
+
+// slide index
+
+titles = [1,5,15,19,23,31,37]
+puzzles = [3,7,9,11,13,17,21,25,27,29,33,35,39]
+gaps = [4,8,10,12,14,18,22,26,28,30,34,36]
+briefs = [2,6,16,20,24,32,38,40]
+
+//
+
+
+sources = [
+    'The Starry Night',
+    'Over the past 7 years, your team of guards at the <span class="but2">Museum of Modern Art</span> have been in charge of guarding one of the most famous paintings known, <span class="but2">the Starry Night by Vincent Van Gogh</span>. Yesterday, the curator of the exhibit informed you that you’d be guarding a different painting that night and the new employee, <span class="but2">Danny</span>, would be guarding the Starry Night from now on. On the very first night, Danny was guarding the painting, <span class="but2">it was stolen</span>. In the footage, you saw a group of <span class="but2">three people wearing balaclavas</span> and fingerless gloves come in and steal the painting.',
+    'puzzles/MN2A.pdf#toolbar=0','',
+
+    'Where Art Thou Hid?',
+    'You are about to receive files of all <span class="but2">the possible suspects</span>. These are the gangs that could potentially have committed the crime and it is your job now to <span class="but2">track every gang down.</span>',
+    'puzzles/MN2B.pdf#toolbar=0','',
+    'puzzles/MN2C.pdf#toolbar=0','',
+    'puzzles/MN2D.pdf#toolbar=0','',
+    'puzzles/MN2E.pdf#toolbar=0','',
+
+    'Who?',
+    'Now that all of the <span class="but2">gangs have been located</span>, you must figure out which one of them it was. The gangs will all have an excuse as to why they didn’t do it and you have to <span class="but2">figure out which of them is lying.</span>',
+    'puzzles/MN2F.pdf#toolbar=0','',
+
+    'ESCAPE!',
+    'You went to the <span class="but2">Saxon gang</span> members, Lucy, Harold and Padra, to inform them that you knew it was them that committed the crime and that they <span class="but2">would be prosecuted</span>. But just as you were about to ask them where the painting was, <span class="but2">they attacked you</span>. They must have drugged you and locked you in a room. There is a door but it is locked with a passcode. The walls of the room have writing on them. You <span class="but2">must escape</span> in order to get back the painting.',
+    'puzzles/MN2G.pdf#toolbar=0','',
+
+    'The Saxon Gang',
+    'You <span class="but2">finally escaped</span> the room that they locked you in. You go to tell Danny the bad news about their escape and find that <span class="but2">Danny has been taken</span> by them! Now you’ve got even more problems to deal with. Just as you’re ready to give up, you notice <span class="but2">a piece of paper sitting on the table.</span>',
+    'puzzles/MN2H.pdf#toolbar=0','',
+    'puzzles/MN2I.pdf#toolbar=0','',
+    'puzzles/MN2J.pdf#toolbar=0','',
+    
+    "Don't Die Danny!",
+    "You managed to capture the whole of the <span class='but2'>Saxon gang</span>. Now all that is left to do is to interrogate them so that you can find out where Danny is. They don't tell you where he is, but <span class='but2'>Harold</span> hands you a document that he says will <span class='but2'>lead you the way.</span>",
+    'puzzles/MN2K.pdf#toolbar=0','',
+    'puzzles/MN2L.pdf#toolbar=0','',
+
+    'Consequences',
+    "The door <span class='but2'>slowly creaks open.</span>",
+    'puzzles/MN2M.pdf#toolbar=0','',
+    ["So, you chose <span class='but2'>the Starry Night</span>. You retrieved the priceless picture but let Danny die. You have been charged with <span class='but2'>murder for 10 years</span>, a shortened sentence as you did recover the painting. You were also fired from your job. And you will never be able to forget that <span class='but2'>you killed Danny</span>. I hope you're happy.",
+    "So, you chose <span class='but2'>Danny</span>. You saved his life, but in doing so, lost the painting. No one will ever be able to get that back. You knew this. You have been <span class='but2'>fired</span> from your job but you have made a new friend who will forever be in your debt. Well done slick."]
+]
+
+hints = [
+    '','',
+    'Find a Pattern',
+    '','','',
+    'Read the individual digits out loud, row by row','',
+    'Count how many shapes in each pattern','',
+    'Sound of the Bronx Zoo<br>West of Soundview<br>North of Longwood<br>East of High Bridge<br>Begins with the letter M','',
+    'Oscar = 1',
+    '','','',
+    'Hint failed to load.',
+    '','','',
+    'y = 9, x = 11',
+    '','','',
+    "Write out all the possibilities in a <a target='_blank' href='https://en.wikipedia.org/wiki/Logic_puzzle#Logic_grid_puzzles'>logic grid</a>.",
+    '',
+    'Page 2? Is that relevant?',
+    '',
+    'Look at the passage and locate the words with a capital letter in the word search.',
+    '','','',
+    "Write out all the possibilities in a <a target='_blank' href='https://en.wikipedia.org/wiki/Logic_puzzle#Logic_grid_puzzles'>logic grid</a>.",
+    '',
+    'Squares',
+    '','','',
+    "Sorry mate, you're on your own.",
+    '',
+]
+
+solutions = [
+    '','',
+    '15',
+    '','','',
+    'EAST FLATBUSH','',
+    'SOUTH BEACH','',
+    'MELROSE','',
+    "QUEENS VILLAGE",
+    '','','',
+    'SAXON',
+    '','','',
+    '119',
+    '','','',
+    ['OSCAR','GERTRUDE','BEN','YASMIN','ROSS','PATRICIA'],
+    '',
+    'LONG ISLAND',
+    '',
+    'WARDENCLYFFE',
+    '','','',
+    ['JIM','FEDORAG','LARRY','CAPG','GREG','CAPR','BOB','FEDORAR'],
+    '',
+    '7253',
+    '','','',
+    ['DAN','PAINT'],
+    '',
+]
+
+solsInstructions = [
+    '','',
+    'Write the number represented by ?',
+    '','','',
+    'Name the location of the gang e.g. "Arden Heights"',
+    '',
+    'Name the location of the gang e.g. "Arden Heights"',
+    '',
+    'Name the location of the gang e.g. "Arden Heights"',
+    '',
+    'Name the location of the gang e.g. "Arden Heights"',
+    '','','',
+    'Name the gang that is lying e.g. "Ludic"',
+    '','','',
+    'Write the pin-code e.g. "782"',
+    '','','',
+    "Name the correct person for each box.",
+    '',
+    'Name the location e.g. "Arden Heights"',
+    '',
+    'Name the missing location e.g. "Arden Heights"',
+    '','','',
+    "Use the drop-downs to enter your answers.",
+    '',
+    'Write the pin-code e.g. "6782"',
+    '','','',
+    "It's your choice...",
+    '',
+]
+
+nextSlide()
+
+function nextSlide() {
+    if (puzzles.includes(slide)) {
+        if (slide == 25) {
+            input = [
+                document.getElementById('inputA').value.toUpperCase(),
+                document.getElementById('inputB').value.toUpperCase(),
+                document.getElementById('inputC').value.toUpperCase(),
+                document.getElementById('inputD').value.toUpperCase(),
+                document.getElementById('inputE').value.toUpperCase(),
+                document.getElementById('inputF').value.toUpperCase()
+            ]
+            if (input[0] != solutions[24][0]
+                || input[1] != solutions[24][1]
+                || input[2] != solutions[24][2]
+                || input[3] != solutions[24][3]
+                || input[4] != solutions[24][4]
+                || input[5] != solutions[24][5]) {
+                error.style.display = 'block'
+                return
+            }
+        } else if (slide == 33) {
+            input = [
+                document.getElementById('inputA').value.toUpperCase(),
+                document.getElementById('inputB').value.toUpperCase(),
+                document.getElementById('inputC').value.toUpperCase(),
+                document.getElementById('inputD').value.toUpperCase(),
+                document.getElementById('inputE').value.toUpperCase(),
+                document.getElementById('inputF').value.toUpperCase(),
+                document.getElementById('inputG').value.toUpperCase(),
+                document.getElementById('inputH').value.toUpperCase()
+            ]
+            if (input[0] != solutions[32][0]
+                || input[1] != solutions[32][1]
+                || input[2] != solutions[32][2]
+                || input[3] != solutions[32][3]
+                || input[4] != solutions[32][4]
+                || input[5] != solutions[32][5]
+                || input[6] != solutions[32][6]
+                || input[7] != solutions[32][7]) {
+                error.style.display = 'block'
+                return
+            }
+        } else if (slide == 39) {
+            input = document.getElementById('input')
+            if (input.value.toUpperCase() != "DAN" && input.value.toUpperCase() != "PAINT") {
+                error.style.display = 'block'
+                error.innerText = 'Please select an option'
+                return
+            }
+            if (input.value.toUpperCase() == "DAN") {
+                outcome = "1"
+            } else {
+                outcome = "0"
+            }
+        } else if (slide == 33) {
+            console.log("TBD")
+        } else {
+            input = document.getElementById('input')
+            if (input.value.toUpperCase() != solutions[slide-1]) {
+                error.style.display = 'block'
+                return
+            }
+        }
+        
+    }
+
+    slide = slide + 1
+    hintBox.style.display = 'none'
+    hintChild.style.display = 'none'
+    error.style.display = 'none'
+    button.style.display = 'inline-block'
+
+    pBar.style.width = 'calc(100% * '+slide/41+')'
+
+    if (titles.includes(slide)) {
+        title.style.display = 'block'
+        iframe.style.display = 'none'
+        textBox.style.display = 'none'
+        logo.style.display = 'none'
+        button.innerHTML = 'Continue'
+
+        if (slide == 1) {
+            title.innerHTML = `<h2>Part 1:</h2>`
+        } else if (slide == 5) {
+            title.innerHTML = `<h2>Part 2:</h2>`
+        } else if (slide == 15) {
+            title.innerHTML = `<h2>Part 3:</h2>`
+        } else if (slide == 19) {
+            title.innerHTML = `<h2>Part 4:</h2>`
+        } else if (slide == 23) {
+            title.innerHTML = `<h2>Part 5:</h2>`
+        } else if (slide == 31) {
+            title.innerHTML = `<h2>Part 6:</h2>`
+        } else if (slide == 37) {
+            title.innerHTML = `<h2>Part 7:</h2>`
+        }
+
+        title.innerHTML = title.innerHTML + "<h1>" + sources[slide-1] + "</h1>"
+
+    } else if (slide >= 41) {
+        title.style.display = 'block'
+        iframe.style.display = 'none'
+        textBox.style.display = 'none'
+        brief.style.display = 'none'
+        logo.style.display = 'none'
+        title.innerHTML = `
+            <h2>You completed Mystery Night Two.</h2>
+            <h1>Congratulations!</h1>`
+        button.innerHTML = 'Download Certificate'
+        if (slide >= 42) {
+            if (outcome == 1) {
+                window.open('puzzles/MN2_Certificate_A.pdf', '_blank');
+            } else {
+                window.open('puzzles/MN2_Certificate_B.pdf', '_blank');
+            }
+            
+        }
+    } else if (puzzles.includes(slide)) {
+        title.style.display = 'none'
+        iframe.style.display = 'inline-block'
+        textBox.style.display = 'block'
+        brief.style.display = 'none'
+        logo.style.display = 'inline-block'
+        button.innerHTML = 'Check Answer'
+        
+
+        iframe.contentWindow.location.replace(sources[slide-1])
+
+
+        textBox.style.textAlign = 'center'
+
+        if (slide == 25) {
+            textBox.innerHTML = `
+            <p><b>Answers:</b></p>
+            <div style="display: inline-block">
+                Pink:<br>
+                <input class="but2 input-small" id="inputA" autocomplete="off">
+            </div>
+            <div style="display: inline-block">
+                Red:<br>
+                <input class="but2 input-small" id="inputB" autocomplete="off">
+            </div>
+            <div style="display: inline-block">
+                Yellow:<br>
+                <input class="but2 input-small" id="inputC" autocomplete="off">
+            </div><br>
+            <div style="display: inline-block">
+                Orange:<br>
+                <input class="but2 input-small" id="inputD" autocomplete="off">
+            </div>
+            <div style="display: inline-block">
+                Green:<br>
+                <input class="but2 input-small" id="inputE" autocomplete="off">
+            </div>
+            <div style="display: inline-block">
+                Blue:<br>
+                <input class="but2 input-small" id="inputF" autocomplete="off">
+            </div>
+
+            <p><i>`+solsInstructions[slide-1]+`</i></p>`
+        } else if (slide == 39) {
+            textBox.innerHTML = `
+            <p><b>Answer:</b></p>
+            <select class="but2" id="input">
+                <option value="" disabled selected>Choose your option...</option>
+                <option value="dan">Save Danny</option>
+                <option value="paint">Save the Painting</option>
+            </select>
+
+            
+            <p><i>`+solsInstructions[slide-1]+`</i></p>`
+
+        } else if (slide==33) {
+            textBox.innerHTML = `
+            <p><b>Answers:</b></p>
+            <div style="display: inline-block">
+                Far Left:<br>
+                <select class="but2 input-small" id="inputA">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="BOB">Bob</option>
+                    <option value="JIM">Jim</option>
+                    <option value="GREG">Greg</option>
+                    <option value="LARRY">Larry</option>
+                </select><br>
+                <select class="but2 input-small" id="inputB">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="CAPR">Red Cap</option>
+                    <option value="FEDORAG">Green Fedora</option>
+                    <option value="FEDORAR">Red Fedora</option>
+                    <option value="CAPG">Green Cap</option>
+                </select>
+            </div>
+            <div style="display: inline-block">
+                Left:<br>
+                <select class="but2 input-small" id="inputC">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="BOB">Bob</option>
+                    <option value="JIM">Jim</option>
+                    <option value="GREG">Greg</option>
+                    <option value="LARRY">Larry</option>
+                </select><br>
+                <select class="but2 input-small" id="inputD">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="CAPR">Red Cap</option>
+                    <option value="FEDORAG">Green Fedora</option>
+                    <option value="FEDORAR">Red Fedora</option>
+                    <option value="CAPG">Green Cap</option>
+                </select>
+            </div>
+            <div style="display: inline-block">
+                Right:<br>
+                <select class="but2 input-small" id="inputE">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="BOB">Bob</option>
+                    <option value="JIM">Jim</option>
+                    <option value="GREG">Greg</option>
+                    <option value="LARRY">Larry</option>
+                </select><br>
+                <select class="but2 input-small" id="inputF">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="CAPR">Red Cap</option>
+                    <option value="FEDORAG">Green Fedora</option>
+                    <option value="FEDORAR">Red Fedora</option>
+                    <option value="CAPG">Green Cap</option>
+                </select>
+            </div>
+            <div style="display: inline-block">
+                Far Right:<br>
+                <select class="but2 input-small" id="inputG">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="BOB">Bob</option>
+                    <option value="JIM">Jim</option>
+                    <option value="GREG">Greg</option>
+                    <option value="LARRY">Larry</option>
+                </select><br>
+                <select class="but2 input-small" id="inputH">
+                    <option value="" disabled selected>Select...</option>
+                    <option value="CAPR">Red Cap</option>
+                    <option value="FEDORAG">Green Fedora</option>
+                    <option value="FEDORAR">Red Fedora</option>
+                    <option value="CAPG">Green Cap</option>
+                </select>
+            </div>
+
+            <p><i>`+solsInstructions[slide-1]+`</i></p>`
+        } else {
+            textBox.innerHTML = `
+        <p><b>Answer:</b></p>
+        <input class="but2" id="input" autocomplete="off"><p><i>`+solsInstructions[slide-1]+`</i></p>`
+        }
+        
+
+        hintBox.style.display = 'block'
+
+        hintChild.innerHTML = "<i>" + hints[slide-1] + "</i><br><br>Need More help?<br> <a target='_blank' href='../info.html'>Contact Us</a> for assistance."
+    } else if (gaps.includes(slide)) {
+        title.style.display = 'block'
+        iframe.style.display = 'none'
+        textBox.style.display = 'none'
+        logo.style.display = 'none'
+        button.style.display = 'none'
+
+        title.innerHTML = `
+            <h2>You got it right!</h2>`
+
+        const myTimeout = setTimeout(nextSlide, 1000);
+    } else if (briefs.includes(slide)) {
+        title.style.display = 'none'
+        iframe.style.display = 'none'
+        textBox.style.display = 'none'
+        logo.style.display = 'none'
+        brief.style.display = 'block'
+        button.innerHTML = 'Continue'
+        
+        if (slide == 40) {
+            brief.innerHTML = '<p>'+sources[40][outcome]+'</p>'
+            
+        } else {
+            brief.innerHTML = '<p>'+sources[slide-1]+'</p>'
+        }    
+    }
+
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function hint() {
+    hintChild.style.display = 'block'
+    console.log('hello')
+}
+tog = 0
+toggle()
+function toggle() {
+    if (tog == 0) {
+        document.getElementById('sure').style.display = "none"
+        document.getElementById('exit').style.display = "block"
+        tog = 1
+        return
+    } else {
+        document.getElementById('exit').style.display = "none"
+        document.getElementById('sure').style.display = "block"
+        tog = 0
+        return
+    }
+}
+
+</script>

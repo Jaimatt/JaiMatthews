@@ -171,12 +171,12 @@ a {
     filter: brightness(30%);
 }
 
-@media only screen and (max-device-width: 768px) {
+/* @media only screen and (max-device-width: 768px) {
     html , body {
         display: none;
         background-image: url("asset/back.png");
     }
-}
+} */
 
 .scroll_window {
     width: 900px; 

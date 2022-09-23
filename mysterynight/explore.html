@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Mystery Nights</title>
+<link rel="icon" type="image/x-icon" href="assets/icon.png">
+<header>
+    <ul class="navbar">
+        <a href="index.html"><li class="selected">Home</li></a>
+        <a href="one.html"><li>One</li></a>
+        <a href="two.html"><li>Two</li></a>
+        <a href="three.html"><li>Three</li></a>
+        <a href="four.html"><li>Four</li></a>
+        <a href="info.html"><li class="end">Info</li></a>
+    </ul>
+</header>
+<html>
+    <div class="body">
+        <br><br>
+        <p>The Mystery Nights:</p>
+        <div id="scroll_window_parent_hover" style="margin-left: auto; margin-right: auto;">
+        <div class="scroll_button_parent" id="left">
+            <i class="fa fa-arrow-left scroll_button_icon" style="font-size: 20px; line-height: 500px;"></i>
+        </div>
+        <div class="scroll_window" id="scroll_window" onscroll="log()">
+            <a href="one.html"><img src="assets/MN1.png" class="scroll_MN"></a>
+            <a href="two.html"><img src="assets/MN2.png" class="scroll_MN"></a>
+            <a href="three.html"><img src="assets/MN3.png" class="scroll_MN"></a>
+            <a href="four.html"><img src="assets/MN4.png" class="scroll_MN"></a>
+            <a><img src="assets/MN5.png" class="scroll_MN" style="cursor: not-allowed;"></a>
+            <a><img src="assets/MN6.png" class="scroll_MN" style="cursor: not-allowed;"></a>
+            <a href="one.html"><img src="assets/MN1.png" class="scroll_MN"></a>
+            <a href="two.html"><img src="assets/MN2.png" class="scroll_MN"></a>
+            <a href="three.html"><img src="assets/MN3.png" class="scroll_MN"></a>
+            <a><img src="assets/MN4.png" class="scroll_MN" style="cursor: not-allowed;"></a>
+        </div>
+        <div class="scroll_button_parent" id="right">
+            <i class="fa fa-arrow-right scroll_button_icon" style="font-size: 20px; line-height: 500px;"></i>
+        </div>
+        </div>
+    </div>
+    <br><br>
+</html>
+<script src="script.js"></script>

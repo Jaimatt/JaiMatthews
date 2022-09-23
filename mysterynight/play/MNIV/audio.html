@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/wIcon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body>
+        <div class="loginBox">
+            <h1>Incoming Transmission...</h1>
+            <button onclick="play()">Play</button>
+        </div>
+        <iframe src="recordings/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+
+        <audio id="audioSource" autoplay onended="leave()">
+        </audio>
+        <div class="footer">
+            <p>Control Panel | Engine Room</p>
+        </div>
+</body>
+</html>
+<script src="main.js"></script>
+<script src="transmissions.js"></script>
+<script src="timer.js"></script>
+<script>
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    aId = urlParams.get('aId')
+
+    exits = [
+        'login.html?',
+        'main.html?',
+        'win.html?'
+    ]
+
+    function play() {
+        document.getElementById('audioSource').play();
+    }
+
+    function leave() {
+        redirect(exits[aId-1])
+    }
+
+    if (aId == 1) {
+        document.getElementById('audioSource').src = "recordings/recA.mp3"
+    } else if (aId == 2) {
+        document.getElementById('audioSource').src = "recordings/recB.mp3"
+    } else if (aId == 3) {
+        document.getElementById('audioSource').src = "recordings/recC.mp3"
+    }
+</script>

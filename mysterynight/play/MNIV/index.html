@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/wIcon.png">
+<header>
+</head>
+<body style="background-image: none;">
+    <div id="homeForm" style="width: 500px; margin: auto; margin-top: 200px; text-align: center;">
+        <b style="font-size: x-large;">Admin Set-Up:</b><br><br>
+        <b>End Time:</b><br>
+        <i>Suggested Time: 20:40</i><br>
+        <label>
+            Hour
+            <input id="hour" placeholder="20" autocomplete="off">
+        </label><br>
+        <label>
+            Minute
+            <input id="minute" placeholder="40" autocomplete="off">
+        </label><br><br><br>
+        <b>Part 2 Message:</b><br>
+        <i>The location of the key, given to players at end of Part 2</i><br>
+        <label>
+            Message
+            <input id="message" placeholder="Type Here..." autocomplete="off">
+        </label><br><br>
+        <button onclick="setParameters()">Submit.</button>
+    </div>
+    <div id="homeButton" style="display: none; margin: 0;">
+        <div style="padding: 0 0;">
+            <div style="padding-right: 100px; background-color: whitesmoke; height: 100vh;  display: inline-block; vertical-align: middle; width: 42vw; text-align: center;">
+                <img style=" width: 350px; margin-top: 20%;" src="assets/poster.png">
+            </div>
+            <div style="padding-right: 100px; height: 100vh;  display: inline-block; vertical-align: middle; width: 42vw; text-align: center;">
+                <img style="width: 400px; margin-top: 40%;" src="assets/icon.png"><br><br>
+                <button class="start" onclick="redirect('audio.html?aId=1&')">Begin MN4</button>
+                <p>Do not press Begin until instructed.</p>
+            </div>  
+        </div>      
+    </div>    
+</body>
+</html>
+<script src="main.js"></script>

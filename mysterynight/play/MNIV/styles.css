@@ -1,0 +1,224 @@
+@font-face {
+    font-family: Headings;
+    src: url(assets/AllRoundGothic-Book.ttf);
+}
+:root {
+    --glow: rgb(6, 240, 248);
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+h1 {
+    font-family: 'Headings';
+}
+h2 {
+    font-family: 'Headings';
+    text-shadow: 0px 0px 10px var(--glow);
+    color: var(--glow);
+}
+p {
+    font-family: 'Sawarabi Gothic', sans-serif;
+    color: red;
+    text-shadow: 0px 0px 5px red;
+}
+body {
+    background-image: url('assets/backdrop.png');
+    background-size: 101vw;
+    background-position-x: center;
+    margin: 0;
+}
+input:focus {
+    outline: 0;
+}
+.loginBox, .finishBox {
+    text-align: center;
+    color: white;
+    margin-top: 50vh;
+}
+.loginBox input, .pwdBox input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 0px;
+    width: 150px;
+    transition-duration: 500ms;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    box-shadow: 0px 0px 10px var(--glow);
+}
+.loginBox input.focus, .pwdBox input.focus {
+    width: 300px;
+    outline: none;
+    text-align: left;
+    box-shadow: 0px 0px 30px var(--glow);
+}
+.loginBox button, .pwdBox button, .start, .finishBox button {
+    padding: 10px;
+    border-radius: 20px;
+    border: 0px;
+    width: 100px;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    background-color: lightgrey;
+    box-shadow: 0px 0px 10px var(--glow);
+    cursor: pointer;
+}
+.FinalInput {
+    padding: 10px;
+    border: 0px;
+    width: 150px;
+    height: 28px;
+    letter-spacing: 13px;
+    font-size: 35px;
+    transition-duration: 500ms;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    box-shadow: 0px 0px 10px var(--glow);
+    background-image: url('assets/part3input.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.timer {
+    text-shadow: 0px 0px 10px var(--glow);
+    color: var(--glow);
+    width: 100px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
+.watermark {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.homeButton {
+    top: 0;
+    position: fixed;
+    right: 50;
+    width: 100vw;
+    text-align: center;
+}
+.homeButton img {
+    filter: drop-shadow(0 0 10px var(--glow));
+    margin-top: 15px;
+}
+.keyboard {
+    width: 100vw;
+    background-color: lightgray;
+    float:inline-end;
+    position: fixed;
+    bottom: 0;
+    height: 90px;
+    padding-top: 5px;
+    text-align: center;
+}
+.keyboard button:not(.wide) {
+    width: 62px;
+    height: 40px;
+    border: 0px;
+    color: white;
+    font-family: 'Headings';
+    font-size: 20px;
+    background-image: url('assets/backdrop.png');
+    background-size: 700px;
+    background-position-x: center;
+    background-position-y: bottom;
+    margin-bottom: 5px;
+}
+.footer {
+    bottom: 0; 
+    position: fixed; 
+    text-align: center; 
+    width: 100vw;
+}
+.footer p {
+    color: var(--glow);
+    text-shadow: 0px 0px 10px var(--glow);
+}
+.wide {
+    width: 129px;
+    height: 40px;
+    border: 0px;
+    color: red;
+    font-family: 'Headings';
+    font-size: 20px;
+    background-color: whitesmoke;
+    margin-bottom: 5px;
+    background-image: url('assets/backdrop.png');
+    background-size: 1400px;
+    background-position-x: center;
+    background-position-y: center;
+    margin-bottom: 5px;
+}
+.appsBox {
+    margin-top: 15vh;
+    color: white;
+    text-align: center;
+}
+.appsBox img.app {
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline-block;  
+    filter: drop-shadow(0 0 10px var(--glow))
+}
+.appBox {
+    color: white;
+    /* background-color: yellow; */
+    margin-top: 13vh;
+    margin-left: 18vw;
+    margin-right: 18vw;
+    text-align: left;
+    height: 70vh;
+}
+.appBox ul {
+    list-style-type: none;
+    width: fit-content;
+    margin: 0;
+    margin-left: 0;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    height: 95%;
+    overflow: auto;
+}
+.appBox li {
+    background-color: rgba(6, 240, 248, 0.4);
+    -webkit-backdrop-filter: opacity(50%);
+    backdrop-filter: opacity(50%);
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+.appBox li.inFolder {
+    background-color: rgba(0, 176, 182, 0.4);
+    margin-left: 20px;
+    width: calc(300px - 20px);
+}
+.appBox li.selected {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+.appBox span {
+    line-height: 40px;
+    vertical-align: middle;
+}
+.appBox iframe, .appBox div.audio {
+    margin-left: 20px; 
+    display: inline-block; 
+    width: 420px; 
+    height: calc(100% - 50px); 
+    vertical-align: top;
+    padding: 20px;
+    border: 0;
+    background-color: rgba(255, 0, 0, 0.4);
+    -webkit-backdrop-filter: opacity(50%);
+    backdrop-filter: opacity(50%);
+    text-align: center;
+}
+.appBox audio {
+    width: 100%;
+}

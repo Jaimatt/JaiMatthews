@@ -9,11 +9,11 @@ document.getElementById("b"+open_box).classList.remove("button_2")
 
 function loadscreen(id) {
   if (document.getElementById("b"+id).className == "button_3") {
-    document.getElementById("b"+id).classList.remove("button_3")
-    document.getElementById("b"+id).classList.add("button_2")
-    document.getElementById("s"+id).style.display = "none"
+    // document.getElementById("b"+id).classList.remove("button_3")
+    // document.getElementById("b"+id).classList.add("button_2")
+    // document.getElementById("s"+id).style.display = "none"
   } else {
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 6; i++) {
       document.getElementById("b"+i).classList.remove("button_3")
       document.getElementById("b"+i).classList.add("button_2")
       document.getElementById("s"+i).style.display = "none"
@@ -22,7 +22,7 @@ function loadscreen(id) {
     document.getElementById("b"+id).classList.remove("button_2")
     document.getElementById("s"+id).style.display = "block"
     var element = document.querySelector("#s"+id);
-    element.scrollIntoView({behavior: 'smooth'});
+    // element.scrollIntoView({behavior: 'smooth'});
   }
   setTimeout(function() {
     history.pushState(null, "", location.href.split("?")[0]);
