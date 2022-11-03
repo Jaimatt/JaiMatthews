@@ -1,10 +1,23 @@
 :root {
+    /* old:
     --elGrey: #797979;
     --lGrey: #5A5A5A;
     --mGrey: #4D4D4D;
-    --dGrey: #363636;
+    --bgBlue: #4D4D4D;
     --elBlue: #0589e0;
     --lBlue: #0071BC;
+    --text: #ffffff;
+    --text2; #ffffff; */
+
+    /* new: */
+    --elGrey: #d4d4d4;
+    --lGrey: #e6e6e6;
+    --mGrey: white;
+    --bgBlue: #dafffb;
+    --elBlue: #12ddc5;
+    --lBlue: #10b9a9;
+    --text: #000000;
+    --text2: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -19,8 +32,10 @@
 }
 
 body {
-    background-color: var(--mGrey);
+    background-image: linear-gradient(var(--mGrey), var(--bgBlue));
     margin: 25px;
+    background-attachment: fixed;
+    
 }
 
 header {
@@ -33,7 +48,7 @@ header {
 }
 
 header div {
-    color: white;
+    color: var(--text);
     line-height: 60px;
     text-align: center;
     font-family: helvetica;
@@ -53,7 +68,8 @@ header div {
 }
 
 header div:hover {
-    background-color: #797979;
+    background-color: var(--elBlue);
+    color: var(--text2);
     font-size: large;
 }
 
@@ -71,7 +87,7 @@ header div:hover {
     width: 1050px;
     margin: auto;
     text-align: center;
-    color: white;
+    color: var(--text);
 }
 .body-small {
     width: 900px;
@@ -90,7 +106,7 @@ h3 {
 }
 
 h4 {
-    color: white;
+    color: var(--text2);
     background-color: var(--lBlue);
     width: 100%;
     margin-top: 0;
@@ -137,7 +153,7 @@ div.website div {
 }
 
 a {
-    color: white; 
+    color: var(--text); 
     text-decoration: underline; 
     cursor: pointer;
 }
@@ -224,7 +240,7 @@ button {
     background-color: var(--lBlue);
     border: 0px;
     border-radius: 25px;
-    color: white;
+    color: var(--text2);
     font-weight: bold;
     font-size: medium;
     transition-duration: 300ms;
@@ -237,6 +253,7 @@ button:hover {
 }
 .button_2 {
     background-color: var(--lGrey);
+    color: var(--text);
     width: 250px;
     margin: 10px;
 }
@@ -256,6 +273,7 @@ button:hover {
 }
 .download {
     background-color: var(--lGrey); 
+    color: var(--text2);
     width: 500px; 
     margin: auto; 
     height: 150px; 
