@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Generator</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body {
+        background-color: whitesmoke;
+    }
+    .string {
+        background-color: white;
+        padding: 20px;
+        width: 400px;
+        border-radius: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        text-align: center;
+    }
+    .maintext {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 25px;
+        text-align: center;
+        margin: 0;
+    }
+    .subtext {
+        font-size: 15px;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        margin: 0;
+        /* cursor: pointer; */
+        font-style: italic;
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    input, button {
+        margin: 10px;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        border: none;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        transition-duration: 300ms;
+    }
+    button {
+        width: 100px;
+        cursor: pointer;
+        margin-bottom: 30px;
+    }
+    .abled:hover, button:hover {
+        background-color: white;
+        
+    }
+    .disabled {
+        cursor: not-allowed;
+    }
+    .home {
+        bottom: 0;
+        left: 50%;
+        position: fixed;
+        font-family: 'Quicksand', sans-serif;
+        font-weight:900;
+        transform: translate(-50%);
+        color: black;
+    }
+</style>
+<body>
+    <div class="string">
+        <p class="maintext">Countdown Generator:</p>
+        <input class="abled" type="text" placeholder="Title" id="title"><br>
+        <input class="abled" type="text" placeholder="Backdrop (Paste Link)" id="backdrop"><br>
+        <input class="abled" type="date" id='date'><br>
+        <input class="abled" type="time" id="time"><br>
+        <button onclick="generate()">Generate!</button>
+        <p class="maintext">Existing Countdowns:</p><br>
+        <p class="subtext"><a href="main.html?title=Tears%20of%20the%20Kingdom&datetime=2023-05-12%2016:00&background=assets/totk.webp">Tears of the Kingdom <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+    </div>
+    <p class="home"><a style="color: black; text-decoration: underline;" href="../index.html">Exit</a></p>
+</body>
+</html>
+<script>
+
+function generate() {
+    console.log("press")
+    title = document.getElementById("title").value
+    date = document.getElementById("date").value
+    time = document.getElementById("time").value
+    backdrop = document.getElementById("backdrop").value
+
+    window.location.href = "main.html?title="+title+"&datetime="+date+" "+time+"&background="+backdrop;
+}
+
+</script>
