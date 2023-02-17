@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <title>The JaiRell Experience</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="sec0">
+    <div class="head">
+        <img src="assets/logo.png" class="mainIcon">
+        <br>
+        <p class="prompt">Welcome to the official JaiRell website!</p>
+        <p onclick="section(1)" class="button b1">About Us</p>
+        <p onclick="section(2)" class="button b4">The Podcasts</p>
+        <p onclick="section(3)" class="button b2">Reviews</p>
+    </div>
+    
+    <div class="section b1" id="sec1">
+        <br>
+        <h1>About Us</h1>
+        <img class="aboutImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png">
+        <p class="aboutTxt">
+            Welcome to the official website for The JaiRell Experience!
+            <br><br>
+            The JaiRell Experience is a series of podcasts created by Jai Matthews & Tyrell Carli for various school assignments since April 2021. Below you can access a list of previous episodes of The JaiRell Experience along with links to listen to them on YouTube. You can also access reviews that have been left by our loyal listeners of The JaiRell Experience.
+            <br><br>
+            The JaiRell Experience is proudly sponsored by MyBraincells from Mark Gurney.
+        </p>
+        <br>
+        <br>
+    </div>
+    <div class="section b4" id="sec2">
+        <br>
+        <h1>The Podcasts</h1>
+        <p>The complete history of The JaiRell Experience podcasts are available below:</p>
+        <div id="podParent">
+
+        </div>
+        <p class="link" onclick="loadMore()" id="loadLink">Load More</p>
+        <br>
+        <br>
+    </div>
+    <div class="section b2" id="sec3">
+        <br>
+        <h1>Reviews</h1>
+        <div id="reviewParent">
+
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="section b4">
+        <br>
+        <h1>Our Donors</h1>
+        <p>The JaiRell Experience is proud to have MyBraincells.cf as the priciple sponsor for our series. Go to MyBraincells.cf, or click below, for expertly crafted jokes on a state-of-the-art website.</p>
+        <a href="https://mybraincells.cf/" style="color: black;"><p class="link">My Braincells >>></p></a>
+        <div style="text-align: center;">
+            <img src="https://mybraincells.cf/braincells.jpg" width="300px">
+        </div>
+        
+        <br>
+        <br>
+    </div>
+
+    <div class="foot">
+        <p>Copyright © 2023 - Jai Matthews & Tyrell Carli</p>
+        <p class="link" onclick="section(0)">Back to Top</p>
+    </div>
+
+</body>
+</html>
+<script src="script.js"></script>
