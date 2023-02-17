@@ -56,12 +56,12 @@ reviewParent = document.getElementById("reviewParent")
 hypertext = ""
 
 reviewAccImg = [
-    "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
-    "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
-    "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
-    "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
-    "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
-    "https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png",
+    "assets/user.png",
+    "assets/user.png",
+    "assets/user.png",
+    "assets/user.png",
+    "assets/user.png",
+    "assets/user.png",
 ]
 
 reviewScore = [
