@@ -90,11 +90,16 @@ function Toggle() {
 
 function calculate() {
     var seconds = new Date().getTime() / 1000;
+    var Dseconds = new Date("Jan 1 2023 00:00:00").getTime() / 1000;
     document.getElementById("sibtext").innerText = "There are"
 
     seconds = Math.floor(seconds)
 
     Fseconds = Math.floor(Fseconds)
+
+    Dseconds = Math.floor(Dseconds)
+    Dseconds = seconds-Dseconds
+    Dseconds = Dseconds%86400
 
     gap = Fseconds - seconds
 
@@ -105,8 +110,11 @@ function calculate() {
             document.getElementById("subtext").innerText = "Second Remaining"
         }
     } else if (setting=="day") {
-        Dgap = Math.floor((gap+86400-(gap%86400))/86400)
+
+        Dgap = Math.floor((Dseconds+gap)/86400)
+
         document.getElementById("string").innerText = Dgap
+
         if (Dgap==1 && gap>0) {
             document.getElementById("sibtext").innerText = "There is"
             document.getElementById("subtext").innerText = "Day Remaining"

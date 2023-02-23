@@ -79,7 +79,7 @@ reviewName = [
     "Brad Surname",
     "Firstname Bradson",
     "Dr A Hasntgotaname",
-    "King John of England"
+    "King John of England",
 ]
 
 reviewContent = [
