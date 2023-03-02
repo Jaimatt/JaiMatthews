@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="styles.css">
+<link id="colour" rel="stylesheet" href="light.css">
 <title>More Info</title>
 <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <html>
-    <img src="assets/iconR-01.png" class="logo">
+    <img src="assets/iconR-01.png" id="logoMain" class="logo">
     <br>
     <header>
-        <a href="index.html"><div>Launchpad</div></a>
-        <a href="ai.html"><div>Illustrations</div></a>
-        <a href="mn.html"><div>Mystery Night</div></a>
-        <a href="temp.html"><div>???</div></a>
-        <a href="about.html"><div class="selected">More Info</div></a>
+        <a class="linkto" href="index.html"><div>Launchpad</div></a>
+        <a class="linkto" href="ai.html"><div>Illustrations</div></a>
+        <a class="linkto" href="mn.html"><div>Mystery Night</div></a>
+        <a class="linkto" href="temp.html"><div>???</div></a>
+        <a class="linkto" href="about.html"><div class="selected">More Info</div></a>
     </header>
     <br><br><br>
     <div class="body">
@@ -152,6 +153,13 @@
                                     <li><a href="https://bookabench.jaimatthews.cf/signup.php">Create Account</a></li>
                                 </ul>
                             </ul>
+                        <li><a href="jairell">The JaiRell Experience</a></li>
+                            <ul>
+                                <li><a href="jairell/index.html#sec1">About Us</a></li>
+                                <li><a href="jairell/index.html#sec2">Podcasts</a></li>
+                                <li><a href="jairell/index.html#sec3">Reviews</a></li>
+                            </ul>
+                        <li><a href="countdown">Countdown Generator</a></li>
                     </ul>
                 <li><a href="ai.html">Illustrations</a></li>
                     <ul>
@@ -226,6 +234,13 @@
             <h4>News/ Updates</h4>
             <br>
             <table class="about" style="margin: auto;">
+                <tr>
+                    <td width="40%">Dark Mode</td>
+                    <td width="60%">
+                        <i>2 March, 2023</i><br>
+                        Following popular request, the website can be viewed as it was prior to the re-design. Scroll down and click "View Legacy Website".
+                    </td>
+                </tr>
                 <tr>
                     <td width="40%">Countdown Update</td>
                     <td width="60%">
@@ -303,12 +318,8 @@
             <div style="margin-left: 30px; margin-right: 30px;">
                 <p>There's still loads of features yet to come to the Jai Matthews website!</p>
                 <ul class="future">
-                    <li>More Information About Illustrations!</li>
-                    <i>Soon you'll be able to read a behind-the-scenes description for each illustration.</i>
                     <li>Mystery Night 5</li>
                     <i>Coming Soon is Mystery Night 5 (Once we make it!)</i>
-                    <li>Illustrations</li>
-                    <i>Illustrations #29 and #30 will soon be moved to the website. (#30 is still hasn't been digitised)</i>
                     <li>Mobile Support</li>
                     <i>This website will soon function on mobile devices. This will also become available for the Mystery Night and BookABench sites.</i>
                     <li>Coming Soon...</li>
@@ -347,6 +358,9 @@
             <span style="color: var(--text);"><i>Jai Matthews, 2022</i> ⋅ </span><a onclick="topFunction()" id="myBtn" style="text-decoration: underline;">Back to Top</a>
             </div>
             <br><br>
+        </div>
+        <div style="margin: auto; width: fit-content"class="footerLinks">
+            <a id="webToggle" onclick="toggleTheme()">View Legacy Website</a>
         </div>
     </footer>
 </html>

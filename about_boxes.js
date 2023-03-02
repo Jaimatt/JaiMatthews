@@ -1,5 +1,3 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
 const open_box = urlParams.get('window')
 console.log(open_box)
 
@@ -25,6 +23,6 @@ function loadscreen(id) {
     // element.scrollIntoView({behavior: 'smooth'});
   }
   setTimeout(function() {
-    history.pushState(null, "", location.href.split("?")[0]);
+    // history.pushState(null, "", location.href.split("?")[0]);
   }, 500);
 }

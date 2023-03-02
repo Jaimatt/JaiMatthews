@@ -1,5 +1,3 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
 const illustration = urlParams.get('no')
 console.log(illustration);
 

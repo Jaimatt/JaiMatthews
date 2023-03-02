@@ -1,24 +1,3 @@
-:root {
-    /* old:
-    --elGrey: #797979;
-    --lGrey: #5A5A5A;
-    --mGrey: #4D4D4D;
-    --bgBlue: #4D4D4D;
-    --elBlue: #0589e0;
-    --lBlue: #0071BC;
-    --text: #ffffff;
-    --text2; #ffffff; */
-
-    /* new: */
-    --elGrey: #d4d4d4;
-    --lGrey: #e6e6e6;
-    --mGrey: white;
-    --bgBlue: #dafffb;
-    --elBlue: #12ddc5;
-    --lBlue: #10b9a9;
-    --text: #000000;
-    --text2: #ffffff;
-}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -388,6 +367,7 @@ iframe:hover {
 }
 .footerLinks a {
     margin: 20px;
+    font-family: arial;
 }
 footer a {
     line-height: 40px;
