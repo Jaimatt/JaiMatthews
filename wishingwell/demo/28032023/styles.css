@@ -1,0 +1,132 @@
+@keyframes flash {
+    0% {color: white; text-shadow: 3px 3px 3px #d43737, -3px -3px 3px rgb(67, 67, 224);}
+    92% {color: white; text-shadow: 3px 3px 3px #d43737, -3px -3px 3px rgb(67, 67, 224);}
+    94% {color: black; text-shadow: none}
+    96% {color: white; text-shadow: 3px 3px 3px #d43737, -3px -3px 3px rgb(67, 67, 224);}
+    98% {color: black; text-shadow: none}
+    100% {color: white; text-shadow: 3px 3px 3px #d43737, -3px -3px 3px rgb(67, 67, 224);}
+}
+
+@keyframes about {
+    0% {height: 0; padding: 0;}
+    100% {height: calc(100vh - 10vw); padding: 20px;}
+}
+
+@keyframes menu {
+    0% {height: 0; padding: 0;}
+    100% {height: 220px; padding: 20px;}
+}
+
+@keyframes aboutBack {
+    0% {color: black; text-shadow: none;}
+    70% {color: black; text-shadow: none;}
+    100% {color: white;}
+}
+
+body {
+    background-color: rgb(29, 29, 29);
+    margin: 0;
+}
+.menu {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    width: 400px;
+    height: 220px;
+    padding: 20px;
+    overflow: hidden;
+
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    position: absolute;
+
+    animation-name: menu;
+    animation-duration: 2s;
+}
+.menu h1, .about h1 {
+    text-shadow: 3px 3px 3px #d43737, -3px -3px 3px rgb(67, 67, 224);
+    animation-name: flash;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.menu p, .about p {
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu a, .about a {
+    text-decoration: underline;
+    width: fit-content;
+    color: white;
+    transition-duration: 300ms;
+}
+.about a {
+    animation-name: aboutBack;
+    animation-duration: 3s;
+    /* position: fixed;
+    bottom: 20px; */
+}
+.menu a:hover, .about a:hover {
+    text-shadow: 3px 3px 1px #d43737, -3px -3px 1px rgb(67, 67, 224);
+}
+.textBack {
+    color: white;
+    font-family: monospace;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+.textBack p {
+    text-overflow:clip;
+    overflow-wrap: anywhere;
+    width: 100vw;
+    margin-top: 0;
+    color: rgb(50, 50, 50);
+}
+.textBack .hlted {
+    color:rgb(77, 77, 77)
+}
+.hlted:hover {
+    color: white;
+    text-shadow: 3px 3px 2px #d43737, -3px -3px 2px rgb(67, 67, 224);
+}
+.about {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    width: 70vw;
+    padding: 20px;
+    height: calc(100vh - 10vw);
+    overflow: hidden;
+
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    position: absolute;
+
+    animation-name: about;
+    animation-duration: 2s;
+}
+@media (max-width: 400px) {
+    @keyframes about {
+        0% {height: 0; padding: 0;}
+        100% {height: 80vh; padding: 20px;}
+    }    
+    .menu {
+        width: calc(100vw - 40px);
+    }
+    .about {
+        width: calc(100vw - 40px);
+        height: 80vh;
+    }
+}

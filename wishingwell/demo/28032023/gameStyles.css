@@ -1,0 +1,292 @@
+@keyframes mapLoad {
+    0% {filter: blur(35px) opacity(0%); height: 0px;}
+    100% {filter: blur(0px) opacity(100%); height: calc(500px * 0.75);}
+}
+
+@keyframes suggestion {
+    0% {height: 0px;}
+    100% {height: 120px}
+}
+body {
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    overflow: visible;
+}
+  
+::-webkit-scrollbar-track {
+    background: #000000;
+    overflow: visible;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(59, 59, 59);
+    transition-duration: 300ms;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: 3px 3px 5px rgba(190, 67, 67, 0.3) inset, -3px -3px 5px rgba(67, 67, 224, 0.3) inset; 
+}
+.window {
+    height: 90vh;
+    width: 90vw;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+}
+.windowTut {
+    width: 60vw;
+    height: 80vh;
+}
+.player {
+    background-color: rgb(15, 15, 15);
+    width: calc(45vw - 52px);
+    height: calc(90vh - 50px);
+    color: white;
+    font-family: monospace;
+    padding: 20px;
+    border: white double 5px;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+
+    /* top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    position: absolute; */
+}
+.playerTut {
+    width: calc(60vw - 50px);
+    height: calc(80vh - 50px);
+}
+.secondaryPlayer {
+    background-color: rgb(15, 15, 15);    
+    display: inline-block;
+    vertical-align: middle;
+}
+.subPlayer {
+    border: white double 5px;
+    padding: 20px;
+    font-family: monospace;
+    color: white;
+    width: calc(45vw - 52px);
+    height: calc(45vh - 25px - 20px - 7px);
+}
+.subPlayerA {
+    text-align: center;
+    height: calc((45vh - 25px - 20px - 7px) * 1.25);
+}
+.subPlayerB {
+    height: calc((45vh - 25px - 20px - 7px) * (2 - 1.25));
+    overflow-y: auto;
+}
+.subPlayer img {
+    max-width: calc((45vh - 25px - 20px - 7px) * 1.25 * 1.33);
+    width: calc(45vw - 52px);
+    cursor: pointer;
+}
+.screen {
+    /* background-color: blue; */
+    max-height: calc(80vh - 60px);
+    overflow-y: auto;
+}
+.god {
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    position: absolute;
+    text-shadow: 3px 3px 2px #d43737, -3px -3px 2px rgb(67, 67, 224);
+    text-align: center;
+}
+.input {
+    bottom: 20px;
+    position: absolute;
+    display: inline;
+}
+input {
+    width: calc(45vw - 62px);
+    padding: 5px;
+    background-color: rgb(59, 59, 59);
+    border: white solid 3px;
+    bottom: 0;
+    color: white;
+    font-family: monospace;
+    display: block;
+}
+@media (min-width: 600px) {
+    input.inputTut {
+        width: calc(60vw - 60px);
+    }
+}
+input:focus {
+    outline: none;
+    
+}
+i {
+    color: rgb(126, 126, 126);
+}
+.validity {
+    display:inline-block;
+    font-size: 10px;
+    text-align: right;
+    width: calc(22.5vw - 25px);
+    margin-left: 0px;
+    padding: 0;
+    vertical-align: bottom;
+
+}
+.validity p {
+    margin-bottom: 0;
+}
+.suggestionBox {
+    animation-name: suggestion;
+    animation-duration: 1s;
+
+    position: relative;
+    width: calc(22.5vw - 25px);
+    /* background-color: brown; */
+    height: 120px;
+    padding: 0;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+
+}
+.suggestions {    
+    bottom: 0;
+    position: absolute;
+
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5);
+    vertical-align: bottom;
+    width: fit-content;
+    padding: 5px;
+    padding-right: 50px;
+    border: rgba(15,15,15) solid 3px;
+    border-bottom: 0px;
+    font-size: 10px;
+    display: inline-block;
+    /* float: left; */
+}
+.suggestionsTitle {
+    color: yellow;
+    text-decoration: underline;
+}
+.suggestions p {
+    font-size: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.imgParent {
+    text-align: center;
+    overflow: hidden;
+}
+.imgAnimation {
+    animation-name: mapLoad;
+    animation-duration: 5s;
+}
+.outdated, .outdated i {
+    color: rgb(40, 40, 40);
+}
+.outdated img {
+    filter: opacity(10%);
+}
+.buffer {
+    /* background-color: blue; */
+    height: 200px;
+}
+.invTitle {
+    /* text-align: center; */
+    text-decoration: underline;
+}
+.label {
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: relative;
+    font-style: italic;
+    color: rgb(126, 126, 126)
+}
+.inventory p {
+    font-style: italic;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.mapWindow img {
+    height: calc(90vw * 0.75);
+    max-height: 90vh;
+    cursor: pointer;
+}
+.mapWindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgb(15, 15, 15);
+    padding: 20px;
+    border: white double 5px;
+}
+.mapWindowParent {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+}
+
+@media (max-width: 600px) {
+    .player {
+        width: calc(90vw - 52px);
+        position: relative;
+    }
+    .secondaryPlayer {
+        margin-top: 5px;
+    }
+    .subPlayer {
+        width: calc(90vw - 52px)
+    }
+    .subPlayer img {
+        max-width: calc((90vw - 52px) * 1.25 * 1.33);
+        width: calc(90vw - 52px);
+        cursor: pointer;
+    }
+    .window {
+        height: calc(180vh + 5px + 5vh);
+        width: 90vw;
+        top: auto;
+        left: 50%;
+        -ms-transform: translate(-50%);
+        transform: translate(-50%);
+        margin: 0;
+        position: absolute;
+        display: block;
+        overflow: hidden;
+    }
+    .windowTut {
+        height: 80vh;
+    }
+    body {
+        margin-top: 5vh;
+        margin-bottom: 50vh;
+    }
+    input {
+        width: calc(90vw - 70px);
+    }
+    .validity {
+        width: calc(45vw - 27px);
+    }
+    .suggestionBox {
+        width: calc(45vw - 27px);
+    }
+}

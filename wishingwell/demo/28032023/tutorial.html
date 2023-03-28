@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <link rel="stylesheet" href="gameStyles.css">
+
+    <title>Bottom of the Wishing Well</title>
+</head>
+<body style="background-color: black;">
+    <!-- <div class="player">
+        <div class="screen" id="screenParent">
+            <div id='screen'>
+                <span class='outdated'></span>
+
+            </div>
+            <div class="buffer">
+
+            </div>
+            <span class="outdated"></span>
+        </div>
+        <div class="input" id="input" style="display: none;">
+            <p id="validity"></p>
+            <input type="text" id="inputChild">
+        </div>
+    </div> -->
+
+    <div class="window windowTut">
+        <div class="player playerTut">
+            <div class="screen" id="screenParent">
+                <div id='screen'>
+                    <span class='outdated'></span>
+
+                </div>
+                <span class="outdated"></span>
+            </div>
+            <div class="input" id="input" style="display: none;">
+                <p id="validity" ></p>
+                <input class="inputTut" type="text" id="inputChild" placeholder="type something..." onfocus="suggestion('show')" onfocusout="suggestion('hide')">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="functions.js"></script>
+<script src="tutorial.js"></script>
