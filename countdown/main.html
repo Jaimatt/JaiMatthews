@@ -90,7 +90,8 @@ function Toggle() {
 
 function calculate() {
     var seconds = new Date().getTime() / 1000;
-    var Dseconds = new Date("Jan 1 2023 00:00:00").getTime() / 1000;
+    var today = new Date().toJSON().slice(0, 10)
+    var Dseconds = new Date(today + " 00:00:00").getTime() / 1000;
     document.getElementById("sibtext").innerText = "There are"
 
     seconds = Math.floor(seconds)
@@ -133,5 +134,4 @@ var x = setInterval(function() {
     calculate()
     
 }, 1000);
-
 </script>
