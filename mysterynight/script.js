@@ -48,7 +48,7 @@ document.getElementById("scroll_window").scrollLeft = 1
 
 function log() {
   var st = document.getElementById("scroll_window").scrollLeft
-  console.log(st)
+  // console.log(st)
   if (st >= 2050) {
     document.getElementById("scroll_window").scrollLeft -= 2050
   }

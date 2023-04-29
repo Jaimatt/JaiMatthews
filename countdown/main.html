@@ -51,6 +51,16 @@
         transform: translate(-50%);
         color: black;
     }
+    .info {
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        font-family: 'Quicksand', sans-serif;
+        font-weight:900;
+        color: black;
+        font-size: 10px;
+        padding-right: 20px;
+    }
 </style>
 <body>
     <div class="string" onclick="Toggle()">
@@ -59,6 +69,7 @@
         <p class="subtext" id="subtext">Seconds Remaining</p>
     </div>
     <p class="home"><a style="color: black;" href="index.html">Home</a></p>
+    <p class="info" id="info">Hello</p>
 </body>
 </html>
 <script>
@@ -75,6 +86,8 @@ document.getElementById("title").innerText = title
 var Fseconds = new Date(datetime).getTime() / 1000;
 
 setting = "sec"
+
+document.getElementById('info').innerText = "Counting down to " + datetime
 
 function Toggle() {
     if (setting=="sec") {
