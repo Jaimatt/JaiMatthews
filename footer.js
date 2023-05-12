@@ -9,5 +9,4 @@ footer = `
     <a onclick="topFunction()">Back to Top</a>
 </div>
 `
-
 document.body.innerHTML += footer
