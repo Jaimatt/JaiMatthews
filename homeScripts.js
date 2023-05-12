@@ -10,6 +10,13 @@ function nav(index) {
 
     links = document.getElementsByClassName('link')
 
+    //TEMPORARY
+    document.getElementById('thingy').style.display = 'none'
+    if (index == 2) {
+        document.getElementById('thingy').style.display = 'block'
+    }
+    //TEMPORARY
+
     for (i = 0; i < links.length; i++) {
         if (links[i].classList.contains(navCategories[index])) {
             links[i].style.display = 'inline-block'
