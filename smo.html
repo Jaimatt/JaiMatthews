@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Odyssey</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        margin: 100px;
+        margin-bottom: 0;
+        font-family: sans-serif;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        color: green;
+        font-weight: bold;
+        font-size: 50px;
+        margin-top: -10px;
+    }
+    .events {
+        margin-top: 10px;
+        background-color: whitesmoke;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .events p {
+        margin: 15px;
+    }
+    .past {
+        opacity: 0.4;
+        font-style: italic;
+    }
+    .present {
+        border: 3px solid green;
+        font-weight: bold;
+    }
+    .future {
+        opacity: 0.7;
+    }
+    button {
+        border-color: green;
+        border-width: 3px;
+        font-size: 18px;
+        background-color: white;
+    }
+    .progress {
+        height: 15px;
+        /* background-color: rgb(202, 202, 202); */
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <h1>Super Mario Odyssey Speedrun</h1>
+    <h2 id="timer">00:00:00:00</h2>
+    <div class="events">
+        <div class="past">
+            <p>1</p>
+            <p>2</p>
+        </div>
+        <p class="present">3</p>
+        <div class="future">
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+        </div>
+        <button onclick="next()" id="next">Next</button>
+        <button onclick="pause()" id="pause" style="display: none;">Pause</button>
+        <div class="progress" id="progress"></div>
+    </div>
+    
+</body>
+</html>
+<script>
+    moons = [
+        "Begin Game",
+
+        "Cap: Boss Fight",
+
+        "Cascade: Rock at Start",
+        "Cascade: Boss Fight",
+        "Cascade: High Cliff to Right of Odyssey",
+
+        "Sand: Back of shop.",
+        "Sand: Pipe on roof (stomp top left).",
+        "Sand: Moon on roof.",
+        "Sand: Bird.",
+        "Sand: Large hill on right.",
+        "Sand: Climb onto stone brick overpass.",
+        "Sand: Rocket breaks block.",
+        "Sand: On top of Swamp structure.",
+        "Sand: Long jump to moon.",
+        "Sand: Wooden box.",
+        "Sand: Hidden in a crevasse on the sand.",
+        "Sand: Cylindrical Mural Moon.",
+        "Sand: Top of cylinder moon.",
+        "Sand: Tallest Pillar.",
+        "Sand: Move the cactus.",
+        "Sand: Oasis hill.",
+
+        "Lake: Sandy area to left",
+        "Lake: Undo Zip",
+        "Lake: Square hole in wall.",
+        "Lake: Atop blue whale.",
+        "Lake: Pillar at the bottom of the lake",
+        "Lake: Boss fight.",
+
+        "Wooded: Bunny",
+        "Wooded: Rock",
+        "Wooded: Buy Moon",
+        "Wooded: Climb up waterfall, uproot in the tree.",
+        "Wooded: Nut in river mouth room.",
+        "Wooded: Cliff up the back.",
+        "Wooded: Uproot nut in maze.",
+        "Wooded: Piranha Plants.",
+        "Wooded: Crumbling Tower",
+        "Wooded: Inside the building (1)",
+        "Wooded: Inside the building (2)",
+        "Wooded: Boss fight",
+        "Wooded: Climb to seed dispenser.",
+        "Wooded: Jump off to nut.",
+
+        "Cloud Kingdom",
+
+        "Lost: Deal with cappy, Tree in the swamp",
+        "Lost: Staircase",
+        "Lost: Destroy the block",
+        "Lost: Stump off the cliff.",
+        "Lost: Middle of the propeller",
+        "Lost: On the mountain road.",
+        "Lost: Butterfly",
+        "Lost: Propeller 2.",
+        "Lost: Tall switch block cage.",
+        "Lost: Under the bridge.",
+
+        "Metro: On top of building to the right.",
+        "Metro: Chest inside building",
+        "Metro: Boss fight.",
+        "Metro: Tunnel at start.",
+        "Metro: Climb atop building to left – under garbage bags.",
+        "Metro: On the bench.",
+        "Metro: Go north, in the steel tunnel behind boxes.",
+        "Metro: Go north-east, underworld (1)",
+        "Metro: Go north-east, underworld (2)",
+        "Metro: Warp to tower, jump to garbage bin.",
+        "Metro: Swinging steel.",
+        "Metro: Top of the tower.",
+        "Metro: On top of the pool.",
+        "Metro: The Café",
+        "Metro: Performer 1",
+        "Metro: Destroyed alien part.",
+        "Metro: Performer 2",
+        "Metro: Warp to start, performer 3",
+
+        "Snow: Captain Toad",
+        "Snow: Boxes to the right.",
+        "Snow: Bridge in shiveria town.",
+        "Snow: Moon under the snow.",
+        "Snow: First sub-world (1)",
+        "Snow: First sub-world (2)",
+        "Snow: Third sub-world (1)",
+        "Snow: Third sub-world (2)",
+        "Snow: Fourth sub-world (1)",
+        "Snow: Fourth sub-world (2)",
+
+        "Seaside: Pipe (bottom right)",
+        "Seaside: Cliff to the back",
+        "Seaside: Gushen area.",
+        "Seaside: Nearby waterspout.",
+        "Seaside: CheepCheep, tunnel under the central glass.",
+        "Seaside: Tunnel beyond the glass.",
+        "Seaside: Dangerous ceiling on top of tunnel",
+        "Seaside: Purple Dorrie",
+        "Seaside: 3-Hill puzzle on outskirts.",
+        "Seaside: Gap in the ocean trench.",
+
+        "Luncheon: Wall to east.",
+        "Luncheon: Gap to north",
+        "Luncheon: Boss fight",
+        "Luncheon: Door near boss.(just 1)",
+        "Luncheon: Polygons to left of town.",
+        "Luncheon: Break boxes, get atop building.",
+        "Luncheon: Golden seed.",
+        "Luncheon: Pillar.",
+        "Luncheon: Leap two islands.",
+        "Luncheon: Green area hat door (1)",
+        "Luncheon: Green area hat door (2)",
+        "Luncheon: Atop the island out the back.",
+        "Luncheon: Lever to open area.",
+        "Luncheon: Centre Torch",
+        "Luncheon: Behind the polygon cliff",
+        "Luncheon: Meat plateau",
+
+        "Ruined Kingdom",
+
+        "Bowser: Intended route.",
+        "Bowser: Intended route – collect shards.",
+        "Bowser: Roof right.",
+        "Bowser: Intended route – Bosses.",
+        "Bowser: Wall behind lake.",
+        "Bowser: Boss fight.",
+
+
+        "Moon Kingdom",
+
+    ]
+
+    display = document.getElementsByTagName('p')
+
+    progress = 0
+    next()
+
+    function next() {
+        document.getElementById('next').blur()
+        document.getElementById('progress').style.background = 'linear-gradient(90deg, rgba(0,128,0,1) '+100*progress/moons.length+'%, rgba(200,200,200,1) '+100*progress/moons.length+'%)'
+
+        if (progress == 1) {
+            time = Date.now()
+            interval = setInterval(timer, 10)
+            document.getElementById('pause').style.display = 'inline-block'
+        }
+
+        if (progress == moons.length) {
+            clearInterval(interval)
+            document.getElementById('pause').style.display = 'none'
+        }
+
+        for (i=0;i<6;i++) {
+            content = moons[i - 2 + progress]
+            
+            if (content == undefined) {
+                display[i].innerText = "~"
+            } else {
+                display[i].innerText = content
+            }
+        }
+        progress += 1
+    }
+
+    function timer() {
+
+        gap  = Date.now() - time - pTime
+
+        ms = Math.floor((gap%1000)/10).toString().padStart(2, '0')
+
+        s = (Math.floor(gap/1000)%60).toString().padStart(2, '0')
+
+        min = (Math.floor(gap/60000)%60).toString().padStart(2, '0')
+
+        hr = Math.floor(gap/3600000).toString().padStart(2, '0')
+
+        document.getElementById('timer').innerText = hr + ":" + min + ":" + s + ":" + ms
+
+    }
+
+    document.body.onkeyup = function(e) {
+    if (e.key == " " ||
+        e.code == "Space" ||      
+        e.keyCode == 32      
+        ) {
+            next()
+        }
+    }
+
+    pTime = 0
+    paused = 'false'
+    function pause() {
+        document.getElementById('pause').blur()
+        if (paused == 'false') {
+            paused = 'true'
+            pStamp = Date.now()
+            clearInterval(interval)
+            document.getElementById('next').style.display = 'none'
+            document.getElementById('pause').innerText = "Play"
+
+        } else if (paused == 'true') {
+            paused = 'false'
+            pTime += Date.now() - pStamp
+            interval = setInterval(timer, 10)
+            document.getElementById('next').style.display = 'inline-block'
+            document.getElementById('pause').innerText = "Pause"
+
+        }
+
+        
+    }
+
+</script>

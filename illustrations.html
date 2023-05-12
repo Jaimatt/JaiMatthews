@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="index.html"><img src='assets/iconR-01.png' class="icon small"></a>
+    <div class="heading">
+        <p>Illustrations</p>
+    </div>
+    <div class="ills">
+        <img onclick="illustration(1)" src="assets/illustrations/icons/1.jpg">
+        <img onclick="illustration(2)" src="assets/illustrations/icons/2.jpg">
+        <img onclick="illustration(3)" src="assets/illustrations/icons/3.jpg">
+        <img onclick="illustration(4)" src="assets/illustrations/icons/4.jpg">
+        <img onclick="illustration(5)" src="assets/illustrations/icons/5.jpg">
+        <img onclick="illustration(6)" src="assets/illustrations/icons/6.jpg">
+        <img onclick="illustration(7)" src="assets/illustrations/icons/7.jpg">
+        <img onclick="illustration(8)" src="assets/illustrations/icons/8.jpg">
+        <img onclick="illustration(9)" src="assets/illustrations/icons/9.jpg">
+        <img onclick="illustration(10)" src="assets/illustrations/icons/10.jpg">
+        <img onclick="illustration(11)" src="assets/illustrations/icons/11.jpg">
+        <img onclick="illustration(12)" src="assets/illustrations/icons/12.jpg">
+        <img onclick="illustration(13)" src="assets/illustrations/icons/13.jpg">
+        <img onclick="illustration(14)" src="assets/illustrations/icons/14.jpg">
+        <img onclick="illustration(15)" src="assets/illustrations/icons/15.jpg">
+        <img onclick="illustration(16)" src="assets/illustrations/icons/16.jpg">
+        <img onclick="illustration(17)" src="assets/illustrations/icons/17.jpg">
+        <img onclick="illustration(18)" src="assets/illustrations/icons/18.jpg">
+        <img onclick="illustration(19)" src="assets/illustrations/icons/19.jpg">
+        <img onclick="illustration(20)" src="assets/illustrations/icons/20.jpg">
+        <img onclick="illustration(21)" src="assets/illustrations/icons/21.jpg">
+        <img onclick="illustration(22)" src="assets/illustrations/icons/22.jpg">
+        <img onclick="illustration(23)" src="assets/illustrations/icons/23.jpg">
+        <img onclick="illustration(24)" src="assets/illustrations/icons/24.jpg">
+        <img onclick="illustration(25)" src="assets/illustrations/icons/25.jpg">
+        <img onclick="illustration(26)" src="assets/illustrations/icons/26.jpg">
+        <img onclick="illustration(27)" src="assets/illustrations/icons/27.jpg">
+        <img onclick="illustration(28)" src="assets/illustrations/icons/28.jpg">
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="index.html">Return Home</a></p>
+    </div>
+    <div class="illsCover" id="cover" onclick="hide()">
+        <img src="assets/illustrations/10.png" id="coverImg">
+    </div>
+</body>
+</html>
+<script src="footer.js"></script>
+<script src="textScripts.js"></script>
+<script>
+    cover = document.getElementById('cover')
+    cover.style.display = 'none'
+    function illustration(no) {
+        cover.style.display = 'block'
+        document.getElementById('coverImg').src = "assets/illustrations/"+no+".png"
+        console.log(no)
+        document.body.classList.add('stopScrolling')
+    }
+    function hide() {
+        cover.style.display = 'none'
+        document.body.classList.remove('stopScrolling')
+    }
+</script>

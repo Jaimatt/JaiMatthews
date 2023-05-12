@@ -1,148 +1,168 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="styles.css">
-<link id="colour" rel="stylesheet" href="light.css">
-<title>Launchpad</title>
-<link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
-<html>
-    <img src="assets/iconR-01.png" id="logoMain" class="logo">
-    <br>
-    <header>
-        <a class="linkto" href="index.html"><div class="selected">Launchpad</div></a>
-        <a class="linkto" href="ai.html"><div>Illustrations</div></a>
-        <a class="linkto" href="mn.html"><div>Mystery Night</div></a>
-        <a class="linkto" href="temp.html"><div>???</div></a>
-        <a class="linkto" href="about.html"><div>More Info</div></a>
-    </header>
-    <br><br><br>
-    <div class="body">
-        <h1>Launchpad</h1>
-        <p><i>Websites created by Jai Matthews are listed below.</i></p>
-        <a href="stressdetector" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-02.png">
-                <div>
-                    <h3>Stress Detector</h3>
-                    <p>Created in 2020 by Jai Matthews using w3.css</p>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Home | Jai Matthews</title>
+    <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href=""><img src='assets/iconR-01.png' class="icon"></a><br>
+    <div class="heading">
+        <p>The incomplete works of Jai Matthews.</p>
+    </div>
+    <div class="navbar">
+        <li onclick="nav(0)" id="nav0" class="nbItem"></li>
+        <li onclick="nav(1)" id="nav1" class="nbItem"></li>
+        <li onclick="nav(2)" id="nav2" class="nbItem"></li>
+        <li onclick="nav(3)" id="nav3" class="nbItem"></li>
+    </div>
+    <p class="nbSecondary" id="secondary">Websites</p>
+    <div class="linkBox">
+        <a href="mysterynight"><div class="link _site">
+            <img src="mysterynight/assets/MN3.png">
+            <div class="topText">
+                <h1>Mystery Nights</h1>
+                <p>Created by Jai Matthews & Aidan de Sousa</p>
             </div>
+            <p class="date">2019 - 2023</p>
         </div></a>
-        <a href="evilvillian" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-03.png">
-                <div>
-                    <h3>Evil Villian</h3>
-                    <p>Created in 2021 by Jai Matthews</p>
-                </div>
+        <a href="jairell"><div class="link _site">
+            <img src="assets/IMG_3616.jpg" class="top">
+            <div class="topText">
+                <h1>The JaiRell Experience</h1>
+                <p>Created by Jai Matthews & Tyrell Carli</p>
             </div>
+            <p class="date">2023</p>
         </div></a>
-        <a href="gettingtrashed" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-04.png">
-                <div>
-                    <h3>Getting Trashed</h3>
-                    <p>Created in 2021 by Jai Matthews & Tyrell Carli</p>
-                </div>
+        <a href="https://bookabench.jaimatthews.cf/"><div class="link _site">
+            <img src="assets/arcadia-03.png">
+            <div class="topText">
+                <h1>Book-a-Bench</h1>
+                <p>Created by Jai Matthews</p>
             </div>
+            <p class="date">2022</p>
         </div></a>
-        <a href="psychology" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-01.png">
-                <div>
-                    <h3>Alzheimer's Research</h3>
-                    <p>Created in 2021 by Jai Matthews</p>
-                </div>
+        <a href="https://carliandco.cf/"><div class="link _site">
+            <img src="assets/vaccine.png">
+            <div class="topText">
+                <h1>Carli & Co.</h1>
+                <p>Created by Jai Matthews & Mark Gurney</p>
             </div>
+            <p class="date">2021</p>
         </div></a>
-        <a href="https://carliandco.cf" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-05.png">
-                <div>
-                    <h3>Carli & Co.</h3>
-                    <p>Created in 2021 by Jai Matthews, Mark Gurney & Tyrell Carli</p>
-                </div>
+        <a href="gettingtrashed"><div class="link _site">
+            <img src="gettingtrashed/assets/image.jpg" class="bottom">
+            <div class="topText">
+                <h1>Getting Trashed</h1>
+                <p>Created by Jai Matthews & Tyrell Carli</p>
             </div>
+            <p class="date">2021</p>
         </div></a>
-        <a href="tpc" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-06.png">
-                <div>
-                    <h3>The Password Company</h3>
-                    <p>Created in 2022 by Jai Matthews</p>
-                </div>
+        <a href="stressdetector"><div class="link _site">
+            <img src="stressdetector/Assets/SIK_Arduino_Uno.jpg">
+            <div class="topText">
+                <h1>Stress Detector</h1>
+                <p>Created by Jai Matthews using w3.css</p>
             </div>
+            <p class="date">2020</p>
         </div></a>
-        <a href="mysterynight" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-07.png">
-                <div>
-                    <h3>Mystery Night</h3>
-                    <p>Created from 2019 - 2022 by Jai Matthews & Aidan de Sousa</p>
-                </div>
+
+
+        <a><div class="link _game">
+            <img src="assets/horse.png" class="top">
+            <div class="topText">
+                <h1>Horse</h1>
+                <p>Web-Based game</p>
             </div>
+            <p class="date">Coming Soon</p>
         </div></a>
-        <a href="https://bookabench.jaimatthews.cf/" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-08.png">
-                <div>
-                    <h3>Book-a-Bench</h3>
-                    <p>Created in 2022 by Jai Matthews</p>
-                </div>
+        <a href="balls"><div class="link _game">
+            <img src="balls/shatter.png">
+            <div class="topText">
+                <h1>Balls</h1>
+                <p>HTML Canvas demonstration</p>
             </div>
+            <p class="date">May 2023</p>
         </div></a>
-        <a href="jairell" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-09.png">
-                <div>
-                    <h3>The JaiRell Experience</h3>
-                    <p>Created in 2023 by Jai Matthews & Tyrell Carli</p>
-                </div>
+        <a href="countdown"><div class="link _game">
+            <img src="assets/IMG_3613.jpg">
+            <div class="topText">
+                <h1>Countdown Generator</h1>
+                <p>Generates custom countdowns</p>
             </div>
+            <p class="date">Mar 2023</p>
         </div></a>
-        <a href="countdown" target="_blank"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-10.png">
-                <div>
-                    <h3>Countdown Generator</h3>
-                    <p>Created in 2023 by Jai Matthews</p>
-                </div>
+        <a href="tpc"><div class="link _game">
+            <img src="assets/IMG_3612.jpg">
+            <div class="topText">
+                <h1>The Password Company</h1>
+                <p>Javascript account system</p>
             </div>
+            <p class="date">Mar 2022</p>
         </div></a>
-        <!-- <a target="_blank" style="cursor: not-allowed;"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-11.png">
-                <div>
-                    <h3>Bottom of the Wishing Well</h3>
-                    <p>Not Yet Available</p>
-                </div>
+
+
+        <!-- <a href=""><div class="link _text">
+            <img src="">
+            <div class="topText">
+                <h1>Pending</h1>
+                <p>Mathematics</p>
             </div>
+            <p class="date">Date</p>
+        </div></a>
+        <a href="annualgame.html"><div class="link _text">
+            <img src="assets/The-Art-of-The-Legend-of-Zelda-Breath-of-the-Wild-3.jpg">
+            <div class="topText">
+                <h1>An Annual Game</h1>
+                <p>Gaming</p>
+            </div>
+            <p class="date">X May 2023</p>
         </div></a> -->
-        <a target="_blank" style="cursor: not-allowed;"><div class="website_icon_parent">
-            <div class="website">
-                <img src="assets/web_icon-12.png">
-                <div>
-                    <h3>Hores</h3>
-                    <p>Not Yet Available</p>
-                </div>
+        <!-- <a href="rp.html"><div class="link _text">
+            <img src="assets/zelda.png">
+            <div class="topText">
+                <h1>Women in Video Games</h1>
+                <p>Gaming</p>
             </div>
+            <p class="date">25 Nov 2022</p>
+        </div></a> -->
+        <a href="hasntgotaname.html"><div class="link _text">
+            <img src="assets/kettle.png" class="top">
+            <div class="topText">
+                <h1>Evil Villain</h1>
+                <p>Fiction</p>
+            </div>
+            <p class="date">18 Jun 2021</p>
+        </div></a>
+
+
+        <a href="illustrations.html"><div class="link _misc">
+            <img src="assets/illustrations/17.png">
+            <div class="topText">
+                <h1>Illustrations</h1>
+                <p>Series of landscape artworks</p>
+            </div>
+            <p class="date">Dec 2020 - Dec 2021</p>
+        </div></a>
+        <a href="_archive"><div class="link _misc">
+            <img src="assets/icon-00.png">
+            <div class="topText">
+                <h1>Old Website</h1>
+                <p>No longer in use</p>
+            </div>
+            <p class="date">Jun 2022 - Apr 2023</p>
         </div></a>
     </div>
-    <br><br><br><br>
+</body>
 </html>
-<footer>
-    <div class="footer">
-        <div style="margin: auto; width: fit-content" class="footerLinks">
-            <a class="footerlink" href="about.html?window=0#scrollto">Terms & Conditions</a>
-            <a class="footerlink" href="about.html?window=1#scrollto">Sitemap</a>
-            <a class="footerlink" href="about.html?window=2#scrollto">Contact</a>
-            <a class="footerlink" href="about.html?window=3#scrollto">Changelog</a>
-        </div>
-        <div style="margin: auto; width: fit-content;">
-        <span style="color: var(--text);"><i>Jai Matthews, 2022</i> ⋅ </span><a onclick="topFunction()" id="myBtn" style="text-decoration: underline;">Back to Top</a>
-        </div>
-        <br><br>
-    </div>
-    <div style="margin: auto; width: fit-content"class="footerLinks">
-        <a id="webToggle" onclick="toggleTheme()">View Legacy Website</a>
-    </div>
-</footer>
-<script src="script.js"></script>
+<script src="footer.js"></script>
+<script src="homeScripts.js"></script>
