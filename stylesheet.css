@@ -8,12 +8,17 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--lBlue);
 }
+::selection {
+    color: black;
+    background: var(--hlBlue);
+}
 :root {
     --lGrey: #d4d4d4;
     --elGrey: #ececec;
     --mGrey: white;
 
     --bgBlue: #dafffb;
+    --hlBlue: #a6fdf4;
     --elBlue: #12ddc5;
     --lBlue: #10b9a9;
 
