@@ -48,11 +48,13 @@ document.getElementById("scroll_window").scrollLeft = 1
 
 function log() {
   var st = document.getElementById("scroll_window").scrollLeft
+  var width = document.getElementById("scroll_window").scrollWidth
   // console.log(st)
-  if (st >= 2050) {
-    document.getElementById("scroll_window").scrollLeft -= 2050
+  // console.log(document.getElementById("scroll_window").scrollWidth)
+  if (st >= width/2) {
+    document.getElementById("scroll_window").scrollLeft -= width/2
   }
   if (st < 1) {
-    document.getElementById("scroll_window").scrollLeft += 2049
+    document.getElementById("scroll_window").scrollLeft += width/2
   }
 }

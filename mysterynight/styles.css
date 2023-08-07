@@ -3,6 +3,8 @@
     --MN2: rgb(2, 40, 212);
     --MN3: rgb(139, 91, 0);
     --MN4: rgb(0, 173, 179);
+    --MN5: rgb(100, 136, 93);
+    /* --MN5: rgb(156, 0, 0); */
 }
 
 ::-webkit-scrollbar {
@@ -166,6 +168,9 @@ ul.navbar li.wide {
 .quotes4 {
     color: var(--MN4);
 }
+.quotes5 {
+    color: var(--MN5);
+}
 button {
     color: white;
     width: 200px;
@@ -185,6 +190,9 @@ button.but3 {
 }
 button.but4 {
     background-color: var(--MN4);
+}
+button.but5 {
+    background-color: var(--MN5);
 }
 button:hover {
     font-size: 16px;
