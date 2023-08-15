@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Illustrations | Jai Matthews</title>
     <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
 
     <link rel="stylesheet" href="stylesheet.css">
@@ -14,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onclick="birth(0)">
+    <canvas></canvas>
     <a href="index.html"><img src='assets/iconR-01.png' class="icon small"></a>
     <div class="heading">
         <p>Illustrations</p>
@@ -47,7 +48,6 @@
         <img onclick="illustration(25)" src="assets/illustrations/icons/25.jpg">
         <img onclick="illustration(26)" src="assets/illustrations/icons/26.jpg">
         <img onclick="illustration(27)" src="assets/illustrations/icons/27.jpg">
-        <img onclick="illustration(28)" src="assets/illustrations/icons/28.jpg">
         <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="index.html">Return Home</a></p>
     </div>
     <div class="illsCover" id="cover" onclick="hide()">
@@ -70,4 +70,13 @@
         cover.style.display = 'none'
         document.body.classList.remove('stopScrolling')
     }
+
+    ills = document.querySelector('.ills').querySelectorAll('img')
+    for (i = 0; i < ills.length; i++) {
+        // console.log()
+        ills[i].style.animationDelay = i / 10 + 's'
+
+    }
+
 </script>
+<script src="canvas.js"></script>
