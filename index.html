@@ -8,13 +8,17 @@
     <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
 
     <link rel="stylesheet" href="stylesheet.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body>
+<body onclick="birth(0)">
+    <canvas></canvas>
     <a href=""><img src='assets/iconR-01.png' class="icon"></a><br>
     <div class="heading">
         <p>The incomplete works of Jai Matthews.</p>
@@ -26,146 +30,160 @@
         <li onclick="nav(3)" id="nav3" class="nbItem"></li>
     </div>
     <p class="nbSecondary" id="secondary">Websites</p>
-    <div class="linkBox">
-        <a href="mysterynight"><div class="link _site">
-            <img src="mysterynight/assets/MN3.png">
-            <div class="topText">
-                <h1>Mystery Nights</h1>
-                <p>Created by Jai Matthews & Aidan de Sousa</p>
-            </div>
-            <p class="date">2019 - 2023</p>
-        </div></a>
-        <a href="jairell"><div class="link _site">
-            <img src="assets/IMG_3616.jpg" class="top">
-            <div class="topText">
-                <h1>The JaiRell Experience</h1>
-                <p>Created by Jai Matthews & Tyrell Carli</p>
-            </div>
-            <p class="date">2023</p>
-        </div></a>
-        <a href="https://bookabench.jaimatthews.cf/"><div class="link _site">
-            <img src="assets/arcadia-03.png">
-            <div class="topText">
-                <h1>Book-a-Bench</h1>
-                <p>Created by Jai Matthews</p>
-            </div>
-            <p class="date">2022</p>
-        </div></a>
-        <a href="https://carliandco.cf/"><div class="link _site">
-            <img src="assets/vaccine.png">
-            <div class="topText">
-                <h1>Carli & Co.</h1>
-                <p>Created by Jai Matthews & Mark Gurney</p>
-            </div>
-            <p class="date">2021</p>
-        </div></a>
-        <a href="gettingtrashed"><div class="link _site">
-            <img src="gettingtrashed/assets/image.jpg" class="bottom">
-            <div class="topText">
-                <h1>Getting Trashed</h1>
-                <p>Created by Jai Matthews & Tyrell Carli</p>
-            </div>
-            <p class="date">2021</p>
-        </div></a>
-        <a href="stressdetector"><div class="link _site">
-            <img src="stressdetector/Assets/SIK_Arduino_Uno.jpg">
-            <div class="topText">
-                <h1>Stress Detector</h1>
-                <p>Created by Jai Matthews using w3.css</p>
-            </div>
-            <p class="date">2020</p>
-        </div></a>
+    <div class="linkBox"></div>
+        <script>
+            links = [
+                {
+                    title: 'Mystery Nights',
+                    subt: 'Created by Jai Matthews & Aidan de Sousa',
+                    date: '2019 - 2023',
+                    href: 'mysterynight',
+                    category: '_site',
+                    img: 'assets/tmn3.png',
+                    img_top: false,
+                },
+                {
+                    title: 'The JaiRell Experience',
+                    subt: 'Created by Jai Matthews & Tyrell Carli',
+                    date: '2023',
+                    href: 'jairell',
+                    category: '_site',
+                    img: 'assets/IMG_3616.jpg',
+                    img_top: true,
+                },
+                {
+                    title: 'Book-a-Bench',
+                    subt: 'Created by Jai Matthews',
+                    date: '2022',
+                    href: 'https://bookabench.jaimatthews.cf/',
+                    category: '_site',
+                    img: 'assets/bab_tall.png',
+                    img_top: false,
+                },
+                {
+                    title: 'Carli & Co.',
+                    subt: 'Created by Jai Matthews & Mark Gurney',
+                    date: '2021',
+                    href: 'https://carliandco.cf/',
+                    category: '_site',
+                    img: 'assets/vaccine.png',
+                    img_top: false,
+                },
+                {
+                    title: 'Getting Trashed',
+                    subt: 'Created by Jai Matthews & Tyrell Carli',
+                    date: '2021',
+                    href: 'gettingtrashed',
+                    category: '_site',
+                    img: 'gettingtrashed/assets/image.jpg',
+                    img_top: false,
+                },
+                {
+                    title: 'Stress Detector',
+                    subt: 'Created by Jai Matthews using w3.css',
+                    date: '2020',
+                    href: 'stressdetector',
+                    category: '_site',
+                    img: 'stressdetector/Assets/SIK_Arduino_Uno.jpg',
+                    img_top: false,
+                },
+                {
+                    title: 'Horse',
+                    subt: 'Web-Based game',
+                    date: 'Coming Soon',
+                    href: '',
+                    category: '_game',
+                    img: 'assets/horse.png',
+                    img_top: true,
+                },
+                {
+                    title: 'Balls',
+                    subt: 'HTML Canvas demonstration',
+                    date: 'May 2023',
+                    href: 'balls',
+                    category: '_game',
+                    img: 'balls/shatter.png',
+                    img_top: false,
+                },
+                {
+                    title: 'Countdown Generator',
+                    subt: 'Generates custom countdowns',
+                    date: 'Mar 2023',
+                    href: 'countdown',
+                    category: '_game',
+                    img: 'assets/IMG_3613.jpg',
+                    img_top: false,
+                },
+                {
+                    title: 'The Password Company',
+                    subt: 'Javascript account system',
+                    date: 'Mar 2022',
+                    href: 'tpc',
+                    category: '_game',
+                    img: 'assets/IMG_3612.jpg',
+                    img_top: false,
+                },
+                {
+                    title: 'Women in Video Games',
+                    subt: 'Research Project',
+                    date: '25 Nov 2022',
+                    href: 'rp.html',
+                    category: '_text',
+                    img: 'assets/zelda.png',
+                    img_top: false,
+                },
+                {
+                    title: 'Evil Villain',
+                    subt: 'Biography',
+                    date: '18 Jun 2021',
+                    href: 'hasntgotaname.html',
+                    category: '_text',
+                    img: 'assets/kettle.png',
+                    img_top: true,
+                },
+                {
+                    title: 'Illustrations',
+                    subt: 'Series of landscape artworks',
+                    date: 'Dec 2020 - Dec 2021',
+                    href: 'illustrations.html',
+                    category: '_misc',
+                    img: 'assets/illustrations/17.png',
+                    img_top: false,
+                },
+                {
+                    title: 'Old Website',
+                    subt: 'No longer in use',
+                    date: 'Jun 2022 - Apr 2023',
+                    href: 'archive',
+                    category: '_misc',
+                    img: 'assets/icon-00.png',
+                    img_top: false,
+                },
+            ]
+
+            for (i = 0; i < links.length; i++) {
+                if (links[i].img_top) {
+                    img_top = "top"
+                } else {
+                    img_top = ""
+                }
+                hypertext = `
+                <div onclick="highlight(this)" class="link ${links[i].category}" data-href="${links[i].href}">
+                    <img src="${links[i].img}" class="${img_top}">
+                    <div class="topText">
+                        <h1>${links[i].title}</h1>
+                        <p>${links[i].subt}</p>
+                    </div>
+                    <p class="date">${links[i].date}</p>
+                </div>
+                `
+                document.querySelector('.linkBox').innerHTML += hypertext
+            }
 
 
-        <a><div class="link _game">
-            <img src="assets/horse.png" class="top">
-            <div class="topText">
-                <h1>Horse</h1>
-                <p>Web-Based game</p>
-            </div>
-            <p class="date">Coming Soon</p>
-        </div></a>
-        <a href="balls"><div class="link _game">
-            <img src="balls/shatter.png">
-            <div class="topText">
-                <h1>Balls</h1>
-                <p>HTML Canvas demonstration</p>
-            </div>
-            <p class="date">May 2023</p>
-        </div></a>
-        <a href="countdown"><div class="link _game">
-            <img src="assets/IMG_3613.jpg">
-            <div class="topText">
-                <h1>Countdown Generator</h1>
-                <p>Generates custom countdowns</p>
-            </div>
-            <p class="date">Mar 2023</p>
-        </div></a>
-        <a href="tpc"><div class="link _game">
-            <img src="assets/IMG_3612.jpg">
-            <div class="topText">
-                <h1>The Password Company</h1>
-                <p>Javascript account system</p>
-            </div>
-            <p class="date">Mar 2022</p>
-        </div></a>
-
-
-        <!-- <a href=""><div class="link _text">
-            <img src="">
-            <div class="topText">
-                <h1>C</h1>
-                <p>Gaming</p>
-            </div>
-            <p class="date">Date</p>
-        </div></a> -->
-        <!-- <a href=""><div class="link _text">
-            <img src="">
-            <div class="topText">
-                <h1>I</h1>
-                <p>Math</p>
-            </div>
-            <p class="date">Date</p>
-        </div></a> -->
-        <a href="rp.html"><div class="link _text">
-            <img src="assets/zelda.png">
-            <div class="topText">
-                <h1>Women in Video Games</h1>
-                <p>Research Project</p>
-            </div>
-            <p class="date">25 Nov 2022</p>
-        </div></a>
-        <a href="hasntgotaname.html"><div class="link _text">
-            <img src="assets/kettle.png" class="top">
-            <div class="topText">
-                <h1>Evil Villain</h1>
-                <p>Biography</p>
-            </div>
-            <p class="date">18 Jun 2021</p>
-        </div></a>
-        <div id="thingy">
-            <!-- <p>This section is under development. Check back soon!</p> -->
-        </div>
-
-
-        <a href="illustrations.html"><div class="link _misc">
-            <img src="assets/illustrations/17.png">
-            <div class="topText">
-                <h1>Illustrations</h1>
-                <p>Series of landscape artworks</p>
-            </div>
-            <p class="date">Dec 2020 - Dec 2021</p>
-        </div></a>
-        <a href="_archive"><div class="link _misc">
-            <img src="assets/icon-00.png">
-            <div class="topText">
-                <h1>Old Website</h1>
-                <p>No longer in use</p>
-            </div>
-            <p class="date">Jun 2022 - Apr 2023</p>
-        </div></a>
-    </div>
+        </script>    
 </body>
 </html>
 <script src="footer.js"></script>
 <script src="homeScripts.js"></script>
+<script src="canvas.js"></script>

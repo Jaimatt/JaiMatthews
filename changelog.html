@@ -14,80 +14,138 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onclick="birth(0)">
+    <canvas></canvas>
     <a href="index.html"><img src='assets/iconR-01.png' class="icon small"></a>
     <br>
     <div class="article">
         <h1>Change Log</h1>
         <h2>jaimatthews.cf</h2>
-
-        <h3>Written Stuff</h3>
-        <h5>7 Aug, 2023</h5>
-        <p>Two written pieces have been added to my website in the 'writing' section; Evil Villain & Women in Video Games. Both of these are school projects and are now available online.</p>
-
-        <h3>New Website<span></span></h3>
-        <h5>13 May, 2023</h5>
-        <p>Website has been re-done from the ground up. You can now navigate projects based on category on home page. Illustrations & Mystery Night pages have been moved to a project accessible from the home page. About page removed, but most of its features are available in the footer. Added new project; 'Balls' available in 'Toys and Games' section. The website is now mobile compatible.</p>
-
-        <h3>Small Changes</h3>
-        <h5>29 April, 2023</h5>
-        <p>Added new button to launchpad, which is locked at present. Added final date to countdown menu positioned at bottom right.</p>
-
-        <h3>Dark Mode</h3>
-        <h5>2 March, 2023</h5>
-        <p>Following popular request, the website can be viewed as it was prior to the re-design. Scroll down and click "View Legacy Website".</p>
-
-        <h3>Countdown Update</h3>
-        <h5>23 February, 2023</h5>
-        <p>Fixed slight mathematical error in countdown website. Added 2 new in-built countdowns.</p>
-
-        <h3>The JaiRell Experience</h3>
-        <h5>17 February, 2023</h5>
-        <p>Added website for The JaiRell Experience.</p>
-
-        <h3>Countdown</h3>
-        <h5>10 February, 2023</h5>
-        <p>New website: Countdown generator. Can be used to generate a countdown to any date which is toggleable between minutes & days. Tears of the Kingdom coutdown is in-built.</p>
-
-        <h3>Visual Changes</h3>
-        <h5>3 November, 2022</h5>
-        <p>Navbar hover effects have been changed, website now uses different shade of blue (or green - it's not important - shut up), website now runs in light mode rather than dark mode.</p>
-
-        <h3>Major Update<span>hi</span></h3>
-        <h5>24 September, 2022</h5>
-        <p>Mystery Night has it's own website, MN1 & MN2 can now be played on it. Resources for MN1 and MN2 can be downloaded. Mystery Night 4 page available. Book-A-Bench website is now available. Placeholder for future project added to header. About page drastically changed.</p>
-
-        <h3>Website Launched!<span></span></h3>
-        <h5>2 June, 2022</h5>
-        <p>Today the new Jai Matthews Website was offiially launched featuring links to other sites, Illustrations, Mystery Nights and more!</p>
-
-        <h3>Password Company</h3>
-        <h5>28 April, 2022</h5>
-        <p>One of my 2022 Computer Science assignments, The Password Company, was added to the website at jaimatthews.cf/tpc.</p>
-
-        <h3>Carli and Co.</h3>
-        <h5>3 December, 2021</h5>
-        <p>A link to Carli & Co.'s website was added. Unfortunately the site could not be hosted on jaimatthews.cf like other assignments.</p>
-
-        <h3>Plans for New Site</h3>
-        <h5>17 November, 2021</h5>
-        <p>A series of plans were laid out for a new version of the website featuring my Illustrations and other projects.</p>
-
-        <h3>jaimatthews.cf<span></span></h3>
-        <h5>10 November, 2021</h5>
-        <p>jaimatthews.cf was created to host all my assignments that are in the form of a website. The site is hosted on GitHub.</p>
-        
-        
-        
-        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="index.html">Return Home</a></p>
+        <div id="changes"></div>        
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="index.html">Return Home</a>
     </div>
 </body>
 </html>
+
+<script>
+    changes = [
+        {
+            change: 'Balls Update',
+            date: 'TBD',
+            description: 'Added 3 new projects to jaimatthews.cf/balls. They are:',
+            important: false
+        },
+        {
+            change: 'Various changes',
+            date: '15 Aug, 2023',
+            description: "I have fixed some typos, adjusted some imagery & icons, and added many animations. The home page now has an animated pop-up that appears before you view a project. Finally, the home page (and changelog) stores information in javascript objects, making it simpler to edit & ammend in future.",
+            important: false
+        },
+        {
+            change: 'Written Stuff',
+            date: '7 Aug, 2023',
+            description: "Two written pieces have been added to my website in the 'writing' section; Evil Villain & Women in Video Games. Both of these are school projects and are now available online.",
+            important: false
+        },
+        {
+            change: "New Website",
+            date: "13 May, 2023",
+            description: "Website has been re-done from the ground up. You can now navigate projects based on category on home page. Illustrations & Mystery Night pages have been moved to a project accessible from the home page. About page removed, but most of its features are available in the footer. Added new project; 'Balls' available in 'Toys and Games' section. The website is now mobile compatible.",
+            important: true
+        },
+        {
+            change: "Small Changes",
+            date: "29 April, 2023",
+            description: "Added new button to launchpad, which is locked at present. Added final date to countdown menu positioned at bottom right.",
+            important: false
+        },
+        {
+            change: "Dark Mode",
+            date: "2 March, 2023",
+            description: "Following popular request, the website can be viewed as it was prior to the re-design. Scroll down and click 'View Legacy Website'.",
+            important: false
+        },
+        {
+            change: "Countdown Update",
+            date: "23 February, 2023",
+            description: "Fixed slight mathematical error in countdown website. Added 2 new in-built countdowns.",
+            important: false
+        },
+        {
+            change: "The JaiRell Experience",
+            date: "17 February, 2023",
+            description: "Added website for The JaiRell Experience.",
+            important: false
+        },
+        {
+            change: "Countdown",
+            date: "10 February, 2023",
+            description: "New website: Countdown generator. Can be used to generate a countdown to any date which is toggleable between minutes & days. Tears of the Kingdom coutdown is in-built.",
+            important: false
+        },
+        {
+            change: "Visual Changes",
+            date: "3 November, 2022",
+            description: "Navbar hover effects have been changed, website now uses different shade of blue (or green - it's not important - shut up), website now runs in light mode rather than dark mode.",
+            important: false
+        },
+        {
+            change: "Major Update",
+            date: "24 September, 2022",
+            description: "Mystery Night has it's own website, MN1 & MN2 can now be played on it. Resources for MN1 and MN2 can be downloaded. Mystery Night 4 page available. Book-A-Bench website is now available. Placeholder for future project added to header. About page drastically changed.",
+            important: true
+        },
+        {
+            change: "Website Launched!",
+            date: "2 June, 2022",
+            description: "Today the new Jai Matthews Website was offiially launched featuring links to other sites, Illustrations, Mystery Nights and more!",
+            important: true
+        },
+        {
+            change: "Password Company",
+            date: "28 April, 2022",
+            description: "One of my 2022 Computer Science assignments, The Password Company, was added to the website at jaimatthews.cf/tpc.",
+            important: false
+        },
+        {
+            change: "Carli and Co.",
+            date: "3 December, 2021",
+            description: "A link to Carli & Co.'s website was added. Unfortunately the site could not be hosted on jaimatthews.cf like other assignments.",
+            important: false
+        },
+        {
+            change: "Plans for New Site",
+            date: "17 November, 2021",
+            description: "A series of plans were laid out for a new version of the website featuring my Illustrations and other projects.",
+            important: false
+        },
+        {
+            change: "jaimatthews.cf",
+            date: "10 November, 2021",
+            description: "jaimatthews.cf was created to host all my assignments that are in the form of a website. The site is hosted on GitHub.",
+            important: true
+        },
+    ]
+
+    changeBox = document.querySelector('#changes')
+
+    for (i = 0; i < changes.length; i++) {
+        if (changes[i].important) {
+            ihtml = '<span>*important</span>'
+        } else {
+            ihtml = ''
+        }
+        c = `
+        <div class="changeItem" style="animation-delay: ${i / 5}s;">
+            <h3>${changes[i].change}${ihtml}</h3>
+            <h5>${changes[i].date}</h5>
+            <p>${changes[i].description}</p>
+        </div>
+        `
+        changeBox.innerHTML += c
+    }
+
+</script>
 <script src="footer.js"></script>
 <script src="textScripts.js"></script>
-<script>
-    spans = document.getElementsByTagName('span')
-    for (i = 0; i < spans.length; i++) {
-        spans[i].innerText = '*important*'
-    }
-</script>
+<script src="canvas.js"></script>
