@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- <p>Things to include:</p>
+    <ol>
+        <li>Heading</li>
+        <li>Location</li>
+        <li>Dates & Times</li>
+        <li>Car that drives</li>
+        <li>Menu</li>
+        <li>About the restaurant</li>
+        <li>Photographs</li>
+    </ol> -->
+    <div class="headingBox">
+        <h1>Gossips Christmas</h1>
+        <h2>- 2023 -</h2>
+    </div>
+
+    <div class="contentBox">
+        <div class="content">
+            <h3>Location</h3>
+            <p>Enjoy a stunning restaurant called blah blah blah whatever you'll enjoy it just trust me idiot.</p>
+        </div>
+
+        <div class="content">
+            <h3>Time & Date</h3>
+            <p>Find out yourself, loser</p>
+        </div>
+
+        <div class="content">
+            <h3>Transport</h3>
+            <p>Yeah, yeah, yeah. We'll drive you. Whatever.</p>
+        </div>
+
+        <div class="content">
+            <h3>Menu</h3>
+            <p>Google</p>
+        </div>
+    </div>
+    
+</body>
+</html>
+<style>
+    body {
+        margin: 0;
+    }
+    .headingBox {
+        text-align: center;
+        background-color: rgb(70, 70, 117);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-family: 'Vollkorn';
+        color: rgb(113, 113, 165);
+    }
+    h1 {
+        font-weight: 800;
+        font-size: 60px;
+        margin-bottom: -10px;
+    }
+    h2 {
+        margin-top: -10px;
+        font-family: 'Dancing Script';
+        font-weight: 700;
+        font-size: 35px;
+    }
+
+
+    .contentBox {
+        background-color: green;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 850px;
+        margin-top: 30px;
+        /* height: 300px; */
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .content {
+        width: calc(50% - 40px - 2px);
+        margin: 20px;
+        display: inline-block;
+        background-color: pink;
+        vertical-align: top;
+    }
+    .content h3 {
+        font-family: 'Dancing Script';
+        font-size: 35px;
+        text-decoration: underline rgb(177, 56, 56);
+        margin: 0;
+    }
+    .content p {
+        font-family: 'vollkorn';
+        margin-top: 0;
+    }
+</style>
+<script>
+    console.log(document.querySelector('.contentBox').clientHeight)
+    document.querySelector('.contentBox').style.height = document.querySelector('.contentBox').clientHeight / 2 + 100 + 'px'
+</script>
