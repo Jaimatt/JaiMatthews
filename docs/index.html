@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Documents | Jai Matthews</title>
+    <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
+
+    <link rel="stylesheet" href="../stylesheet.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="docsBody">
+        <div class="docsHead">
+            <a href="../index.html"><img src="../assets/iconR-01.png"></a>
+            <h1>Documents</h1>
+            <p>This is a fairly new page on my website. In the past, some of the following have been online but inaccessible without the link. Now, they are here. For some reason. Enjoy!</p>
+        </div>
+        <div class="docsList">
+        </div>
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="../index.html">Return Home</a></p>
+    </div>
+    
+</body>
+</html>
+<script>
+    //for icon, choose from:
+    //excel, powerpoint, word, text, pdf, audio, video, code, archive
+    //these all link to the relevant font awesome icons
+    documents = [
+        {
+            title: 'TV Show Rankings',
+            link: 'shows.html',
+            icon: 'excel',
+        },
+        {
+            title: 'Books Spreadsheet',
+            link: 'books.html',
+            icon: 'excel',
+        },
+        {
+            title: 'Super Mario Odyssey Timer',
+            link: 'smo.html',
+            icon: 'code',
+        },
+        {
+            title: 'JM Article DevGuide',
+            link: '../_TEXTDEMO.html',
+            icon: 'text',
+        },
+    ]
+
+    docsList = document.querySelector('.docsList')
+    
+    for (i = 0; i < documents.length; i++) {
+        docsList.innerHTML += `
+            <div>
+                <i class="fa fa-file-${documents[i].icon}-o"></i>
+                <a href="${documents[i].link}"><p>${documents[i].title}</p></a>  
+            </div>
+        
+        `
+    }
+
+</script>
+<script src="../footer.js"></script>
+<script src="../textScripts.js"></script>
