@@ -1,5 +1,6 @@
 ::-webkit-scrollbar {
     width: 10px;
+    background-color: var(--white);
 }
 ::-webkit-scrollbar-thumb {
     background: var(--elBlue); 
@@ -13,24 +14,23 @@
     background: var(--hlBlue);
 }
 :root {
-    --lGrey: #d4d4d4;
     --elGrey: #ececec;
-    --mGrey: white;
+    --eelGrey: rgba(255, 255, 255,0.5);
 
     --bgBlue: #dafffb;
+    --acBlue: #dafffb;
     --hlBlue: #a6fdf4;
     --elBlue: #12ddc5;
     --lBlue: #10b9a9;
-
-    /* --bgBlue: #ffdaf9;
-    --elBlue: #dd12c2;
-    --lBlue: #b9108f; */
+    --textlBlue: #10b9a9;
 
     --text: #000000;
-    --text2: #ffffff;
+
+    --white: white; 
+    --smoke: whitesmoke
 }
 body {
-    background-image: linear-gradient(var(--mGrey), var(--bgBlue));
+    background-image: linear-gradient(var(--white), var(--bgBlue));
     margin-top: 50px;
     margin-bottom: 0px;
     margin-left: 0px;
@@ -38,6 +38,7 @@ body {
     background-attachment: fixed;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
+    transition-duration: 3000ms;
 }
 .icon {
     width: 100px;
@@ -51,6 +52,7 @@ body {
     font-size: 20px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--text);
 }
 .footer {
     background-color: var(--lBlue);
@@ -61,6 +63,7 @@ body {
     /* bottom: 0; */
     padding-bottom: 10px;
     /* padding-top: 10px; */
+    transition-duration: 300ms;
 }
 .footer.snap {
     position: fixed;
@@ -106,6 +109,7 @@ body {
     z-index: 1;
     /* animation-name: fadeIn; */
     animation-duration: 1s;
+    transition-duration: 300ms;
 }
 .nbItem {
     width: calc((700px / 4) - 8px);
@@ -124,12 +128,13 @@ body {
     display: inline-block;
     cursor: pointer;
     overflow: hidden;
+    color: var(--text);
 }
 .grown {
     font-size: 30px;
 }
 .nbItem:hover {
-    background-color: rgba(255,255,255,0.5);
+    background-color: var(--eelGrey);
 }
 .selected, .selected:hover {
     background-color: var(--elBlue);
@@ -154,7 +159,7 @@ body {
     max-width: 400px;
     width: calc(100vw - 40px);
     height: 150px;
-    background-color: white;
+    background-color: var(--white);
     margin: 10px;
     display: none;
     border-radius: 30px;
@@ -163,7 +168,7 @@ body {
     position: relative;
     transition-duration: 300ms;
     overflow: hidden;
-    color: black;
+    color: var(--text);
     cursor: pointer;
     animation: fadeIn 1s;
     animation-fill-mode:backwards;
@@ -173,7 +178,6 @@ body {
     filter: opacity(0.5) brightness(1.1);
     top: 50%;
     transform: translateY(-50%);
-
     width: calc(100vw - 40px);
     max-width: 400px;
 }
@@ -190,6 +194,7 @@ body {
     margin-top: 20px;
     margin-bottom: 0;
     transition-duration: 300ms;
+    color: var(--text);
 }
 .link p:not(.linkButton), .alink p:not(.linkButton) {
     font-size: 14px;
@@ -197,12 +202,14 @@ body {
     padding-left: 25px;
     font-weight: 500;
     transition-duration: 300ms;
+    color: var(--text);
 }
 .link .date, .alink .date {
     position: absolute;
     bottom: 0;
     text-align: right;
     padding-right: 25px;
+    color: var(--text);
 }
 .link.invis {
     transition-duration: 0s;
@@ -218,13 +225,13 @@ body {
     max-width: 400px;
     width: calc(100vw - 40px);
     height: 150px;
-    background-color: white;
+    background-color: var(--white);
     margin: 10px;
     border-radius: 30px;
     text-align: left;
     position: fixed;
     overflow: hidden;
-    color: black;
+    color: var(--black);
     cursor:auto;
     transition-duration: 300ms;
     box-shadow: black 0px 0px 20px;
@@ -281,7 +288,7 @@ body {
 .article {
     width: calc(95vw - 50px);
     max-width: 650px;
-    background-color: whitesmoke;
+    background-color: var(--smoke);
     box-shadow: var(--lBlue) 5px 5px 0px;
     border-radius: 20px;
     margin-left: auto;
@@ -291,6 +298,8 @@ body {
     margin-top: 20px;
     margin-bottom: 50px;
     text-align: center;
+    color: var(--text);
+    transition-duration: 300ms;
 }
 .article h1 {
     font-size: 27px;
@@ -300,7 +309,7 @@ body {
 }
 .article h2 {
     margin-top: 0;
-    color: var(--lBlue);
+    color: var(--textlBlue);
     font-size: 15px;
     font-weight: 300;
     text-align: left;
@@ -338,12 +347,12 @@ body {
     list-style-type: disc;
 }
 .article li a {
-    color: black;
+    color: var(--text);
     word-wrap: break-word;
 }
 .goHome {
     font-size: 13px;
-    color: var(--lBlue);
+    color: var(--textlBlue);
     transition-duration: 300ms;
     padding-left: 10px;
     padding-right: 10px;
@@ -354,10 +363,10 @@ body {
     padding-left: 20px;
 }
 .article a, .ills a, .docsBody a {
-    color: var(--lBlue);
+    color: var(--textlBlue);
 }
 .article h4 {
-    color: var(--lBlue);
+    color: var(--textlBlue);
     margin-bottom: -18px;
     font-size: 22px;
     padding-left: 10px;
@@ -367,7 +376,7 @@ body {
     text-align: left;
 }
 .article h5 {
-    color: var(--lBlue);
+    color: var(--textlBlue);
     margin-top: -8px;
     font-size: 12px;
     padding-left: 10px;
@@ -388,7 +397,7 @@ body {
 
     margin-left: 10px;
     margin-right: 10px;
-    border: solid var(--lGrey) 3px;
+    border: solid var(--elGrey) 3px;
     height: 20px;
     border-radius: 13px;
     padding-left: 10px;
@@ -396,11 +405,11 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 .article input:hover, .article textarea:hover {
-    border: solid var(--lBlue) 3px;
+    border: solid var(--textlBlue) 3px;
 }
 .article input:focus, .article textarea:focus {
     outline: none;
-    border: solid var(--lBlue) 3px;
+    border: solid var(--textlBlue) 3px;
 }
 .article textarea {
     padding-top: 5px;
@@ -420,8 +429,8 @@ body {
     transition-duration: 300ms;
 }
 .article button:hover {
-    background-color: whitesmoke;
-    color: black;
+    background-color: var(--smoke);
+    color: var(--text);
 }
 .article img {
     margin-left: auto;
@@ -445,7 +454,7 @@ body {
 }
 .article h6 {
     text-align: center;
-    color: var(--lBlue);
+    color: var(--textlBlue);
     margin-top: 0;
     margin-bottom: 10px;
     font-weight: 500;
@@ -511,10 +520,17 @@ canvas {
 }
 .docsBody {
     /* background-color: green; */
-    width: 95vw;
+    width: calc(95vw - 50px);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--text);
+    margin-bottom: 50px;
+    background-color: var(--smoke);
+    box-shadow: var(--lBlue) 5px 5px 0px;
+    border-radius: 20px;
+    padding: 25px;
+    transition-duration: 300ms;
 }
 .docsHead {
     /* background-color: red; */
@@ -532,6 +548,7 @@ canvas {
 }
 .docsHead p {
     margin-top: 0;
+    color: var(--text);
 }
 .docsList {
     /* background-color: blue; */
@@ -540,7 +557,7 @@ canvas {
 .docsList div {
     width: 100px;
     height: 100px;
-    background-color: whitesmoke;
+    background-color: var(--white);
     border: rgb(141, 141, 141) 3px solid;
     display: inline-block;
     vertical-align: middle;
@@ -549,10 +566,57 @@ canvas {
 .docsList div p {
     margin-top: 8px;
     font-size: 13px;
-    color: black;
-    text-decoration: underline black;
+    color: var(--text);
+    text-decoration: underline var(--text);
 }
 .docsList div i {
+    color: var(--text);
     font-size: 40px;
     margin-top: 10px;
+}
+.darkToggle {
+    float: right;
+    vertical-align: top;
+}
+.darkToggle p {
+    font-size: 12px;
+    color: var(--acBlue);
+    margin: 5px;
+    margin-top: 15px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--acBlue);
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--lBlue);
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider:before {
+    transform: translateX(20px);
 }
