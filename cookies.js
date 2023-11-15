@@ -1,4 +1,7 @@
-c
+function setCookie(cname, cvalue) {
+    document.cookie = cname + "=" + cvalue;
+}
+
 function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
