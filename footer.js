@@ -25,12 +25,6 @@ document.body.innerHTML += footer;
 
 function darkUpdate() {
 
-    if (getCookie('dark') == 'true') {
-        document.querySelector('.switch').querySelector('input').checked = true
-    } else {
-        document.querySelector('.switch').querySelector('input').checked = false
-    }
-
     if (document.querySelector('.switch').querySelector('input').checked) {
         document.body.style.setProperty('--elGrey','#424242')
         document.body.style.setProperty('--eelGrey','rgba(112, 112, 112, 0.5)')
@@ -58,6 +52,12 @@ function darkUpdate() {
         document.body.style.setProperty('--smoke','unset')
         setCookie('dark','false')
     }
+}
+
+if (getCookie('dark') == 'true') {
+    document.querySelector('.switch').querySelector('input').checked = true
+} else {
+    document.querySelector('.switch').querySelector('input').checked = false
 }
 
 darkUpdate()

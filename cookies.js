@@ -1,8 +1,4 @@
-function setCookie(cname, cvalue) {
-    const d = new Date();
-    document.cookie = cname + "=" + cvalue + ";path=/";
-}
-
+c
 function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
