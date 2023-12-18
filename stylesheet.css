@@ -40,6 +40,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     transition-duration: 3000ms;
 }
+p { color: var(--text);}
 .icon {
     width: 100px;
 }
