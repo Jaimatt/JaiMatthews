@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Night 5 Web App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>Mystery Night Five | Part 1</p>
+    <div class="center">
+        <button onclick="start()">Start Part 1</button>
+    </div>
+    <div class="p1main">
+        <img src="img/star.png" width="40px">
+        <h1>Gather information from the Maps</h1>
+        <input spellcheck="false" autocomplete="off">
+        <button onclick="check()">Go!</button>
+        
+    </div>
+    <audio id="init" onended="end()" src="recordings/main/1.mp3"></audio>
+    <audio id="response"></audio>
+</body>
+</html>
+<script>
+    function start() {
+        document.querySelector('#init').play()
+        document.querySelector('.center').style.display = 'none'
+    }
+    function end() {
+        document.querySelector('.p1main').style.display = 'block'
+    }
+    right = ['0','0','0','0','0']
+    function check() {
+        answers = [
+            'guest bedroom',
+            '28',
+            '52,23',
+            'waiting room',
+            '18'
+        ]
+
+        if (answers.includes(document.querySelector('input').value.toLowerCase())) {
+            right[answers.indexOf(document.querySelector('input').value.toLowerCase())] = '1'
+            
+            document.querySelector('#response').src = 'recordings/1good/' + Math.ceil(Math.random()*5) + '.mp3'
+            document.querySelector('#response').play()
+
+            if (!right.includes('0')) {
+                window.location.href = 'p2.html'
+            }
+
+        } else {
+            document.querySelector('#response').src = 'recordings/1bad/' + Math.ceil(Math.random()*5) + '.mp3'
+            document.querySelector('#response').play()
+        }
+    }
+</script>

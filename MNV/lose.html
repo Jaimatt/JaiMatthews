@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Night 5 Web App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>You Lost...</p>
+    <div class="center">
+        <h1>You Lost...</h1>
+        <button onclick="start()">Contact Ava</button>
+    </div>
+    <div class="p3main">
+        <h1>You Lost...</h1>
+    </div>
+    <audio id="init" onended="end()" src="recordings/end/bad.mp3"></audio>
+</body>
+</html>
+<script>
+    function start() {
+        document.querySelector('#init').play()
+        document.querySelector('.center').style.display = 'none'
+    }
+    function end() {
+        document.querySelector('.p3main').style.display = 'block'
+    }
+</script>

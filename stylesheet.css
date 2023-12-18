@@ -110,6 +110,7 @@ body {
     /* animation-name: fadeIn; */
     animation-duration: 1s;
     transition-duration: 300ms;
+    user-select: none;
 }
 .nbItem {
     width: calc((700px / 4) - 8px);
@@ -143,6 +144,7 @@ body {
 .nbSecondary {
     text-decoration: underline var(--elBlue);
     font-size: 20px;
+    color: var(--text);
 }
 .linkBox {
     margin-top: 30px;
@@ -172,6 +174,7 @@ body {
     cursor: pointer;
     animation: fadeIn 1s;
     animation-fill-mode:backwards;
+    user-select: none;
 }
 .link img, .alink img {
     position: absolute;
@@ -180,6 +183,7 @@ body {
     transform: translateY(-50%);
     width: calc(100vw - 40px);
     max-width: 400px;
+    image-rendering: pixelated;
 }
 .link img.top, .alink img.top {
     top: 0;
@@ -235,6 +239,7 @@ body {
     cursor:auto;
     transition-duration: 300ms;
     box-shadow: black 0px 0px 20px;
+    user-select: none;
 }
 .alink:not(.shrinking) img {
     height: 460px;
@@ -620,3 +625,4 @@ canvas {
 input:checked + .slider:before {
     transform: translateX(20px);
 }
+br { user-select: none; }

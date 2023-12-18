@@ -108,9 +108,11 @@ function auto() {
     }
 }
 
-
-
 window.addEventListener('mousemove', function(event) {
     mouse.x = event.x
     mouse.y = event.y
+})
+
+window.addEventListener('click', function() {
+    birth(0)
 })

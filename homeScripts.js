@@ -85,41 +85,46 @@ function highlight(me) {
     linkButtonChild.classList = 'linkButton'
     linkButtonChild.innerText = 'Open'
     linkButton.innerHTML = linkButtonChild.outerHTML
-    
-    popup.appendChild(linkButton)
 
-    popup.setAttribute('onclick','lowlight(this)')
+    if (popup.querySelector('p.date').innerText != 'Coming Soon') {
+        console.log('butt')
+        popup.appendChild(linkButton)
+    }
+
+    popup.removeAttribute('onclick')
     popup.style.top = (me.offsetTop - 10 - window.scrollY) + 'px'
     popup.style.left = (me.offsetLeft - 10) + 'px'
 
     href = popup.dataset.href
     document.body.appendChild(popup)
 
-
     setTimeout(function() {
-        popup = document.querySelectorAll("[data-href='"+href+"']")[1]
         popup.style.height = '450px'
-        popup.style.left = 'calc(50vw - ' + (popup.clientWidth / 2) + 'px)'
+        popup.style.left = 'calc(50vw - ' + (popup.clientWidth / 2) + 'px - 15px)'
         popup.style.top = 'calc(50vh - 225px)'
 
-        document.body.setAttribute('onclick',"escape();birth(0)")
-    }, 10)   
+        // popup.style.left = '50%'
+        // popup.style.top = '50%'
+        // popup.style.transform = 'translate(-50%,-50%)'
+
+        document.body.setAttribute('onclick',"escape()")
+    }, 10)
 }
 
 function lowlight(me) {
-    console.log(me)
-
     document.querySelector('.navbar').style.pointerEvents = 'unset'
+
+    console.log(me.classList)
 
     me.style.height = '150px'
     me.style.boxShadow = 'none'
     me.classList.add('shrinking')
-    me.querySelector('a').style.opacity = '0'
+    if (me.querySelector('a') != null) me.querySelector('a').style.opacity = '0'
 
     original = document.querySelectorAll("[data-href='"+href+"']")[0]
 
     me.style.left = (original.offsetLeft - 10) + 'px'
-    me.style.top = (original.offsetTop - 10 - window.scrollY) + 'px' 
+    me.style.top = (original.offsetTop - 10 - window.scrollY) + 'px'
 
     original.classList.remove('invis')
 
@@ -129,8 +134,11 @@ function lowlight(me) {
 }
 
 function escape() {
-    lowlight(document.querySelectorAll('.alink')[0])
-    document.body.setAttribute('onclick','birth(0)')
+    document.body.removeAttribute('onclick')
+    let highlighted = document.querySelectorAll('.alink')
+    for (i = 0; i < highlighted.length; i++) {
+        lowlight(highlighted[i])
+    }
 }
 
 function topFunction() {

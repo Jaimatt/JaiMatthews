@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Night 5 Web App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>Mystery Night Five | Part 3</p>
+    <div class="center">
+        <button onclick="start()">Start Part 3</button>
+    </div>
+    <div class="p3main">
+        <h1>Guess the Number</h1>
+        <p>Between 0-9999</p>
+        <input type="number">
+        <button onclick="check()">Guess!</button>
+        <p class="ans" style="color: red;">Guess a number!</p>
+    </div>
+    <audio id="init" onended="end()" src="recordings/main/3.mp3"></audio>
+</body>
+</html>
+<script>
+    function start() {
+        document.querySelector('#init').play()
+        document.querySelector('.center').style.display = 'none'
+    }
+    function end() {
+        document.querySelector('.p3main').style.display = 'block'
+    }
+    number = Math.floor(Math.random()*10000)
+    function check() {
+        guess = document.querySelector('input').value
+
+        console.log(guess)
+        if (guess < number) {
+            document.querySelector('.ans').innerText = 'Higher!'
+        } else if (number < guess) {
+            document.querySelector('.ans').innerText = 'Lower!'
+        } else if (number == guess) {
+            window.location.href = 'p4.html'
+        }
+    }
+</script>

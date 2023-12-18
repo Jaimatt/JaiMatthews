@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Night 5 Web App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>Mystery Night Five | Part 2</p>
+    <p>PSST: Aidan has a key for you.</p>
+    <div class="center">
+        <button onclick="start()">Start Part 2</button>
+    </div>
+    <div class="p2main">
+        <div class="s1" style="text-align: center;">
+            <h1>Ava's Laptop</h1>
+            <button onclick="
+            document.querySelector('.s1').style.display = 'none';
+            document.querySelector('.s2').style.display = 'block';
+            ">Log In</button>
+        </div>
+        <div class="s2" style="display: none;">
+            <h1>To log in, please answer these security Questions:</h1>
+            <p>What did I eat at the dinner party?</p>
+            <input id="in1" spellcheck="false" autocomplete="off">
+            <p>What is my favourite thing?</p>
+            <input id="in2" spellcheck="false" autocomplete="off">
+            <p>What is my grandmother's postcode?</p>
+            <input id="in3" spellcheck="false" autocomplete="off">
+            <p>What is my favourite number?</p>
+            <input id="in4" spellcheck="false" autocomplete="off">
+            <br>
+            <p id="error" style="color: red; display: none;">One or more answers are incorrect!</p>
+            <br>
+            <button onclick="check()">Log In.</button>
+        </div>
+    </div>
+    <audio id="init" onended="end()" src="recordings/main/2.mp3"></audio>
+</body>
+</html>
+<script>
+    function start() {
+        document.querySelector('#init').play()
+        document.querySelector('.center').style.display = 'none'
+    }
+    function end() {
+        document.querySelector('.p2main').style.display = 'block'
+    }
+    function check() {
+        answers = [
+            'steak',
+            ['llama','llamas'],
+            '104',
+            '17',
+        ]
+
+        if (
+            document.querySelector('#in1').value.toLowerCase() == answers[0] &&
+            (document.querySelector('#in2').value.toLowerCase() == answers[1][0] || document.querySelector('#in2').value.toLowerCase() == answers[1][1]) &&
+            document.querySelector('#in3').value.toLowerCase() == answers[2] &&
+            document.querySelector('#in4').value.toLowerCase() == answers[3]
+        ) {
+            window.location.href = 'p3.html'
+        } else {
+            document.querySelector('#error').style.display = 'block'
+            setTimeout(hideError, 1000);
+        }
+    }
+    function hideError() {
+        document.querySelector('#error').style.display = 'none'
+    }
+</script>

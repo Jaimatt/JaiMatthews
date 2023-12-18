@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Night 5 Web App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>Mystery Night Five | Part 4</p>
+    <div class="center">
+        <button onclick="start()">Start Part 4</button>
+    </div>
+    <div class="timer" id="timerParent" style="display: none;">
+        <p style="margin-top: 0; margin-bottom: 0;">Explosion In</p>
+        <h1 id="timer" style="margin-top: 0; margin-bottom: 0;">20:00</h1>
+    </div>
+    <div class="p4main">
+        <div class="col1" style="display: inline-block; margin-right: 100px;">
+            <div>
+                <img src="img/4/i-01.png" width="40px">
+                <select id="se1">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+            <div>
+                <img src="img/4/i-02.png" width="40px">
+                <select id="se2">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+
+            <div>
+                <img src="img/4/i-03.png" width="40px">
+                <select id="se3">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+            <div>
+                <img src="img/4/i-04.png" width="40px">
+                <select id="se4">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+            <div>
+                <img src="img/4/i-05.png" width="40px">
+                <select id="se5">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+        </div>
+        <div class="col2" style="display: inline-block; margin-left: 100px;">
+            <div>
+                <img src="img/4/i-06.png" width="40px">
+                <select id="se6">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+            <div>
+                <img src="img/4/i-07.png" width="40px">
+                <select id="se7">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+
+            <div>
+                <img src="img/4/i-08.png" width="40px">
+                <select id="se8">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+            <div>
+                <img src="img/4/i-09.png" width="40px">
+                <select id="se9">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+            <div>
+                <img src="img/4/i-10.png" width="40px">
+                <select id="se10">
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Green</option>
+                    <option value="4">Blue</option>
+                    <option value="5">Purple</option>
+                </select>
+            </div>
+        </div>
+        <p id="error" style="color: red; display: none;">An error occured!<br><br></p>
+        <button onclick="check()">Submit.</button>
+    </div>
+    <audio id="init" onended="end()" src="recordings/main/4.mp3"></audio>
+</body>
+</html>
+<script>
+    function start() {
+        document.querySelector('#init').play()
+        document.querySelector('.center').style.display = 'none'
+    }
+    function end() {
+        document.querySelector('.p4main').style.display = 'block'
+        document.querySelector(".timer").style.display = 'block'
+        startTimer()
+    }
+    function check() {
+        if (
+            document.querySelector('#se1').value == "1" &&
+            document.querySelector('#se2').value == "4" &&
+            document.querySelector('#se3').value == "2" &&
+            document.querySelector('#se4').value == "5" &&
+            document.querySelector('#se5').value == "3" &&
+            document.querySelector('#se6').value == "5" &&
+            document.querySelector('#se7').value == "4" &&
+            document.querySelector('#se8').value == "1" &&
+            document.querySelector('#se9').value == "3" &&
+            document.querySelector('#se10').value == "2"
+        ) {
+            console.log('yes')
+            window.location.href = 'win.html'
+        } else {
+            document.querySelector('#error').style.display = 'block'
+            setTimeout(hideError, 1000);
+        }
+    }
+    function hideError() {
+        document.querySelector('#error').style.display = 'none'
+    }
+
+    var div=document.getElementById("timer");
+
+    function timeCheck(toDate,tomorrow) {
+        var toDate = new Date();
+        var diffMS = tomorrow - toDate.getTime();
+        // console.log(diffMS)
+
+        min = Math.floor(diffMS / 1000 / 60)
+
+        sec = Math.floor((diffMS % (1000 * 60)) / 1000)
+
+        console.log(min,sec)
+
+        div.innerHTML = min + ":" + sec
+        
+        if (diffMS < 0) {
+            window.location.href = 'lose.html'
+            return
+        }
+    }
+
+    function startTimer() {
+        var toDate = new Date();
+        var tomorrow = toDate.getTime() + (20 * 60 * 1000);
+
+        console.log(toDate.getTime())
+
+        setInterval(function(){ 
+            timeCheck(toDate,tomorrow)
+        },1000);
+    }
+
+</script>
