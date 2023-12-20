@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="assets/brick/NONE.png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
@@ -39,19 +41,35 @@
         <div id="story">
             <div class="content">
                 <p class="story">H</p>
-                <div class="button" onclick="regressStory()">
-                    <p style="margin: 0;"><</p>
+                <div class="button" onclick="regressStory()" style="display: inline-block;">
+                    <p style="margin: 0;"><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
                 </div>
-                <div class="button" onclick="progressStory()">
-                    <p style="margin: 0;">></p>
+                <div class="button" onclick="progressStory()" style="display: inline-block;">
+                    <p style="margin: 0;"><i class="fa fa-chevron-right" aria-hidden="true"></i></p>
                 </div>
             </div>
         </div>
         <div id="controls">
             <div class="content">
                 <div class="button" onclick="mainMenu()">
-                    <img src="assets/delete.png">
                     <p>Back</p>
+                </div>
+            </div>
+        </div>
+        <div id="pause">
+            <div class="content">
+                <h1>Paused</h1>
+                <div class="button">
+                    <p>Resume</p>
+                </div>
+                <div class="button">
+                    <p>Download Save File</p>
+                </div>
+                <div class="button">
+                    <p>Controls</p>
+                </div>
+                <div class="button" onclick="mainMenu()">
+                    <p>Main Menu</p>
                 </div>
             </div>
         </div>

@@ -30,10 +30,10 @@ function nextLevel() {
 }
 
 stories = [
-    'hello world',
-    'not today',
-    'MARK GURNEY DIE',
-    "This message goes on and on and on and on and on. It never ends. It is sooo long. I'm bord. It's too long. Make it stop, please. Please make it stop. It's infuriating. Nobody should be expected to read this; it's too long. STOP IT! NOW! No, no no no. I've had enough. I hate this. Oh, wait. Hold on. I think the end is finally just around the c"
+    // 'hello world',
+    // 'not today',
+    // 'MARK GURNEY DIE',
+    // "This message goes on and on and on and on and on. It never ends. It is sooo long. I'm bord. It's too long. Make it stop, please. Please make it stop. It's infuriating. Nobody should be expected to read this; it's too long. STOP IT! NOW! No, no no no. I've had enough. I hate this. Oh, wait. Hold on. I think the end is finally just around the c"
 ]
 
 function mainMenu() {
@@ -42,6 +42,7 @@ function mainMenu() {
     document.querySelector('#main').style.display = 'block'
     document.querySelector('#story').style.display = 'none'
     document.querySelector('#controls').style.display = 'none'
+    document.querySelector('#pause').style.display = 'none'
 }
 
 function story() {
@@ -79,5 +80,13 @@ function regressStory() {
     }
 }
 
+function pause() {
+    paused = true
+    document.querySelector('.menu').style.display = 'block'
+    document.querySelector('#main').style.display = 'none'
+    document.querySelector('#story').style.display = 'none'
+    document.querySelector('#controls').style.display = 'none'
+    document.querySelector('#pause').style.display = 'block'
+}
 
 mainMenu()

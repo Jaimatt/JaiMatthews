@@ -117,7 +117,7 @@ class Player {
             this.velocity.x = 0
             this.velocity.y = 0
             this.position.x = spawnpoint[0]*8 + 1
-            this.position.y = spawnpoint[1]*8 - (this.height - 8) - 1
+            this.position.y = spawnpoint[1]*8 - (this.height - 8)
         }
     }
 

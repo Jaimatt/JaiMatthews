@@ -465,8 +465,10 @@ p { color: var(--text);}
     margin-bottom: 10px;
     font-weight: 500;
 }
-.ills {
-    /* background-color: pink; */
+
+
+
+.illWindow {
     width: 90vw;
     max-width: calc(750px + 7 * 20px);
     margin-left: auto;
@@ -474,42 +476,204 @@ p { color: var(--text);}
     margin-bottom: 50px;
     margin-top: -10px;
 }
-.ills img {
-    max-width: 250px;
+.illWindow a {
+    color: var(--textlBlue);
+}
+
+.illContainer {
+    max-width: 270px;
     width: calc(90vw - 10px);
-    margin: 20px;
+    height: calc(90vw - 10px);
+    max-height: 270px;
+
+    position: relative;
     border-radius: 20px;
     overflow: hidden;
-    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    margin: 10px;
+
     transition-duration: 300ms;
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-fill-mode: backwards;
 }
-.ills img:hover {
-    filter: brightness(1.5);
+.contentContainer {
+    border: solid var(--lBlue) 5px;
+    width: calc(100% - 10px);
+    position: relative;
+}
+.illContainer:hover {
     transform: translate(-5px, -5px);
-    box-shadow: rgb(116, 116, 116) 5px 5px 0px;
+    box-shadow: var(--lBlue) 5px 5px 0px;
+}
+.illContainer .imageContainer {
+    width: 100%;
+    height: 100%;
+}
+.illContainer img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+    object-position: center;
+    transition-duration: 300ms;
+}
+.illOverlay {
+    transition-duration: 300ms;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: rgba(0,0,0,0.4);
+}
+.illOverlay h1 {
+    color: white;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    font-weight: 300;
+    font-size: 40px;
+    padding: 10px;
+    text-shadow: #000000 2px 2px 0px;
+}
+.illOverlay p {
+    color: white;
+    position: absolute;
+    text-align: right;
+    margin: 0;
+    bottom: 0;
+    right: 0;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    text-shadow: #000000 2px 2px 0px;
+}
+.illOverlay p i {
+    font-weight: 100;
+    cursor: pointer;
+    margin: 5px;
+}
+.illOverlay p a {
+    color: white;
+    text-decoration: none;
+}
+.illOverlay.arrows {
+    opacity: 1;
+    background-color: rgba(0,0,0,0);
+    /* width: unset;
+    height: unset; */
+    pointer-events: none;
+}
+.illOverlay.arrows p {
+    bottom: unset;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    pointer-events: all;
+    color: rgba(255,255,255,0.5);
+    text-shadow: none;
+}
+.illOverlay.arrows i:hover {
+    color: rgba(255,255,255,1);
+}
+.illOverlay.arrows p.left {
+    left: 0;
+    right: unset;
+    width: unset;
+}
+.illOverlay.arrows p.right {
+    left: unset;
+    width: unset;
+    right: 0;
+}
+.illOverlay.arrows p i {
+    margin: 0;
+}
+.illContainer:hover .illOverlay {
+    opacity: 1;
+}
+.illContainer:hover img {
+    transform: scale(1.1);
 }
 .illsCover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
+    display: none;
+
+    transition-duration: 300ms;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-fill-mode: backwards;
+}
+.illsCover .content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.illsCover .content.square {
+    width: calc(90vw + 10px);
+    max-width: calc(80vh + 10px);
+}
+.illsCover .content.wide {
+    width: calc(90vw + 10px);
+    max-width: calc((80vh * (16 / 9)) + 10px);
+}
+.illsCover .content h1, .illsCover .content p {
+    color: white;
+    font-weight: 300;
+    font-size: 40px;
+    padding: 10px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 49%;
+    display: inline-block;
+}
+.illsCover .content p {
+    font-size: 20px;
+    text-align: right;
+}
+.illsCover .content p i {
+    margin: 5px;
+    cursor: pointer;
+}
+.illsCover .illOverlay p i {
+    color: rgba(255, 255, 255,0.5);
+}
+
+.illsCover .content a {
+    color: white;
+    text-decoration: none;
 }
 .illsCover img {
-    width: 90vw;
-    max-width: 90vh;
-    position: relative;
-    top: 50%;
-    transform: translate(0,-50%);
-    cursor: pointer;
+    width: 100%;
 }
 .stopScrolling {
     height: 100%;
     overflow: hidden;
 }
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+    /* transition-duration: 300ms;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-fill-mode: backwards; */
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,

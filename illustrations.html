@@ -20,40 +20,52 @@
     <div class="heading">
         <p>Illustrations</p>
     </div>
-    <div class="ills">
-        <p>My 2020-2021 landscapes are shown below:</p>
-        <img onclick="illustration(1)" src="assets/illustrations/icons/1.jpg">
-        <img onclick="illustration(2)" src="assets/illustrations/icons/2.jpg">
-        <img onclick="illustration(3)" src="assets/illustrations/icons/3.jpg">
-        <img onclick="illustration(4)" src="assets/illustrations/icons/4.jpg">
-        <img onclick="illustration(5)" src="assets/illustrations/icons/5.jpg">
-        <img onclick="illustration(6)" src="assets/illustrations/icons/6.jpg">
-        <img onclick="illustration(7)" src="assets/illustrations/icons/7.jpg">
-        <img onclick="illustration(8)" src="assets/illustrations/icons/8.jpg">
-        <img onclick="illustration(9)" src="assets/illustrations/icons/9.jpg">
-        <img onclick="illustration(10)" src="assets/illustrations/icons/10.jpg">
-        <img onclick="illustration(11)" src="assets/illustrations/icons/11.jpg">
-        <img onclick="illustration(12)" src="assets/illustrations/icons/12.jpg">
-        <img onclick="illustration(13)" src="assets/illustrations/icons/13.jpg">
-        <img onclick="illustration(14)" src="assets/illustrations/icons/14.jpg">
-        <img onclick="illustration(15)" src="assets/illustrations/icons/15.jpg">
-        <img onclick="illustration(16)" src="assets/illustrations/icons/16.jpg">
-        <img onclick="illustration(17)" src="assets/illustrations/icons/17.jpg">
-        <img onclick="illustration(18)" src="assets/illustrations/icons/18.jpg">
-        <img onclick="illustration(19)" src="assets/illustrations/icons/19.jpg">
-        <img onclick="illustration(20)" src="assets/illustrations/icons/20.jpg">
-        <img onclick="illustration(21)" src="assets/illustrations/icons/21.jpg">
-        <img onclick="illustration(22)" src="assets/illustrations/icons/22.jpg">
-        <img onclick="illustration(23)" src="assets/illustrations/icons/23.jpg">
-        <img onclick="illustration(24)" src="assets/illustrations/icons/24.jpg">
-        <img onclick="illustration(25)" src="assets/illustrations/icons/25.jpg">
-        <img onclick="illustration(26)" src="assets/illustrations/icons/26.jpg">
-        <img onclick="illustration(27)" src="assets/illustrations/icons/27.jpg">
-        <p>All other designs are available on my <a target="_blank" href="https://www.instagram.com/jaimatthews1/">Instagram</a>.</p>
+    <div class="illWindow">
+        <p>My illustrations are shown below</p>
+
+        <!-- <div class="illContainer" id="carousel">
+            <div>
+                <img class="visible" src="assets/illustrations/12.png">
+                <img class="hidden" src="assets/illustrations/11.png">
+                <img class="hidden" src="assets/illustrations/10.png">
+                <img class="hidden" src="assets/illustrations/9.png">
+            </div>
+            <div class="illOverlay">
+                <h1>#00</h1>
+                <p><a href="${data.data[x].permalink}" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a><i class="fa fa-arrows-alt" aria-hidden="true" onclick="fullscreen(this)"></i></p>
+            </div>
+            <div class="illOverlay arrows">
+                <p class="left"><i class="fa fa-arrow-circle-left" aria-hidden="true" onclick="changeImg(this,-1)"></i></p><p class="right"><i class="fa fa-arrow-circle-right" aria-hidden="true" onclick="changeImg(this,1)"></i></p>
+            </div>
+        </div>
+
+        <div class="illContainer" id="image">
+            <div>
+                <img class="visible" src="assets/illustrations/6.png">
+            </div>
+            <div class="illOverlay">
+                <h1>#01</h1>
+                <p><a href="${data.data[x].permalink}" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a><i class="fa fa-arrows-alt" aria-hidden="true" onclick="fullscreen(this)"></i></p>
+            </div>
+        </div> -->
+
+        <div class="media">
+            <p style="color: red;">Loading illustrations...</p>
+
+
+
+
+        </div>
+        <p>All designs are also available on my <a target="_blank" href="https://www.instagram.com/jaimatthews1/">Instagram</a>.</p>
         <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="index.html">Return Home</a></p>
     </div>
-    <div class="illsCover" id="cover" onclick="hide()">
-        <img src="assets/illustrations/10.png" id="coverImg">
+    <div class="illsCover" id="cover">
+        <div class="content">
+            <h1 id="number">Illustrations</h1>
+            <p><a id="link" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a><i class="fa fa-times" aria-hidden="true" onclick="hide()"></i></p>
+            <div id="box" class="contentContainer">
+            </div>
+        </div>
     </div>
 </body>
 </html>
@@ -62,24 +74,139 @@
 <script src="textScripts.js"></script>
 <script>
     cover = document.getElementById('cover')
-    cover.style.display = 'none'
-    function illustration(no) {
+    function fullscreen(me) {
+        img = me.parentElement.parentElement.parentElement.children[0].querySelector('.visible')
+        no = me.parentElement.parentElement.querySelector('h1').innerText
+        link = me.parentElement.parentElement.querySelector('a').href
+
+        document.getElementById('link').href = link
         cover.style.display = 'block'
-        document.getElementById('coverImg').src = "assets/illustrations/"+no+".png"
-        console.log(no)
+
+        htmlElements = me.parentElement.parentElement.parentElement
+
+        document.getElementById('box').innerHTML = htmlElements.children[0].outerHTML
+
+        if (me.parentElement.parentElement.parentElement.id == 'carousel') {
+            document.getElementById('box').innerHTML += `
+                <div class="illOverlay arrows">
+                    <p class="left"><i class="fa fa-arrow-circle-left" aria-hidden="true" onclick="changeImg(this,-1,true)"></i></p><p class="right"><i class="fa fa-arrow-circle-right" aria-hidden="true" onclick="changeImg(this,1,true)"></i></p>
+                </div>
+            `
+        }
+
+        if (img.naturalWidth == img.naturalHeight) {
+            document.querySelector('.content').classList = 'content square'
+            // document.getElementById('coverImg').classList = 'square'
+        } else {
+            document.querySelector('.content').classList = 'content wide'
+            // document.getElementById('coverImg').classList = 'wide'
+        }
+        document.getElementById('number').innerText = no
         document.body.classList.add('stopScrolling')
+
+        me.parentElement.parentElement.parentElement.classList.add('full')
     }
+
     function hide() {
         cover.style.display = 'none'
         document.body.classList.remove('stopScrolling')
+
+        document.querySelector('.full').classList.remove('full')
     }
 
-    ills = document.querySelector('.ills').querySelectorAll('img')
-    for (i = 0; i < ills.length; i++) {
-        // console.log()
-        ills[i].style.animationDelay = i / 10 + 's'
+    function changeImg(me,i,full) {
+        imageFolder = me.parentElement.parentElement.parentElement.children[0].children
 
+        for (x in imageFolder) {
+            // console.log(imageFolder[x])
+            if (imageFolder[x].classList == 'visible') {
+                index = x
+                break
+            }
+        }
+
+        imageFolder[index].classList = 'hidden'
+
+        index = parseInt(index) + parseInt(i)
+
+        if (index >= imageFolder.length) index -= imageFolder.length
+        if (index < 0) index += imageFolder.length
+
+        imageFolder[index].classList = 'visible'
+
+        if (full == true) {
+            console.log('HELLO')
+            element = document.querySelector('.full').querySelector('#arrow1')
+            changeImg(element,i,false)
+        }
     }
+
+    const accessToken = 'IGQWRPR3JVTEZAXeEF0LWc2cDdIWklJOVZAUTllIMVd3RlV3SnJTVHcyZAUtvWW9WLU9tWWs3U2VKa29Ob1kxdWRoRllXS0plSFdaOUJLYjM1YmtXTWhJcktJc0M2M1JYRDlnX0Iwdnp4WjN1cDN6dnZAVMHZAMWWNjbEUZD';
+    const apiUrl = `https://graph.instagram.com/v12.0/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{media_type,media_url,thumbnail_url}&access_token=${accessToken}`;
+
+    mediaBox = document.querySelector('.media')
+
+    retrieve(apiUrl)
+
+    function retrieve(url) {
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => loadMedia(data))
+    }
+
+    function loadMedia(data) {
+        for (x in data.data) {
+            images = ''
+            arrows = ''
+            if (data.data[x].media_type == 'IMAGE') {
+                images = `<img class="visible" src="${data.data[x].media_url}">`
+                id = `image`
+            } else if (data.data[x].media_type == 'CAROUSEL_ALBUM') {
+                for (y in data.data[x].children.data) {
+                    if (y == 0) cl = 'visible'
+                    else cl = 'hidden'
+                    images += `<img class="${cl}" src="${data.data[x].children.data[y].media_url}">`
+                }
+                arrows = `
+                    <div class="illOverlay arrows">
+                        <p class="left"><i id='arrow1' class="fa fa-arrow-circle-left" aria-hidden="true" onclick="changeImg(this,-1,false)"></i></p><p class="right"><i class="fa fa-arrow-circle-right" aria-hidden="true" onclick="changeImg(this,1,false)"></i></p>
+                    </div>
+                `
+                id = `carousel`
+            }
+            mediaBox.innerHTML += `
+            <div class="illContainer" id="${id}">
+                <div class="imageContainer">
+                    ${images}
+                </div>
+                <div class="illOverlay">
+                    <h1>#</h1>
+                    <p><a href="${data.data[x].permalink}" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a><i class="fa fa-arrows-alt" aria-hidden="true" onclick="fullscreen(this)"></i></p>
+                </div>
+                ${arrows}
+            </div>
+            `
+        }
+        if (data.paging.next) {
+            retrieve(data.paging.next)
+        } else {
+            numberThem()
+        }
+        sizeChange()
+    }
+
+    function numberThem() {
+        document.querySelector('.media').children[0].outerHTML = ''
+        illustrations = document.querySelector('.media').children
+        for (x in illustrations) {
+            no = illustrations.length - parseInt(x)
+            if (no < 10) {
+                no = '0' + no
+            }
+            illustrations[x].querySelector('h1').innerText += no
+        }
+    }
+
 
 </script>
 <script src="canvas.js"></script>

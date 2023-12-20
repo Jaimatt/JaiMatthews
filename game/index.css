@@ -1,3 +1,6 @@
+:root {
+    --main: rgb(25, 148, 220);
+}
 body {
     text-align: center;
     margin: 0;
@@ -13,10 +16,13 @@ canvas {
     z-index: 0;
     height: 100vh;
     width: calc(100vh * (16/9));
-
 }
 img {
     image-rendering: pixelated;
+}
+html {
+    /* height: 100vh; */
+    font-size: calc(100vh * (1 / 720));
 }
 .menu {
     top: 50%;
@@ -28,7 +34,7 @@ img {
     width: calc(100vh * (16/9));
     display: none;
     background-color: rgba(0,0,0,0.5);
-    transition-duration: 300ms;
+    /* transition-duration: 300ms; */
 }
 .content {
     top: 50%;
@@ -38,24 +44,37 @@ img {
     text-align: center;
 }
 .content img.title {
-    width: 100%;
-    margin: 2%;
+    width: 500rem;
+    margin: 10rem;
+    user-select: none;
+}
+h1 {
+    color: white;
+    font-size: 45rem;
+    margin: 0;
+    text-decoration: 2px underline var(--main);
+    margin-left: 10rem;
+    font-weight: 900;
+    font-family: 'quicksand',sans-serif;
+    transition-duration: 300ms;
 }
 .play {
-    margin: 2%;
+    margin: 10rem;
     padding: 0;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
     transition-duration: 300ms;
+    user-select: none;
 }
-#main, #story, #controls {
+#main, #story, #controls, #pause {
     display: none;
     transition-duration: 300ms;
+    user-select: none;
 }
 .play img {
-    width: 4vw;
+    width: 50rem;
     display: inline-block;
     vertical-align: middle;
     transition-duration: 300ms;
@@ -64,22 +83,22 @@ img {
     display: inline-block;
     vertical-align: middle;
     color: white;
-    font-size: 2.5vw;
+    font-size: 35rem;
     margin: 0;
-    margin-left: 1vw;
+    margin-left: 10rem;
     font-weight: 600;
     font-family: 'quicksand',sans-serif;
     transition-duration: 300ms;
 }
 .button {
-    /* display: inline-block; */
-    margin: 4%;
+    margin: 20rem;
     padding: 0;
     cursor: pointer;
     transition-duration: 300ms;
+    user-select: none;
 }
 .button img {
-    width: 2.5vw;
+    width: 40rem;
     display: inline-block;
     vertical-align: middle;
     transition-duration: 300ms;
@@ -88,9 +107,9 @@ img {
     display: inline-block;
     vertical-align: middle;
     color: white;
-    font-size: 1.5vw;
+    font-size: 25rem;
     margin: 0;
-    margin-left: 1vw;
+    margin-left: 10rem;
     font-weight: 600;
     font-family: 'quicksand',sans-serif;
     vertical-align: middle;
@@ -100,32 +119,11 @@ img {
     transform: scale(1.2);
 }
 .play:hover p, .button:hover p {
-    text-shadow: 0.2vw 0.2vw 0px black;
+    text-shadow: 3rem 3rem 0rem var(--main);
 }
 .play:hover img, .button:hover img {
-    transform: rotate(-20deg) scale(1.2);
-}
-.controls {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    text-align: center;
-    width: 60%;
-    height: 80%;
-    background-color: blue;
-}
-.controls h1 {
-    font-size: 4vw;
-    color: white;
-    font-family: 'quicksand',sans-serif;
-    margin: 0;
-}
-.controls h2 {
-    font-size: 3vw;
-    color: white;
-    font-family: 'quicksand',sans-serif;
-    margin: 0;
+    transform: rotate(-20deg) scale(1.1);
+    box-shadow: 2rem 2rem 0rem var(--main);
 }
 p.story {
     color: rgb(182, 182, 182);
@@ -133,7 +131,6 @@ p.story {
     font-family: 'quicksand',sans-serif;
     font-weight: 600;
 }
-  
 
 @media (max-width: calc(100vh * (16/9))) {
     .menu {
@@ -143,5 +140,8 @@ p.story {
     canvas {
         width: 100vw;
         height: calc(100vw * (9 / 16));
+    }
+    html {
+        font-size: calc(100vw * (9 / 16) * (1 / 720));
     }
 }
