@@ -141,8 +141,8 @@
         }
     }
 
-    const accessToken = 'IGQWRPR3JVTEZAXeEF0LWc2cDdIWklJOVZAUTllIMVd3RlV3SnJTVHcyZAUtvWW9WLU9tWWs3U2VKa29Ob1kxdWRoRllXS0plSFdaOUJLYjM1YmtXTWhJcktJc0M2M1JYRDlnX0Iwdnp4WjN1cDN6dnZAVMHZAMWWNjbEUZD';
-    const apiUrl = `https://graph.instagram.com/v12.0/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{media_type,media_url,thumbnail_url}&access_token=${accessToken}`;
+    const accessTokenEnc = 'SUdRV1JRTlZKMVlsUkJVMmMyUkhOTlUwbEViVGcyTkVrMmExZFFYM2RtV2pCeWNFUndVRmMzZEU1cFVYbERWSGR2UzBnNWFFbHNiMjVzZWxscGEzWXhUMk5DVUdnemVVbGlVa3MyVUUxSVVIcGhXRzlZZUZsSk5qRXRhekIxZDNONlJVZE5RWGxsVW1oaGJFcEdjSGd5TkdGRWMxRlNZMmNaRA==';
+    const apiUrl = `https://graph.instagram.com/v12.0/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{media_type,media_url,thumbnail_url}&access_token=${window.atob(accessTokenEnc)}`;
 
     mediaBox = document.querySelector('.media')
 
