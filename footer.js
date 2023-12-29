@@ -1,25 +1,32 @@
 footer = `
 <div class="footer">
-    <a href="changelog.html">Change Log</a>
-    <a href="tnc.html">Terms & Conditions</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://www.instagram.com/jaimatthews1/" target="_blank">Instagram</a>
+    <div class="bunch">
+        <a href="changelog.html">Change Log</a>
+        <a href="tnc.html">Terms & Conditions</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.instagram.com/jaimatthews1/" target="_blank">Instagram</a>
+    </div>
+    <div class="bunch bunch2">
+        <p>Jai Matthews, 2023</p>
+        <a onclick="topFunction()">Back to Top</a>
+    </div>
     
     <div class="darkToggle">
-        <p>Dark Mode</p><br>
+        <p>Dark Mode</p>
         <label class="switch" onclick="darkUpdate()">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
     </div>
-
-    <br>
-    <p>Jai Matthews, 2023</p>
-    <a onclick="topFunction()">Back to Top</a>
 </div>
 `
-
-document.body.innerHTML += footer;
+console.log(document.querySelector('footer'))
+document.body.innerHTML = `
+    <div class="wholeDocument">
+        ${document.body.innerHTML}
+    </div>
+    ${footer}
+`;
 
 //dark mode stuff:
 
