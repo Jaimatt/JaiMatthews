@@ -25,6 +25,7 @@
     --textlBlue: #10b9a9;
 
     --text: #000000;
+    --alert: red;
 
     --white: white; 
     --smoke: whitesmoke
@@ -367,71 +368,26 @@ input:checked + .slider:before {
     animation-fill-mode: backwards;
 }
 
-.article {
-    width: calc(95vw - 50px);
-    max-width: 650px;
-    background-color: var(--smoke);
-    box-shadow: var(--lBlue) 5px 5px 0px;
+.changeItem.important {
+    background-color: #41f7e42d;
+    /* background-color: #2cd20b38; */
+    padding: 5px;
+    padding-top: 15px;
     border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    padding: 25px;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: var(--text);
-    transition-duration: 300ms;
+    margin-bottom: 13px;
 }
-.article h1 {
-    font-size: 27px;
-    margin-top: 0;
-    margin-bottom: 0;
+
+.changeItem.important p.span {
+    color: var(--alert);
+    font-weight: 600;
+    margin-bottom: -15px !important;
     text-align: left;
 }
-.article h2 {
-    margin-top: 0;
-    color: var(--textlBlue);
-    font-size: 15px;
-    font-weight: 300;
-    text-align: left;
-}
-.article h3 {
-    margin-bottom: 5px;
-    font-size: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: left;
-}
-.article p {
+
+/* .changeItem.important h3 {
     margin-top: 0px;
-    font-size: 13px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: left;
-}
-.article ul {
-    margin-top: 0;
-    font-size: 13px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: left;
-    list-style-position: inside;
-    list-style-type: disc;
-}
-.article ol {
-    margin-top: 0;
-    font-size: 13px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: left;
-    list-style-position: inside;
-    list-style-type: disc;
-}
-.article li a {
-    color: var(--text);
-    word-wrap: break-word;
-}
+} */
+
 .goHome {
     font-size: 13px;
     color: var(--textlBlue);
@@ -440,109 +396,13 @@ input:checked + .slider:before {
     padding-right: 10px;
     width: fit-content;
 }
+.goHome a {
+    color: var(--textlBlue);
+}
 .goHome:hover {
     font-weight: 900;
     padding-left: 20px;
 }
-.article a, .ills a, .docsBody a {
-    color: var(--textlBlue);
-}
-.article h4 {
-    color: var(--textlBlue);
-    margin-bottom: -18px;
-    font-size: 22px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: 300;
-    margin-top: 0;
-    text-align: left;
-}
-.article h5 {
-    color: var(--textlBlue);
-    margin-top: -8px;
-    font-size: 12px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    text-align: left;
-}
-.article span {
-    color: red;
-    content: 'hi';
-    padding-left: 5px;
-    font-size: 10px;
-}
-.article input, .article textarea {
-    width: calc(95vw - 50px - 6px - 40px);
-    max-width: calc(650px - 6px - 40px);
-
-    margin-left: 10px;
-    margin-right: 10px;
-    border: solid var(--elGrey) 3px;
-    height: 20px;
-    border-radius: 13px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-family: 'Quicksand', sans-serif;
-}
-.article input:hover, .article textarea:hover {
-    border: solid var(--textlBlue) 3px;
-}
-.article input:focus, .article textarea:focus {
-    outline: none;
-    border: solid var(--textlBlue) 3px;
-}
-.article textarea {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    height: 130px;
-    resize: none;
-}
-.article button {
-    float: right;
-    background-color: var(--lBlue);
-    border: solid var(--lBlue) 3px;
-    color: white;
-    width: 100px;
-    height: 30px;
-    border-radius: 18px;
-    cursor: pointer;
-    transition-duration: 300ms;
-}
-.article button:hover {
-    background-color: var(--smoke);
-    color: var(--text);
-}
-.article img {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3px;
-    border-radius: 20px;
-    overflow: hidden;
-}
-.article img.logo {
-    width: 50px;
-    border-radius: 0;
-    /* margin-bottom: 5px; */
-}
-.article img.small {
-    width: 160px;
-}
-.article img.banner {
-    width: calc(95vw - 50px - 20px);
-    max-width: calc(650px - 20px);
-    margin-bottom: 30px;
-}
-.article h6 {
-    text-align: center;
-    color: var(--textlBlue);
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-
 
 .illWindow {
     width: 90vw;
