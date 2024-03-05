@@ -71,22 +71,23 @@ function highlight(me) {
     popup = me.cloneNode(true)
     popup.classList = 'alink'
 
-    linkButton = document.createElement('a')
-    linkButton.href = popup.dataset.href
-    linkButtonChild = document.createElement('p')
-    linkButtonChild.classList = 'linkButton'
-    linkButtonChild.innerText = 'Open'
-    linkButton.innerHTML = linkButtonChild.outerHTML
+    linkButton = document.createElement('div')
+    linkButton.id = 'buttons'
+    linkButton.classList = 'linkButton'
 
-    if (popup.querySelector('p.date').innerText != 'Coming Soon') {
-        popup.appendChild(linkButton)
-    }
+    if (popup.dataset.portfolio != 'false') linkButton.innerHTML += `
+    <a href=${popup.dataset.portfolio}><p class="square"><i class="fa fa-info" aria-hidden="true"></i></p></a>`
+
+    if (popup.dataset.href != 'false') linkButton.innerHTML += `
+    <a href="${popup.dataset.href}"><p>Open</p></a>`
+
+    popup.appendChild(linkButton)
 
     popup.removeAttribute('onclick')
     popup.style.top = (me.offsetTop - 10 - window.scrollY) + 'px'
     popup.style.left = (me.offsetLeft - 10) + 'px'
 
-    href = popup.dataset.href
+    linkId = popup.dataset.linkid
     document.body.appendChild(popup)
 
     setTimeout(function() {
@@ -108,9 +109,9 @@ function lowlight(me) {
     me.style.height = '150px'
     me.style.boxShadow = 'none'
     me.classList.add('shrinking')
-    if (me.querySelector('a') != null) me.querySelector('a').style.opacity = '0'
+    if (me.querySelector('#buttons') != null) me.querySelector('#buttons').style.opacity = '0'
 
-    original = document.querySelectorAll("[data-href='"+href+"']")[0]
+    original = document.querySelectorAll("[data-linkId='"+linkId+"']")[0]
 
     me.style.left = (original.offsetLeft - 10) + 'px'
     me.style.top = (original.offsetTop - 10 - window.scrollY) + 'px'

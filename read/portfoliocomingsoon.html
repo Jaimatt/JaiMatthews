@@ -1,33 +1,4 @@
-editorBox = document.querySelector('.editorBox')
-
-var options = {
-    modules: {
-        syntax: true,
-        formats: ['bold', 'italic', 'underline', 'link'],
-        toolbar: [
-            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-            ['bold', 'italic', 'underline'],
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            [{ 'script': 'sub'}, { 'script': 'super' }],
-            ['link','image']
-            ]
-      },
-    theme: 'snow'
-}
-
-var quill = new Quill(editorBox, options)
-
-function save() {
-    htmlElements = document.querySelector('.ql-editor')
-
-    console.log(htmlElements.innerHTML)
-
-    // articleInterior = htmlElements.innerHTML
-
-    articleInterior = htmlElements.innerHTML.replace(/></g, ">\n        <")
-
-    documentContent = 
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +20,10 @@ function save() {
     <a href="../index.html"><img src='../assets/iconR-01.png' class="icon small"></a>
     <br>
     <div class="article">
-        ${articleInterior}
+        <h1>Coming Soon!</h1>
+        <h2>JaiMatthews.com/Portfolio</h2>
+        <p>Thanks for showing interest in the behind-the-scenes for my projects! Unfortunately, I am still writing out all of the individual pages. I'm hoping to finish them before the end of March then release them all at once.</p>
+        <p>To return to the home page, click below:</p>
         <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"> </i> <a href="../index.html">Return Home</a> </p>
     </div>
 </body>
@@ -57,16 +31,4 @@ function save() {
 <script src="../js/cookies.js"></script>
 <script src="../js/footer.js"></script>
 <script src="../js/textScripts.js"></script>
-<script src="../js/canvas.js"></script>`
-
-    const blob = new Blob([documentContent], { type: 'text/plain' });
-
-    const link = document.createElement('a');
-    link.download = document.querySelector('#url').value + '.html';
-    link.href = URL.createObjectURL(blob);
-
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-}
+<script src="../js/canvas.js"></script>

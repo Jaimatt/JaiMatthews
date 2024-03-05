@@ -278,7 +278,7 @@ input:checked + .slider:before {
     transition-duration: 300ms;
     color: var(--text);
 }
-.link p:not(.linkButton), .alink p:not(.linkButton) {
+.link p:not(.linkButton p), .alink p:not(.linkButton p) {
     font-size: 14px;
     margin-top: 0;
     padding-left: 25px;
@@ -337,25 +337,45 @@ input:checked + .slider:before {
 .alink:not(.shrinking) .date {
     padding-right: 28px;
 }
-.linkButton {
-    width: 150px;
-    height: 40px;
-    line-height: 40px;
-    padding-left: 0px;
-    border-radius: 20px;
-    background-color: var(--lBlue);
+
+.linkButton {    
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 20px;
+    margin: 10px;
+}
+.linkButton p {
+    padding: 5px;
+    line-height: 30px;
+    height: 30px;
+    width: 90px;
+    border-radius: 25px;
+    font-size: 15px;
+    background-color: var(--lBlue);
+    margin: 0px 3px;
     text-align: center;
     color: white;
     transition-duration: 300ms;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
 }
-.linkButton:hover {
+.linkButton p.square {
+    width: 30px;
+    background-color: var(--elGrey);
+    color: var(--textlBlue);
+}
+.linkButton p.square:hover {
+    background-color: var(--bgBlue);
+}
+.linkButton p i {
+    width: 20px;
+    height: 20px;
+}
+.linkButton p:hover {
     background-color: var(--elBlue);
-    transform: translate(0px, -10px);
-    /* box-shadow: black 0px 0px 20px; */
+    transform: translate(0px,-7px);
+    /* box-shadow: #000000 0px 5px 5px; */
 }
 @keyframes fadeAcross {
     0% { opacity: 0; transform: translate(20px, 0px); }
