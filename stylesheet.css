@@ -557,6 +557,7 @@ input:checked + .slider:before {
 }
 .illContainer:hover img {
     transform: scale(1.1);
+    /* filter: blur(10px); */
 }
 .illsCover {
     background-color: rgba(0,0,0,0.9);
