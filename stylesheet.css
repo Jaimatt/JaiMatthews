@@ -702,3 +702,29 @@ canvas {
     margin-top: 10px;
 }
 br { user-select: none; }
+.portfolioBox {
+    text-align: center;
+}
+.portfolioBox div {
+    background-color: green;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    position: relative;
+}
+.portfolioBox div img {
+    width: 100%;
+    position: absolute;
+    
+}
+.portfolioBox div p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-weight: 600;
+}
