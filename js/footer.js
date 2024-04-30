@@ -7,9 +7,9 @@ if (window.location.href.includes('/read/')) {
 footer = `
 <div class="footer">
     <div class="bunch">
-        <a href="${goHomeEr}read/changelog.html">Change Log</a>
-        <a href="${goHomeEr}read/terms.html">Terms & Conditions</a>
-        <a href="${goHomeEr}read/contact.html">Contact</a>
+        <a href="${goHomeEr}read/changelog">Change Log</a>
+        <a href="${goHomeEr}read/terms">Terms & Conditions</a>
+        <a href="${goHomeEr}read/contact">Contact</a>
         <a href="https://www.instagram.com/jaimatthews1/" target="_blank">Instagram</a>
     </div>
     <div class="bunch bunch2">
