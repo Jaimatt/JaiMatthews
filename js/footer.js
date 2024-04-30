@@ -39,32 +39,10 @@ document.body.innerHTML = `
 function darkUpdate() {
 
     if (document.querySelector('.switch').querySelector('input').checked) {
-        document.body.style.setProperty('--elGrey','#424242')
-        document.body.style.setProperty('--eelGrey','rgba(112, 112, 112, 0.5)')
-        document.body.style.setProperty('--bgBlue','#304141')
-        document.body.style.setProperty('--hlBlue','#a6fdf4')
-        document.body.style.setProperty('--elBlue','#0d8b7d')
-        document.body.style.setProperty('--acBlue','#9fd4cf')
-        document.body.style.setProperty('--lBlue','#0b7e72')
-        document.body.style.setProperty('--textlBlue','#11e2cd')
-        document.body.style.setProperty('--text','#ffffff')
-        document.body.style.setProperty('--alert','rgb(255, 54, 54)')
-        document.body.style.setProperty('--white','rgb(39, 39, 39)')
-        document.body.style.setProperty('--smoke','rgb(85, 85, 85)')
+        document.querySelector('#colourTheme').href = `${goHomeEr}themes/darkMain.css`
         setCookie('dark','true')
     } else {
-        document.body.style.setProperty('--elGrey','unset')
-        document.body.style.setProperty('--eelGrey','unset')
-        document.body.style.setProperty('--bgBlue','unset')
-        document.body.style.setProperty('--hlBlue','unset')
-        document.body.style.setProperty('--elBlue','unset')
-        document.body.style.setProperty('--acBlue','unset')
-        document.body.style.setProperty('--lBlue','unset')
-        document.body.style.setProperty('--textlBlue','unset')
-        document.body.style.setProperty('--text','unset')
-        document.body.style.setProperty('--alert','unset')
-        document.body.style.setProperty('--white','unset')
-        document.body.style.setProperty('--smoke','unset')
+        document.querySelector('#colourTheme').href = `${goHomeEr}themes/lightMain.css`
         setCookie('dark','false')
     }
 }

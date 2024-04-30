@@ -1,0 +1,32 @@
+:root {
+    /* NEAR WHITE */
+    --nearWhite: #a8e2dc;
+
+    /* NEAR THEME */
+    --nearTheme: #162320;
+
+    /* HIGHLIGHT COLOUR */
+    --highlight: #48e1d2;
+
+    /* GENERIC COLOUR */
+    --mainLight: #1b9689;
+
+    /* DARKER COLOUR */
+    --main: #11786d;
+
+    /* TEXT COLOUR (stays light for dark mode) */
+    --mainText: #16dfcb;
+
+    /* TRANSPARENT COLOUR */
+    --transparent: #41f7e42d;
+
+    /* TEXT COLOUR (invert theme) */
+    --text: #ffffff;
+    /* ALERT COLOUR */
+    --alert: rgb(255, 55, 55);
+
+    /* WHITE */
+    --foreground: rgb(20, 20, 20);
+    /* SMOKE (of theme) */
+    --background: #2b2b2b;
+}

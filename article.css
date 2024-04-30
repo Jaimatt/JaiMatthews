@@ -1,8 +1,8 @@
 .article, .articleEdit {
     width: calc(95vw - 50px);
     max-width: 650px;
-    background-color: var(--smoke);
-    box-shadow: var(--lBlue) 5px 5px 0px;
+    background-color: var(--foreground);
+    box-shadow: var(--main) 5px 5px 0px;
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -26,7 +26,7 @@
 .article h2, .ql-editor h2 {
     margin-top: 0 !important;
     margin-bottom: 13px !important;
-    color: var(--textlBlue) !important;
+    color: var(--mainText) !important;
     font-size: 15px !important;
     font-weight: 300 !important;
     text-align: left;
@@ -70,10 +70,10 @@
     word-wrap: break-word;
 }
 .article a, .ills a, .docsBody a, .ql-editor a {
-    color: var(--textlBlue) !important;
+    color: var(--mainText) !important;
 }
 .article h4, .ql-editor h4 {
-    color: var(--textlBlue) !important;
+    color: var(--mainText) !important;
     margin-bottom: -18px !important;
     font-size: 22px !important;
     padding-left: 10px !important;
@@ -83,7 +83,7 @@
     text-align: left;
 }
 .article h5, .ql-editor h5 {
-    color: var(--textlBlue) !important;
+    color: var(--mainText) !important;
     margin-top: -8px !important;
     font-size: 12px !important;
     padding-left: 10px !important;
@@ -98,19 +98,20 @@
 
     margin-left: 10px;
     margin-right: 10px;
-    border: solid var(--elGrey) 3px;
+    border: solid var(--background) 3px;
     height: 20px;
     border-radius: 13px;
     padding-left: 10px;
     padding-right: 10px;
     font-family: 'Quicksand', sans-serif;
+    background-color: var(--background);
 }
 .article input:hover, .article textarea:hover, .articleEdit input:hover {
-    border: solid var(--textlBlue) 3px;
+    border: solid var(--mainText) 3px;
 }
 .article input:focus, .article textarea:focus, .articleEdit input:focus {
     outline: none;
-    border: solid var(--textlBlue) 3px;
+    border: solid var(--mainText) 3px;
 }
 .articleEdit input {
     max-width: 200px !important;
@@ -123,8 +124,8 @@
 }
 .article button {
     float: right;
-    background-color: var(--lBlue);
-    border: solid var(--lBlue) 3px;
+    background-color: var(--main);
+    border: solid var(--main) 3px;
     color: white;
     width: 100px;
     height: 30px;
@@ -133,12 +134,12 @@
     transition-duration: 300ms;
 }
 .article button:hover, .articleEdit button.save:hover {
-    background-color: var(--smoke);
+    background-color: var(--background);
     color: var(--text);
 }
 .articleEdit button.save {
-    background-color: var(--lBlue);
-    border: solid var(--lBlue) 3px;
+    background-color: var(--main);
+    border: solid var(--main) 3px;
     color: white;
     width: 100px;
     height: 30px;
@@ -169,7 +170,7 @@
 }
 .article h6, .ql-editor h6 {
     text-align: center;
-    color: var(--textlBlue) !important;
+    color: var(--mainText) !important;
     margin-top: 0 !important;
     margin-bottom: 10px !important;
     font-weight: 500 !important;

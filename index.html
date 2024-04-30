@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
 
     <link rel="stylesheet" href="stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -33,6 +34,7 @@
     <div class="linkBox"></div>
         <!-- import links -->
         <script src="links.js"></script>
+
         <!-- place links on page -->    
         <script>
             for (i = 0; i < links.length; i++) {
@@ -41,8 +43,7 @@
                 } else {
                     img_top = ""
                 }
-                hypertext = `
-                <div onclick="highlight(this)" class="link ${links[i].category}" 
+                hypertext = `<div onclick="highlight(this)" class="link ${links[i].category}" 
                     data-href="${links[i].href}"
                     data-linkid="${i}"
                     data-portfolio="${links[i].portfolio}"
@@ -53,13 +54,13 @@
                         <p>${links[i].subt}</p>
                     </div>
                     <p class="date">${links[i].date}</p>
-                </div>
-                `
+                </div>`
                 document.querySelector('.linkBox').innerHTML += hypertext
             }
 
 
-        </script>    
+        </script>  
+    <div class="fadeOut"></div>
 </body>
 <footer></footer>
 </html>

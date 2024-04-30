@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
 
     <link rel="stylesheet" href="stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,12 +125,10 @@
         else d = ''
 
         //insert HTML into page
-        docsList.innerHTML += `
-            <div>
+        docsList.innerHTML += `<div>
                 <i class="fa fa-file-${documents[i].icon}-o"></i>
                 <a target="_blank" href="${documents[i].link}"${d}><p>${documents[i].title}</p></a>  
-            </div>
-        `
+            </div>`
     }
 
     //sort() compare function for getting object title

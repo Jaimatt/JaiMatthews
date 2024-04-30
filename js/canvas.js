@@ -10,21 +10,23 @@ var mouse = {
     y: undefined,
 }
 
-function Circle(x, y, direction, velocity, radius, r, g, b) {
-    this.x = x
-    this.y = y
+class Circle {
+    constructor(x, y, direction, velocity, radius, r, g, b) {
+        this.x = x
+        this.y = y
+    
+        this.frame = 0
+    
+        this.direction = direction
+        this.velocity = velocity
+        this.radius = radius
+    
+        this.r = r
+        this.g = g
+        this.b = b    
+    }
 
-    this.frame = 0
-
-    this.direction = direction
-    this.velocity = velocity
-    this.radius = radius
-
-    this.r = r
-    this.g = g
-    this.b = b
-
-    this.draw = function() {
+    draw() {
         c.beginPath()
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.strokeStyle = 'rgb('+this.r+','+this.g+','+this.b+')'
@@ -33,7 +35,7 @@ function Circle(x, y, direction, velocity, radius, r, g, b) {
         c.stroke()
     }  
 
-    this.update = function() {
+    update() {
         this.frame += 1
 
         this.x += this.velocity * Math.cos(this.direction)
@@ -65,9 +67,11 @@ function animate() {
 
 function birth(iteration,r,g,b) {
     if (r == undefined) {
-        r = 20
-        g = 220
-        b = 200
+        colour = getComputedStyle(document.body).getPropertyValue('--main')
+
+        r = parseInt(colour.slice(1, 3), 16)
+        g = parseInt(colour.slice(3, 5), 16)
+        b = parseInt(colour.slice(5, 7), 16)
     }
     
     

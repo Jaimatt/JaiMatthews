@@ -1,0 +1,5 @@
+Website Ideas:
+
+Begin the website with an animation (the incomplete works of Jai Matthews) before continuing to the site.
+
+Save links and changes as JSON files.

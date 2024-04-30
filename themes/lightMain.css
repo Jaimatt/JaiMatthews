@@ -1,0 +1,32 @@
+:root {
+    /* NEAR WHITE */
+    --nearWhite: #defaf7;
+
+    /* NEAR THEME */
+    --nearTheme: #defaf7;
+
+    /* HIGHLIGHT COLOUR */
+    --highlight: #a6fdf4;
+
+    /* GENERIC COLOUR */
+    --mainLight: #12ddc5;
+
+    /* DARKER COLOUR */
+    --main: #10b9a9;
+
+    /* TEXT COLOUR (stays light for dark mode) */
+    --mainText: #10b9a9;
+
+    /* TRANSPARENT COLOUR */
+    --transparent: #41f7e42d;
+
+    /* TEXT COLOUR (invert theme) */
+    --text: #000000;
+    /* ALERT COLOUR */
+    --alert: red;
+
+    /* WHITE */
+    --foreground: white;
+    /* SMOKE (of theme) */
+    --background: whitesmoke
+}

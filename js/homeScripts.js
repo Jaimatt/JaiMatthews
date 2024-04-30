@@ -90,6 +90,8 @@ function highlight(me) {
     linkId = popup.dataset.linkid
     document.body.appendChild(popup)
 
+    document.querySelector('.fadeOut').classList.add('dark')
+
     setTimeout(function() {
         popup.style.height = '450px'
         popup.style.left = 'calc(50vw - ' + (popup.clientWidth / 2) + 'px - 15px)'
@@ -117,6 +119,8 @@ function lowlight(me) {
     me.style.top = (original.offsetTop - 10 - window.scrollY) + 'px'
 
     original.classList.remove('invis')
+
+    document.querySelector('.fadeOut').classList.remove('dark')
 
     setTimeout(function() {    
         me.remove()

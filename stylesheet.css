@@ -1,37 +1,21 @@
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: var(--white);
+    background-color: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--elBlue); 
+    background: var(--main); 
     /* border-radius: 5px; */
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--lBlue);
+    background: var(--mainLight);
 }
 ::selection {
     color: black;
-    background: var(--hlBlue);
-}
-:root {
-    --elGrey: #ececec;
-    --eelGrey: rgba(255, 255, 255,0.5);
-
-    --bgBlue: #dafffb;
-    --acBlue: #dafffb;
-    --hlBlue: #a6fdf4;
-    --elBlue: #12ddc5;
-    --lBlue: #10b9a9;
-    --textlBlue: #10b9a9;
-
-    --text: #000000;
-    --alert: red;
-
-    --white: white; 
-    --smoke: whitesmoke
+    background: var(--highlight);
 }
 body {
-    background-image: linear-gradient(var(--white), var(--bgBlue));
+    /* background-image: whitesmoke; */
+    background-color: var(--background);
     margin-top: 50px;
     margin-bottom: 0px;
     margin-left: 0px;
@@ -63,7 +47,7 @@ p { color: var(--text);}
     flex: 1;
 }
 .footer {
-    background-color: var(--lBlue);
+    background-color: var(--main);
     width: 100%;
     height: fit-content;
     bottom: 0;
@@ -117,7 +101,7 @@ p { color: var(--text);}
 }
 .darkToggle p {
     font-size: 12px;
-    color: var(--acBlue);
+    color: var(--nearWhite);
     margin: 5px;
     margin-top: 12px;
     padding: 0;
@@ -141,7 +125,7 @@ p { color: var(--text);}
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--acBlue);
+    background-color: var(--nearWhite);
     transition: .4s;
     border-radius: 34px;
 }
@@ -152,7 +136,7 @@ p { color: var(--text);}
     width: 16px;
     left: 2px;
     bottom: 2px;
-    background-color: var(--lBlue);
+    background-color: var(--main);
     transition: .4s;
     border-radius: 50%;
 }
@@ -178,11 +162,11 @@ input:checked + .slider:before {
 .navbar {
     max-width: 700px;
     height: 40px;
-    background-color: var(--elGrey);
+    background-color: var(--foreground);
     border-radius: 25px;
     margin-left: auto;
     margin-right: auto;
-    border: 5px solid var(--elGrey);
+    border: 5px solid var(--foreground);
     /* overflow: hidden; */
     z-index: 1;
     /* animation-name: fadeIn; */
@@ -213,14 +197,14 @@ input:checked + .slider:before {
     font-size: 30px;
 }
 .nbItem:hover {
-    background-color: var(--eelGrey);
+    background-color: var(--nearTheme);
 }
 .selected, .selected:hover {
-    background-color: var(--elBlue);
+    background-color: var(--mainLight);
     transform: translate(0px, -10px);
 }
 .nbSecondary {
-    text-decoration: underline var(--elBlue);
+    text-decoration: underline var(--mainLight);
     font-size: 20px;
     color: var(--text);
 }
@@ -239,7 +223,7 @@ input:checked + .slider:before {
     max-width: 400px;
     width: calc(100vw - 40px);
     height: 150px;
-    background-color: var(--white);
+    background-color: var(--foreground);
     margin: 10px;
     display: none;
     border-radius: 30px;
@@ -299,15 +283,27 @@ input:checked + .slider:before {
     opacity: 0;
 }
 .link:hover:not(.active) {
-    box-shadow: var(--lBlue) 6px 6px 0px;
+    box-shadow: var(--main) 6px 6px 0px;
     transform: translate(-3px, -3px);
 }
-
+.fadeOut {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+    transition-duration: 300ms;
+    z-index: 1;
+    opacity: 0.6;
+}
+.fadeOut.dark {
+    background-color: black;
+}
 .alink {
     max-width: 400px;
     width: calc(100vw - 40px);
     height: 150px;
-    background-color: var(--white);
+    background-color: var(--foreground);
     margin: 10px;
     border-radius: 30px;
     text-align: left;
@@ -316,8 +312,12 @@ input:checked + .slider:before {
     color: var(--black);
     cursor:auto;
     transition-duration: 300ms;
-    box-shadow: black 0px 0px 20px;
+    box-shadow: var(--main) 6px 6px 0px;
     user-select: none;
+    z-index: 1;
+}
+.alink.shrinking {
+    z-index: 0;
 }
 .alink:not(.shrinking) img {
     height: 460px;
@@ -351,7 +351,7 @@ input:checked + .slider:before {
     width: 90px;
     border-radius: 25px;
     font-size: 15px;
-    background-color: var(--lBlue);
+    background-color: var(--main);
     margin: 0px 3px;
     text-align: center;
     color: white;
@@ -362,18 +362,18 @@ input:checked + .slider:before {
 }
 .linkButton p.square {
     width: 30px;
-    background-color: var(--elGrey);
-    color: var(--textlBlue);
+    background-color: var(--background);
+    color: var(--mainText);
 }
 .linkButton p.square:hover {
-    background-color: var(--bgBlue);
+    background-color: var(--foreground);
 }
 .linkButton p i {
     width: 20px;
     height: 20px;
 }
 .linkButton p:hover {
-    background-color: var(--elBlue);
+    background-color: var(--mainLight);
     transform: translate(0px,-7px);
     /* box-shadow: #000000 0px 5px 5px; */
 }
@@ -389,7 +389,7 @@ input:checked + .slider:before {
 }
 
 .changeItem.important {
-    background-color: #41f7e42d;
+    background-color: var(--transparent);
     /* background-color: #2cd20b38; */
     padding: 5px;
     padding-top: 15px;
@@ -410,14 +410,14 @@ input:checked + .slider:before {
 
 .goHome {
     font-size: 13px;
-    color: var(--textlBlue);
+    color: var(--mainText);
     transition-duration: 300ms;
     padding-left: 10px;
     padding-right: 10px;
     width: fit-content;
 }
 .goHome a {
-    color: var(--textlBlue);
+    color: var(--mainText);
 }
 .goHome:hover {
     font-weight: 900;
@@ -433,7 +433,7 @@ input:checked + .slider:before {
     margin-top: -10px;
 }
 .illWindow a {
-    color: var(--textlBlue);
+    color: var(--mainText);
 }
 
 .illContainer {
@@ -456,13 +456,13 @@ input:checked + .slider:before {
     animation-fill-mode: backwards;
 }
 .contentContainer {
-    border: solid var(--lBlue) 5px;
+    border: solid var(--main) 5px;
     width: calc(100% - 10px);
     position: relative;
 }
 .illContainer:hover {
     transform: translate(-5px, -5px);
-    box-shadow: var(--lBlue) 5px 5px 0px;
+    box-shadow: var(--main) 5px 5px 0px;
 }
 .illContainer .imageContainer {
     width: 100%;
@@ -653,8 +653,8 @@ canvas {
     margin-right: auto;
     color: var(--text);
     margin-bottom: 50px;
-    background-color: var(--smoke);
-    box-shadow: var(--lBlue) 5px 5px 0px;
+    background-color: var(--foreground);
+    box-shadow: var(--main) 5px 5px 0px;
     border-radius: 20px;
     padding: 25px;
     transition-duration: 300ms;
@@ -684,17 +684,18 @@ canvas {
 .docsList div {
     width: 100px;
     height: 100px;
-    background-color: var(--white);
-    border: rgb(141, 141, 141) 3px solid;
+    background-color: var(--background);
+    padding: 5px;
     display: inline-block;
     vertical-align: middle;
     margin: 8px;
+    border-radius: 10px;
 }
 .docsList div p {
     margin-top: 8px;
     font-size: 13px;
-    color: var(--text);
-    text-decoration: underline var(--text);
+    color: var(--mainText);
+    text-decoration: underline var(--mainText);
 }
 .docsList div i {
     color: var(--text);
