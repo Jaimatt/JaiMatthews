@@ -10,10 +10,8 @@ function applyAnimations() {
 
     ind = 0
     for (i = 0; i < article.length; i++) {
-        console.log(article[i].localName)
         if (['ul','ol','div'].includes(article[i].localName)) {
             for (j = 0; j < article[i].children.length; j++) {
-                console.log(article[i].children[j])
                 article[i].children[j].style.animationName = 'fadeAcross'
                 article[i].children[j].style.animationDuration = '1s'
                 article[i].children[j].style.animationDelay = ind/10 + 's'

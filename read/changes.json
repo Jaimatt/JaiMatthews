@@ -2,7 +2,7 @@
     {
         "change" : "HTTPS Editing",
         "date" : "1 June 2024",
-        "description" : "Using a live server, I can now write code that ordinarily only works with HTTPs including cookies and fetch requests. Using this, some cookie bus were so that every page on the site remembers the colour them. Also, data is now stored as JSON files for ease.",
+        "description" : "Using a live server, I can now write code that ordinarily only works with HTTPs including cookies and fetch requests. Using this, a cookie bug was fixed so that every page on the site remembers the colour theme. Also, most data is now stored as JSON files for ease.",
         "important" : false
     },
     {

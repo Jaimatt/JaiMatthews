@@ -2,7 +2,7 @@ cover = document.getElementById('cover')
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-openId = parseInt(urlParams.get('image'))
+openId = parseInt(urlParams.get('img'))
 
 function fullscreen(me) {
     img = me.parentElement.parentElement.parentElement.children[0].querySelector('.visible')

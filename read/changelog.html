@@ -42,7 +42,7 @@
         for (i = 0; i < changes.length; i++) {
             if (changes[i].important) {
                 ihtml = '<span>*important</span>'
-                c = `
+                change = `
                 <div class="changeItem important" style="animation-delay: ${i / 5}s;">
                     <p class="span"><i class="fa fa-info-circle" aria-hidden="true"></i> Important</p>
                     <h3>${changes[i].change}</h3>
@@ -51,7 +51,7 @@
                 </div>
                 `
             } else {
-                c = `
+                change = `
                 <div class="changeItem" style="animation-delay: ${i / 5}s;">
                     <h3>${changes[i].change}</h3>
                     <h5>${changes[i].date}</h5>
@@ -59,7 +59,7 @@
                 </div>
                 `
             }
-            changeBox.innerHTML += c
+            changeBox.innerHTML += change
         }
 
         applyAnimations();
