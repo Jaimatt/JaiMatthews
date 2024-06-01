@@ -1,5 +1,5 @@
 function setCookie(cname, cvalue) {
-    document.cookie = cname + "=" + cvalue;
+    document.cookie = `${cname} = ${cvalue}; path=/`;
 }
 
 // this code isn't mine lol

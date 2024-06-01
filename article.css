@@ -96,6 +96,7 @@
     width: calc(95vw - 50px - 6px - 40px);
     max-width: calc(650px - 6px - 40px);
 
+    color: var(--text);
     margin-left: 10px;
     margin-right: 10px;
     border: solid var(--background) 3px;
@@ -162,6 +163,10 @@
 }
 .article img.small {
     width: 160px;
+}
+.article img.standard {
+    max-width: 300px;
+    width: calc(95vw - 50px - 20px);
 }
 .article img.banner {
     width: calc(95vw - 50px - 20px);

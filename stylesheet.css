@@ -173,6 +173,8 @@ input:checked + .slider:before {
     animation-duration: 1s;
     transition-duration: 300ms;
     user-select: none;
+
+
 }
 .nbItem {
     width: calc((700px / 4) - 8px);
@@ -237,6 +239,9 @@ input:checked + .slider:before {
     animation: fadeIn 1s;
     animation-fill-mode:backwards;
     user-select: none;
+
+
+
 }
 .link img, .alink img {
     position: absolute;
@@ -246,6 +251,7 @@ input:checked + .slider:before {
     width: calc(100vw - 40px);
     max-width: 400px;
     image-rendering: pixelated;
+    transition-duration: 300ms;
 }
 .link img.top, .alink img.top {
     top: 0;
@@ -323,6 +329,10 @@ input:checked + .slider:before {
     height: 460px;
     position: absolute;
     object-fit: cover;
+
+    /* filter: opacity(0.5) brightness(1.1) blur(5px);
+    transform: translateY(-50%) scale(1.2); */
+
 }
 .alink:not(.shrinking) .topText {
     position: absolute;
@@ -331,8 +341,8 @@ input:checked + .slider:before {
     font-size: 25px;
 }
 .alink:not(.shrinking) p {
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 17px !important;
+    font-weight: 500 !important;
 }
 .alink:not(.shrinking) .date {
     padding-right: 28px;
@@ -566,6 +576,7 @@ input:checked + .slider:before {
     position: fixed;
     top: 0;
     display: none;
+    z-index: 1;
 
     transition-duration: 300ms;
     animation-name: fadeIn;

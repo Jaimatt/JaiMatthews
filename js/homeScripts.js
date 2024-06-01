@@ -1,3 +1,38 @@
+// load media
+
+retrieve("links.json")
+
+function retrieve(url) {
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => { loadPage(data); goToUrlParam() })
+}
+
+function loadPage(links) {
+    for (i = 0; i < links.length; i++) {
+        if (links[i].img_top) {
+            img_top = "top"
+        } else {
+            img_top = ""
+        }
+        hypertext = `<div onclick="highlight(this)" class="link ${links[i].category}" 
+            data-href="${links[i].href}"
+            data-linkid="${i}"
+            data-portfolio="${links[i].portfolio}"
+        >
+            <img src="${links[i].img}" class="${img_top}">
+            <div class="topText">
+                <h1>${links[i].title}</h1>
+                <p>${links[i].subt}</p>
+            </div>
+            <p class="date">${links[i].date}</p>
+        </div>`
+        document.querySelector('.linkBox').innerHTML += hypertext
+    }
+}
+
+// other shit
+
 navCategories = ['_site','_game','_text','_misc']
 ncText = ['Websites','Toys & Games','Writing','Miscellaneous']
 
@@ -12,16 +47,16 @@ function nav(index) {
     }
     nbItems[index].classList.add('selected')
 
-    links = document.getElementsByClassName('link')
+    projectLinks = document.getElementsByClassName('link')
 
     j = 0
-    for (i = 0; i < links.length; i++) {
-        if (links[i].classList.contains(navCategories[index])) {
-            links[i].style.animationDelay = j / 10 + 's'
-            links[i].style.display = 'inline-block'
+    for (i = 0; i < projectLinks.length; i++) {
+        if (projectLinks[i].classList.contains(navCategories[index])) {
+            projectLinks[i].style.animationDelay = j / 10 + 's'
+            projectLinks[i].style.display = 'inline-block'
             j += 1
         } else {
-            links[i].style.display = 'none'
+            projectLinks[i].style.display = 'none'
         }
     }
 
@@ -139,11 +174,13 @@ function topFunction() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-pageId = parseInt(urlParams.get('page'))
-if (pageId <= 3 && pageId >= 0) {
-    nav(pageId)
-} else {
-    nav(0)
+function goToUrlParam() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    pageId = parseInt(urlParams.get('page'))
+    if (pageId <= 3 && pageId >= 0) {
+        nav(pageId)
+    } else {
+        nav(0)
+    }
 }

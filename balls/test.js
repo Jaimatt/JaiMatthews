@@ -10,27 +10,28 @@ var mouse = {
     y: undefined,
 }
 
-function Circle(x, y, dx, dy, radius, colour) {
-    this.givenRadius = radius
-    this.x = x
-    this.y = y
-    this.dx = dx
-    this.dy = dy
-    this.radius = radius
-    this.colour = colour
+class Circle {
+    constructor(x, y, dx, dy, radius, colour) {
+        this.givenRadius = radius
+        this.x = x
+        this.y = y
+        this.dx = dx
+        this.dy = dy
+        this.radius = radius
+        this.colour = colour    
+    }
 
-    this.draw = function() {
+    draw() {
         c.beginPath()
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
         c.strokeStyle = this.colour
         c.fillStyle = this.colour
         c.fill()
         c.shadowColor = this.colour
-        // c.shadowBlur = 6
         c.stroke()
     }
 
-    this.update = function() {
+    update() {
         if (this.x + this.radius > innerWidth || this.x + this.radius < 0) {
             this.dx = -this.dx
         }

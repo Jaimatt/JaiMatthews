@@ -32,38 +32,13 @@
     </div>
     <p class="nbSecondary" id="secondary">Websites</p>
     <div class="linkBox"></div>
-        <!-- import links -->
-        <script src="links.js"></script>
-
-        <!-- place links on page -->    
-        <script>
-            for (i = 0; i < links.length; i++) {
-                if (links[i].img_top) {
-                    img_top = "top"
-                } else {
-                    img_top = ""
-                }
-                hypertext = `<div onclick="highlight(this)" class="link ${links[i].category}" 
-                    data-href="${links[i].href}"
-                    data-linkid="${i}"
-                    data-portfolio="${links[i].portfolio}"
-                >
-                    <img src="${links[i].img}" class="${img_top}">
-                    <div class="topText">
-                        <h1>${links[i].title}</h1>
-                        <p>${links[i].subt}</p>
-                    </div>
-                    <p class="date">${links[i].date}</p>
-                </div>`
-                document.querySelector('.linkBox').innerHTML += hypertext
-            }
-
-
-        </script>  
     <div class="fadeOut"></div>
 </body>
 <footer></footer>
 </html>
+<script>
+    
+</script>
 <script src="js/cookies.js"></script>
 <script src="js/footer.js"></script>
 <script src="js/homeScripts.js"></script>

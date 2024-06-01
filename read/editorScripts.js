@@ -2,8 +2,8 @@ editorBox = document.querySelector('.editorBox')
 
 var options = {
     modules: {
-        syntax: true,
-        formats: ['bold', 'italic', 'underline', 'link'],
+        // syntax: true,
+        // formats: ['bold', 'italic', 'underline', 'link'],
         toolbar: [
             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
             ['bold', 'italic', 'underline'],
@@ -12,10 +12,11 @@ var options = {
             ['link','image']
             ]
       },
+    placeholder: 'compose an epic...',
     theme: 'snow'
 }
 
-var quill = new Quill(editorBox, options)
+const quill = new Quill(editorBox, options)
 
 function save() {
     htmlElements = document.querySelector('.ql-editor')
@@ -37,6 +38,7 @@ function save() {
     <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
 
     <link rel="stylesheet" href="../stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
     <link rel="stylesheet" href="../article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 

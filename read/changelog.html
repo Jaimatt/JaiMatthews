@@ -22,41 +22,47 @@
     <br>
     <div class="article">
         <h1>Change Log</h1>
-        <h2>jaimatthews.cf</h2>
+        <h2>jaimatthews.com</h2>
         <div id="changes"></div>        
         <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="../index.html">Return Home</a>
     </div>
 </body>
 </html>
-
-<!-- import changes -->
-<script src="changes.js"></script>
-
-<!-- add to screen -->
 <script>
-    changeBox = document.querySelector('#changes')
-
-    for (i = 0; i < changes.length; i++) {
-        if (changes[i].important) {
-            ihtml = '<span>*important</span>'
-            c = `
-            <div class="changeItem important" style="animation-delay: ${i / 5}s;">
-                <p class="span"><i class="fa fa-info-circle" aria-hidden="true"></i> Important</p>
-                <h3>${changes[i].change}</h3>
-                <h5>${changes[i].date}</h5>
-                <p>${changes[i].description}</p>
-            </div>
-            `
-        } else {
-            c = `
-            <div class="changeItem" style="animation-delay: ${i / 5}s;">
-                <h3>${changes[i].change}</h3>
-                <h5>${changes[i].date}</h5>
-                <p>${changes[i].description}</p>
-            </div>
-            `
+    retrieve("changes.json")
+        function retrieve(url) {
+            fetch(url)
+                .then((response) => response.json())
+                .then((data) => loadPage(data))
         }
-        changeBox.innerHTML += c
+
+        function loadPage(changes) {
+        changeBox = document.querySelector('#changes')
+
+        for (i = 0; i < changes.length; i++) {
+            if (changes[i].important) {
+                ihtml = '<span>*important</span>'
+                c = `
+                <div class="changeItem important" style="animation-delay: ${i / 5}s;">
+                    <p class="span"><i class="fa fa-info-circle" aria-hidden="true"></i> Important</p>
+                    <h3>${changes[i].change}</h3>
+                    <h5>${changes[i].date}</h5>
+                    <p>${changes[i].description}</p>
+                </div>
+                `
+            } else {
+                c = `
+                <div class="changeItem" style="animation-delay: ${i / 5}s;">
+                    <h3>${changes[i].change}</h3>
+                    <h5>${changes[i].date}</h5>
+                    <p>${changes[i].description}</p>
+                </div>
+                `
+            }
+            changeBox.innerHTML += c
+        }
+
+        applyAnimations();
     }
 
 </script>
