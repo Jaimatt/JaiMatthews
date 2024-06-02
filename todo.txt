@@ -1,6 +1,4 @@
-ADJUSTMENTS:
-    Make documents an article (CSS).
-
+ADJUSTMENTS: 
     Fix css for large screens.
 
 CHANGES:
@@ -12,6 +10,8 @@ CHANGES:
 
 DYNAMIC/HTTPS FEATURES:
     (long term) create and use a content management system.
+
+    HEADER
 
 CONTENT:
     Portfolios
@@ -29,3 +29,11 @@ CONTENT:
     Balls 2 (working title)
 
     Canvas Castle
+
+    Written Pieces
+        Updated editior
+        Paul Spragg (when the time comes!)
+        Women Preface
+        Doctor Who? Games? I want to add some new stuff
+
+    Laser Cutting Stuff, somehow.

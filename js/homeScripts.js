@@ -113,8 +113,10 @@ function highlight(me) {
     if (popup.dataset.portfolio != 'false') linkButton.innerHTML += `
     <a href=${popup.dataset.portfolio}><p class="square"><i class="fa fa-info" aria-hidden="true"></i></p></a>`
 
-    if (popup.dataset.href != 'false') linkButton.innerHTML += `
-    <a href="${popup.dataset.href}"><p>Open</p></a>`
+    if (popup.dataset.href != 'false') { linkButton.innerHTML += `
+    <a href="${popup.dataset.href}"><p>Open</p></a>` } else {
+        linkButton.innerHTML += `<a title="Unavailable"><p class="notLinked">Open</p></a>`
+    }
 
     popup.appendChild(linkButton)
 

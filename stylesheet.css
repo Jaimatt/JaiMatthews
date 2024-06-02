@@ -370,6 +370,13 @@ input:checked + .slider:before {
     vertical-align: top;
     font-size: 20px;
 }
+.linkButton p.notLinked {
+    /* background-color: var(--background); */
+    /* color: var(--text); */
+    filter: grayscale(1);
+    /* opacity: 0.5; */
+    cursor: not-allowed;
+}
 .linkButton p.square {
     width: 30px;
     background-color: var(--background);
@@ -656,38 +663,6 @@ canvas {
     top: 0;
     left: 0;
 }
-.docsBody {
-    /* background-color: green; */
-    width: calc(95vw - 50px);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text);
-    margin-bottom: 50px;
-    background-color: var(--foreground);
-    box-shadow: var(--main) 5px 5px 0px;
-    border-radius: 20px;
-    padding: 25px;
-    transition-duration: 300ms;
-}
-.docsHead {
-    /* background-color: red; */
-    width: 100%;
-}
-.docsHead img {
-    width: 50px;
-    display: inline-block;
-    vertical-align: middle;
-}
-.docsHead h1 {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-.docsHead p {
-    margin-top: 0;
-    color: var(--text);
-}
 .docsList {
     /* background-color: blue; */
     text-align: center;
@@ -707,6 +682,7 @@ canvas {
     font-size: 13px;
     color: var(--mainText);
     text-decoration: underline var(--mainText);
+    text-align: center;
 }
 .docsList div i {
     color: var(--text);

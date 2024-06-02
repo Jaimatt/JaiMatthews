@@ -1,0 +1,74 @@
+[
+    {
+        "title" : "TV Show Rankings",
+        "link" : "docs/shows.html",
+        "icon" : "excel",
+        "download" : false
+    },
+    {
+        "title" : "Books Spreadsheet",
+        "link" : "docs/books.html",
+        "icon" : "excel",
+        "download" : false
+    },
+    {
+        "title" : "Super Mario Odyssey Timer",
+        "link" : "docs/smo.html",
+        "icon" : "code",
+        "download" : false
+    },
+    {
+        "title" : "JM Article DevGuide",
+        "link" : "read/TEXTDEMO.html",
+        "icon" : "text",
+        "download" : false
+    },
+    {
+        "title" : "Book-a-Bench Embed",
+        "link" : "bookabench.html",
+        "icon" : "code",
+        "download" : false
+    },
+    {
+        "title" : "Carli & Co. Embed",
+        "link" : "cnc.html",
+        "icon" : "code",
+        "download" : false
+    },
+    {
+        "title" : "Bookmark Design Comp.",
+        "link" : "docs/bookmarks.pdf",
+        "icon" : "pdf",
+        "download" : false
+    },
+    {
+        "title" : "The Rendezvous - Short Film",
+        "link" : "https://www.youtube.com/watch?v=SxktarnYox4",
+        "icon" : "video",
+        "download" : false
+    },
+    {
+        "title" : "Laser Cut TARDIS Design",
+        "link" : "docs/TARDIS.pdf",
+        "icon" : "pdf",
+        "download" : false
+    },
+    {
+        "title" : "Custom Switch Covers",
+        "link" : "docs/switchcover.pdf",
+        "icon" : "pdf",
+        "download" : false
+    },
+    {
+        "title" : "Biographical No. Generator",
+        "link" : "docs/biographicals.py",
+        "icon" : "code",
+        "download" : true
+    },
+    {
+        "title" : "Doctor Who Episode List",
+        "link" : "docs/doctorwho.html",
+        "icon" : "excel",
+        "download" : false
+    }
+]

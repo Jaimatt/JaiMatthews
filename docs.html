@@ -4,131 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">Documents | Jai Matthews</title>
-    <link rel="icon" type="image/x-icon" href="assets/iconR-01.png">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
 
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="../stylesheet.css">
     <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
+    <link rel="stylesheet" href="../article.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <canvas></canvas>
-    <div class="docsBody">
-        <div class="docsHead">
-            <a href="index.html"><img src="assets/iconR-01.png"></a>
-            <h1>Documents</h1>
-            <p>In the past, some of the following have been online but inaccessible without the link. By moving such documents here, it becomes easier to share access to people when needed. Few will be of any use to anyone, but now they are available to view. Enjoy!</p>
-        </div>
+    <a href="../index.html"><img src='../assets/iconR-01.png' class="icon small"></a>
+    <br>
+    <div class="article">
+        <h1>Documents</h1>
+        <h2>jaimatthews.com</h2>
+        <p>In the past, some of the following have been online but inaccessible without the link. By moving such documents here, it becomes easier to share access to people when needed. Few will be of any use to anyone, but now they are available to view. Enjoy!</p>
         <div class="docsList">
-        </div>
-        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="index.html">Return Home</a></p>
+
+        </div>        
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"></i> <a href="../index.html">Return Home</a>
     </div>
-    
 </body>
 </html>
 <script>
     //for icon, choose from:
     //excel, powerpoint, word, text, pdf, audio, video, code, archive
     //these all link to the relevant font awesome icons
-    documents = [
-        {
-            title: 'TV Show Rankings',
-            link: 'docs/shows.html',
-            icon: 'excel',
-            download: false,
-        },
-        {
-            title: 'Books Spreadsheet',
-            link: 'docs/books.html',
-            icon: 'excel',
-            download: false,
-        },
-        {
-            title: 'Super Mario Odyssey Timer',
-            link: 'docs/smo.html',
-            icon: 'code',
-            download: false,
-        },
-        {
-            title: 'JM Article DevGuide',
-            link: 'read/TEXTDEMO.html',
-            icon: 'text',
-            download: false,
-        },
-        {
-            title: 'Book-a-Bench Embed',
-            link: 'bookabench.html',
-            icon: 'code',
-            download: false,
-        },
-        {
-            title: 'Carli & Co. Embed',
-            link: 'cnc.html',
-            icon: 'code',
-            download: false,
-        },
-        {
-            title: 'Bookmark Design Comp.',
-            link: 'docs/bookmarks.pdf',
-            icon: 'pdf',
-            download: false,
-        },
-        {
-            title: 'The Rendezvous - Short Film',
-            link: 'https://www.youtube.com/watch?v=SxktarnYox4',
-            icon: 'video',
-            download: false,
-        },
-        {
-            title: 'Laser Cut TARDIS Design',
-            link: 'docs/TARDIS.pdf',
-            icon: 'pdf',
-            download: false,
-        },
-        {
-            title: 'Custom Switch Covers',
-            link: 'docs/switchcover.pdf',
-            icon: 'pdf',
-            download: false,
-        },
-        {
-            title: 'Biographical No. Generator',
-            link: 'docs/biographicals.py',
-            icon: 'code',
-            download: true,
-        },
-        {
-            title: 'Doctor Who Episode List',
-            link: 'docs/doctorwho.html',
-            icon: 'excel',
-            download: false,
-        },
-    ]
 
-    //alphabetise
-    documents.sort(compare);
 
-    //get HTML element
-    docsList = document.querySelector('.docsList')
+    retrieve("docs.json")
+
+    function retrieve(url) {
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => loadDocs(data))
+    }
     
-    //for each document
-    for (i = 0; i < documents.length; i++) {
+    function loadDocs(documents) {
+        //alphabetise
+        documents.sort(compare);
 
-        //make download-only ones have 'download'
-        if (documents[i].download) d = ' download'
-        else d = ''
+        //get HTML element
+        docsList = document.querySelector('.docsList')
+        
+        //for each document
+        for (i = 0; i < documents.length; i++) {
 
-        //insert HTML into page
-        docsList.innerHTML += `<div>
-                <i class="fa fa-file-${documents[i].icon}-o"></i>
-                <a target="_blank" href="${documents[i].link}"${d}><p>${documents[i].title}</p></a>  
-            </div>`
+            //make download-only ones have 'download'
+            if (documents[i].download) d = ' download'
+            else d = ''
+
+            //insert HTML into page
+            docsList.innerHTML += `<div>
+                    <i class="fa fa-file-${documents[i].icon}-o"></i>
+                    <a target="_blank" href="${documents[i].link}"${d}><p>${documents[i].title}</p></a>  
+                </div>`
+        }
+
+        applyAnimations();
     }
 
     //sort() compare function for getting object title
@@ -143,7 +81,7 @@
     }
 
 </script>
-<script src="js/cookies.js"></script>
-<script src="js/footer.js"></script>
-<script src="js/textScripts.js"></script>
-<script src="js/canvas.js"></script>
+<script src="../js/cookies.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/textScripts.js"></script>
+<script src="../js/canvas.js"></script>
