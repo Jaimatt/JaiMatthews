@@ -5,6 +5,8 @@ ADJUSTMENTS:
 
     Go HOME hover effects broken
 
+    Lower resolution of some images to allow for quick loading :<
+
 CHANGES:
     Create a featured posts page.
 
@@ -28,7 +30,7 @@ CONTENT:
         countdown DONE
         password DONE
         artworks DONE
-        article editior
+        article editior DONE
 
     Balls 2 (working title)
 

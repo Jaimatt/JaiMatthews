@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
+
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
+    <link rel="stylesheet" href="../article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas></canvas>
+    <a href="../index.html"><img src='../assets/iconR-01.png' class="icon small"></a>
+    <br>
+    <div class="article">
+        <h1>Article Editor</h1>
+        <h2>Jai Matthews ⋅ 31 December 2023</h2>
+        <p>All of the pages at Jaimatthews.com/read — such as this one — are made using the Article Editor. When I made this version of the website, I set up a very simple CSS library (shown off <a href="https://jaimatthews.com/read/TEXTDEMO.html" target="_blank">here</a>) that would allow me to write "articles" for my website in a simple, consistent, and on-brand manner. When it came to adding a written piece to the website, I'd just have to use the right tags and it would format itself correctly.</p>
+        <p>Truthfully, even this was more work that was practical and so I sought a way of making my process more efficient. Ideally, I could write articles, add the HTML file to my website, and not have to manually edit any HTML myself.</p>
+        <p>That is why I created my Article Editor, which I am using <em>right now</em> to write this very page (very meta!). There is no force on this earth powerful enough to make me make the kind of rich text editor that'd be necessary (god, that would be so fucking painful), so instead I sought an existing framework that I could incorporate into my website. With a bit of learning, and even more fiddling around, I managed to get the use the Quill API to embed a text editor into my website.</p>
+        <img class="standard" src="../assets/portfolio_quill_a.png">
+        <h6>Initialising the editor using their inbuilt class.</h6>
+        <p>Surprisingly, this was most of what I needed to do. The text editor would now work and even puts the HTML of what you're typing directly into the page in a way that means my own JavaScript can interact with it.</p>
+        <p>Using this, I created a simple <em>save</em> function that would add the typed JavaScript to the necessary headers, footers, and included files/ styles and make a complete HTML page that can be added to my website.</p>
+        <img class="standard" src="../assets/portfolio_quill_b.png">
+        <h6>Concatenating the HTML</h6>
+        <p>Whilst it's primarily for me, you can access Article Editor <a href="https://jaimatthews.com/read/articleEditor" target="_blank">here</a>. Please note that the HTML file links to other JS and CSS files using relative links, so it will not render correctly unless it's uploaded to my website.</p>
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"> </i> <a href="../index.html">Return Home</a> </p>
+    </div>
+</body>
+</html>
+<script src="../js/cookies.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/textScripts.js"></script>
+<script src="../js/canvas.js"></script>
