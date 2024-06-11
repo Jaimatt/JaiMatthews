@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
+
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
+    <link rel="stylesheet" href="../article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas></canvas>
+    <a href="../index.html"><img src='../assets/iconR-01.png' class="icon small"></a>
+    <br>
+    <div class="article">
+        <h1>Book a Bench</h1>
+        <h2>Jai Matthews ⋅ 2022</h2>
+        <p>Book a Bench is my final Year 11 Coding Project. On the website, users can navigate to the parks within their (fictional) council area, and book council facilities. The website remembers which facilities have been booked and at which times, preventing any double bookings. With a bit of guidance from my peers (namely, <a href="https://markgurney.dev/" target="_blank">Mark Gurney</a>) I learnt a bit of PHP, and SQL to make a website that could dynamically store information and react to users' requests.</p>
+        <img class="standard" src="../assets/portfolio_bench_a.png">
+        <h6>Book A Bench Logo and Fictional Council Area (complete with obligatory Dr Who reference)</h6>
+        <p>Book a Bench allows users to create and manage accounts through its account system connected to a database. Passwords are safely hashed and users can sign back in any time.</p>
+        <img class="standard" src="../assets/portfolio_bench_b.png">
+        <h6>The 'Create Account' Page</h6>
+        <img class="standard" src="../assets/portfolio_bench_c.png">
+        <h6>Code to create a user</h6>
+        <p>When signed in, users can navigate to the parks page, search for parks. When on the page, users can select a date and a park facility. They can check what times are available and, if they wish, book them at no charge.</p>
+        <img class="standard" src="../assets/portfolio_bench_d.png">
+        <h6>Parks Page</h6>
+        <img class="standard" src="../assets/portfolio_bench_e.png">
+        <h6>Booking Form</h6>
+        <p>From every user's profile page, they can view all of their bookings from the past and in the future. Because every individual booking is stored in a database, displaying that data is just a matter of making a request to the database for all the bookings whose user ID matches the ID of the signed in user.</p>
+        <img class="standard" src="../assets/portfolio_bench_f.png">
+        <h6>A user can look at their bookings</h6>
+        <img class="standard" src="../assets/portfolio_bench_g.png">
+        <h6>The bookings are displayed to the user.</h6>
+        <p>Throughout this project, my goal was to make the program flexible and easy to amend; the kind of thing that would exist in the real world and actually be used. For this reason, I didn't hardcode the parks and instead stored them in a third database (the first two being users &amp; bookings) that could be amended by admins using a special admin form.</p>
+        <img class="standard" src="../assets/portfolio_bench_h.png">
+        <h6>The 'add park' section of the admin form.</h6>
+        <p>This is one of the first projects I've worked on where I am left <em>genuinely proud</em> of my efforts and how they project came out. It's a great feeling and there's so much else that I would love to show you. This was a fascinating project that involved ample learning and many small but brilliant challenges, but I need to end this article at some point so I'll leave it there! </p>
+        <p>It is a terrible tragedy that, at the time of writing, Book a Bench is no longer available online due to hosting difficulties. Hopefully this changes soon. In the meantime (I'm going to regret uploading this!), you can have a look at the school project's <a href="https://youtu.be/If1zb_JRK7c" target="_blank">submission video</a> to see how the website works.</p>
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"> </i> <a href="../index.html">Return Home</a> </p>
+    </div>
+</body>
+</html>
+<script src="../js/cookies.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/textScripts.js"></script>
+<script src="../js/canvas.js"></script>

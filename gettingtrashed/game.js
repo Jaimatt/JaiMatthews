@@ -95,16 +95,16 @@ function validate(a) {
     hidebutton4.style.display = 'none';
 
     var trashcheck = new Array ();
-        trashcheck[0] = '1';
-        trashcheck[1] = '2';
-        trashcheck[2] = '3';
-        trashcheck[3] = '3';
-        trashcheck[4] = '1';
-        trashcheck[5] = '1';
-        trashcheck[6] = '2';
-        trashcheck[7] = '2';
-        trashcheck[8] = '3';
-        trashcheck[9] = '3';
+    trashcheck[0] = '1';
+    trashcheck[1] = '2';
+    trashcheck[2] = '3';
+    trashcheck[3] = '3';
+    trashcheck[4] = '1';
+    trashcheck[5] = '1';
+    trashcheck[6] = '2';
+    trashcheck[7] = '2';
+    trashcheck[8] = '3';
+    trashcheck[9] = '3';
 
     round = round + 1
 

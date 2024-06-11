@@ -1,6 +1,10 @@
 ADJUSTMENTS: 
     Fix css for large screens.
 
+    article editor click effects broken
+
+    Go HOME hover effects broken
+
 CHANGES:
     Create a featured posts page.
 
@@ -15,14 +19,14 @@ DYNAMIC/HTTPS FEATURES:
 
 CONTENT:
     Portfolios
-        bookabench
-        getting trashed
+        bookabench DONE
+        getting trashed DONE
         game
         gravity
         horse
         balls DONE
         countdown DONE
-        password
+        password DONE
         artworks DONE
         article editior
 
@@ -37,3 +41,5 @@ CONTENT:
         Doctor Who? Games? I want to add some new stuff
 
     Laser Cutting Stuff, somehow.
+
+    Get Carli & Co. Back Up
