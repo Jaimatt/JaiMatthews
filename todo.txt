@@ -1,14 +1,14 @@
 ADJUSTMENTS:
     Fix css for large screens.
 
+    Change the popup animation for mobile devices
+
     Lower resolution of some images to allow for quick loading
 
 CHANGES:
     Create a featured posts page.
 
     Make TOYS AND GAMES the first page?
-
-    Clean up assets folder (it's a bloody mess!).
 
     Begin the website with an animation (the incomplete works of Jai Matthews) before continuing to the site.
 

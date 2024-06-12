@@ -1,5 +1,11 @@
 [
     {
+        "change" : "Removed Old Website",
+        "date" : "13 June 2024",
+        "description" : "Removed functionality for the old version website, which could previously be accessed from the 'Miscellaneous' section. It was inevitable.",
+        "important" : false
+    },
+    {
         "change" : "Portfolios & Projects",
         "date" : "12 June 2024",
         "description" : "As promised, the portfolio articles are finished and on the website. Click on a project's (i) button to read them. This is also available for the unreleased Canvas Castle game. I've also brought back the Carli & Co. website, just without its dynamic code. And the project 'Horse' has been removed from the website.",

@@ -6,7 +6,7 @@
         "href" : "mysterynight",
         "portfolio" : false,
         "category" : "_site",
-        "img" : "assets/tmn3.png",
+        "img" : "assets/thumbnails/tmn3.png",
         "img_top" : false
     },
     {
@@ -16,7 +16,7 @@
         "href" : "jairell",
         "portfolio" : false,
         "category" : "_site",
-        "img" : "assets/IMG_3616.jpg",
+        "img" : "assets/thumbnails/IMG_3616.jpg",
         "img_top" : true
     },
     {
@@ -27,7 +27,7 @@
         "href" : false,
         "portfolio" : "read/bookabench",
         "category" : "_site",
-        "img" : "assets/bab_tall.png",
+        "img" : "assets/thumbnails/bab_tall.png",
         "img_top" : false
     },
     {
@@ -38,7 +38,7 @@
         "href" : "cnc",
         "portfolio" : false,
         "category" : "_site",
-        "img" : "assets/vaccine.png",
+        "img" : "assets/thumbnails/vaccine.png",
         "img_top" : false
     },
     {
@@ -68,7 +68,7 @@
         "href" : false,
         "portfolio" : "read/canvascastle",
         "category" : "_game",
-        "img" : "assets/sky.png",
+        "img" : "assets/thumbnails/sky.png",
         "img_top" : false
     },
     {
@@ -98,7 +98,7 @@
         "href" : "countdown",
         "portfolio" : "read/countdown",
         "category" : "_game",
-        "img" : "assets/IMG_3613.jpg",
+        "img" : "assets/thumbnails/IMG_3613.jpg",
         "img_top" : false
     },
     {
@@ -108,7 +108,7 @@
         "href" : "tpc",
         "portfolio" : "read/password",
         "category" : "_game",
-        "img" : "assets/IMG_3612.jpg",
+        "img" : "assets/thumbnails/IMG_3612.jpg",
         "img_top" : false
     },
     {
@@ -118,7 +118,7 @@
         "href" : "read/rp",
         "portfolio" : false,
         "category" : "_text",
-        "img" : "assets/zelda.png",
+        "img" : "assets/thumbnails/zelda.png",
         "img_top" : false
     },
     {
@@ -128,7 +128,7 @@
         "href" : "read/hasntgotaname",
         "portfolio" : false,
         "category" : "_text",
-        "img" : "assets/kettle.png",
+        "img" : "assets/thumbnails/kettle.png",
         "img_top" : true
     },
     {
@@ -138,7 +138,7 @@
         "href" : "docs",
         "portfolio" : false,
         "category" : "_misc",
-        "img" : "assets/docs.jpg",
+        "img" : "assets/thumbnails/docs.jpg",
         "img_top" : false
     },
     {
@@ -148,7 +148,7 @@
         "href" : "art",
         "portfolio" : "read/artworks",
         "category" : "_misc",
-        "img" : "assets/illustrations/17.png",
+        "img" : "assets/thumbnails/17.png",
         "img_top" : false
     },
     {
@@ -158,17 +158,17 @@
         "href" : "read/articleEditor",
         "portfolio" : "read/editor",
         "category" : "_misc",
-        "img" : "assets/article.png",
+        "img" : "assets/thumbnails/article.png",
         "img_top" : false
     },
     {
         "title" : "Old Website",
         "subt" : "No longer in use",
         "date" : "Jun 2022 - Apr 2023",
-        "href" : "archive",
+        "href" : false,
         "portfolio" : false,
         "category" : "_misc",
-        "img" : "assets/icon-00.png",
+        "img" : "assets/thumbnails/icon-00.png",
         "img_top" : false
     }
 ]

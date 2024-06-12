@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
+    <link rel="icon" type="image/x-icon" href="../assets/icon.png">
 
     <link rel="stylesheet" href="../stylesheet.css">
     <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
@@ -18,27 +18,27 @@
 </head>
 <body>
     <canvas></canvas>
-    <a href="../index.html"><img src='../assets/iconR-01.png' class="icon small"></a>
+    <a href="../index.html"><img src='../assets/icon.png' class="icon small"></a>
     <br>
     <div class="article">
         <h1>Balls</h1>
         <h2>Jai Matthews ⋅ May 2023</h2>
         <p>'Balls' is an interactive animation named after the colourful balls that appear within it. It was created as a quick week-long project whilst I learnt how to use the HTML Canvas element and animate things on it using JavaScript.</p>
-        <img src="../assets/portfolio_balls_a.png" class="standard">
+        <img src="../assets/portfolio/balls_a.png" class="standard">
         <h6>Home Screen for "Balls" featuring 3 modes</h6>
         <p>To begin with, I learnt how the HTML Canvas actually works. I learnt that the canvas is a bitmap image with defined dimensions. I could draw things onto the canvas such as lines, rectangles, circles (called arcs), and images. For the purpose of this project, I chose to exclusively draw coloured circles. Code is required to begin the arc &amp; end it etc. and also to declare colour, position, whether it's filled in, and how much of the circle is shown.</p>
-        <img src="../assets/portfolio_balls_b.png" class="standard">
+        <img src="../assets/portfolio/balls_b.png" class="standard">
         <h6>Code for drawing balls</h6>
         <p>To keep track of the balls, I would use classes (or, in some cases, constructor functions) to define every ball's movement. Then I could create a new instance of this class whenever I wished and could add it to an array to keep track of it. A this.update() function would allow me to change the position of each ball by looping through every ball within the array.</p>
-        <img src="../assets/portfolio_balls_c.png" class="standard">
+        <img src="../assets/portfolio/balls_c.png" class="standard">
         <h6>Constructor function for balls.</h6>
         <p>With this base code, I changed the specifics of this.update() for each animation. For instance, in the first animation - shatter - this.update() included code to move in a constant direction and bounce when it hits the walls.</p>
-        <img src="../assets/portfolio_balls_d.png" class="standard">
+        <img src="../assets/portfolio/balls_d.png" class="standard">
         <h6>Code for SHATTER mode.</h6>
         <p>When the ball hits the wall it breaks into two smaller ones and continues the shatter every time it hits another wall. Another animation I created is 'Explosion', which uses gravity to create a firework-esque effect with sets of complementary colours. The third and final animation, 'Rainbow', features many small rainbow balls that grow with proximity to the mouse cursor.</p>
-        <img src="../assets/portfolio_balls_e.png" class="standard">
+        <img src="../assets/portfolio/balls_e.png" class="standard">
         <h6>Mode 2: Explosion</h6>
-        <img src="../assets/portfolio_balls_f.png" class="standard">
+        <img src="../assets/portfolio/balls_f.png" class="standard">
         <h6>Mode 3: Rainbow</h6>
         <p>Each animation also features a more intense mode toggleable using a button in the top left to make it extra-interesting.</p>
         <p>Balls is available to play with from your web browser on any device. Click <a href="../balls">here</a> is access it.</p>

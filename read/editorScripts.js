@@ -35,7 +35,7 @@ function save() {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="icon" type="image/x-icon" href="../assets/iconR-01.png">
+    <link rel="icon" type="image/x-icon" href="../assets/icon.png">
 
     <link rel="stylesheet" href="../stylesheet.css">
     <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
@@ -48,7 +48,7 @@ function save() {
 </head>
 <body>
     <canvas></canvas>
-    <a href="../index.html"><img src='../assets/iconR-01.png' class="icon small"></a>
+    <a href="../index.html"><img src='../assets/icon.png' class="icon small"></a>
     <br>
     <div class="article">
         ${articleInterior}
