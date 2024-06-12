@@ -1,5 +1,11 @@
 [
     {
+        "change" : "Portfolios & Projects",
+        "date" : "12 June 2024",
+        "description" : "As promised, the portfolio articles are finished and on the website. Click on a project's (i) button to read them. This is also available for the unreleased Canvas Castle game. I've also brought back the Carli & Co. website, just without its dynamic code. And the project 'Horse' has been removed from the website.",
+        "important" : false
+    },
+    {
         "change" : "HTTPS Editing",
         "date" : "1 June 2024",
         "description" : "Using a live server, I can now write code that ordinarily only works with HTTPs including cookies and fetch requests. Using this, a cookie bug was fixed so that every page on the site remembers the colour theme. Also, most data is now stored as JSON files for ease.",

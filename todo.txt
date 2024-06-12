@@ -24,7 +24,7 @@ CONTENT:
         bookabench DONE
         getting trashed DONE
         game
-        gravity
+        gravity DONE
         horse
         balls DONE
         countdown DONE

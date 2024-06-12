@@ -25,7 +25,7 @@
         "date" : "2022",
         "href_old" : "https://bookabench.jaimatthews.cf/",
         "href" : false,
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/bookabench",
         "category" : "_site",
         "img" : "assets/bab_tall.png",
         "img_top" : false
@@ -35,7 +35,7 @@
         "subt" : "Created by Jai Matthews & Mark Gurney",
         "date" : "2021",
         "href_old" : "https://carliandco.cf/",
-        "href" : false,
+        "href" : "cnc",
         "portfolio" : false,
         "category" : "_site",
         "img" : "assets/vaccine.png",
@@ -46,7 +46,7 @@
         "subt" : "Created by Jai Matthews & Tyrell Carli",
         "date" : "2021",
         "href" : "gettingtrashed",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/gettingtrashed",
         "category" : "_site",
         "img" : "gettingtrashed/assets/image.jpg",
         "img_top" : false
@@ -62,11 +62,11 @@
         "img_top" : false
     },
     {
-        "title" : "Untitled Game",
+        "title" : "Canvas Castle",
         "subt" : "JS Platformer",
         "date" : "Coming Soon",
         "href" : false,
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/canvascastle",
         "category" : "_game",
         "img" : "assets/sky.png",
         "img_top" : false
@@ -76,19 +76,9 @@
         "subt" : "Physics Simulation",
         "date" : "Oct 2023",
         "href" : "gravity",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/gravity",
         "category" : "_game",
         "img" : "gravity/assets/gi1.png",
-        "img_top" : true
-    },
-    {
-        "title" : "Horse",
-        "subt" : "Web-Based game",
-        "date" : "Coming Soon",
-        "href" : false,
-        "portfolio" : "read/portfoliocomingsoon",
-        "category" : "_game",
-        "img" : "assets/horse.png",
         "img_top" : true
     },
     {
@@ -96,7 +86,7 @@
         "subt" : "HTML Canvas demonstration",
         "date" : "May 2023",
         "href" : "balls",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/balls",
         "category" : "_game",
         "img" : "balls/shatter.png",
         "img_top" : false
@@ -106,7 +96,7 @@
         "subt" : "Generates custom countdowns",
         "date" : "Mar 2023",
         "href" : "countdown",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/countdown",
         "category" : "_game",
         "img" : "assets/IMG_3613.jpg",
         "img_top" : false
@@ -116,7 +106,7 @@
         "subt" : "Javascript account system",
         "date" : "Mar 2022",
         "href" : "tpc",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/password",
         "category" : "_game",
         "img" : "assets/IMG_3612.jpg",
         "img_top" : false
@@ -156,7 +146,7 @@
         "subt" : "Landscape & other artworks.",
         "date" : "Dec 2020 - Present",
         "href" : "art",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/artworks",
         "category" : "_misc",
         "img" : "assets/illustrations/17.png",
         "img_top" : false
@@ -166,7 +156,7 @@
         "subt" : "Makes site's written documents.",
         "date" : "31 Dec 2023",
         "href" : "read/articleEditor",
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/editor",
         "category" : "_misc",
         "img" : "assets/article.png",
         "img_top" : false
