@@ -1,14 +1,12 @@
-ADJUSTMENTS: 
+ADJUSTMENTS:
     Fix css for large screens.
 
-    article editor click effects broken
-
-    Go HOME hover effects broken
-
-    Lower resolution of some images to allow for quick loading :<
+    Lower resolution of some images to allow for quick loading
 
 CHANGES:
     Create a featured posts page.
+
+    Make TOYS AND GAMES the first page?
 
     Clean up assets folder (it's a bloody mess!).
 
@@ -17,21 +15,9 @@ CHANGES:
 DYNAMIC/HTTPS FEATURES:
     (long term) create and use a content management system.
 
-    HEADER
+    Header
 
 CONTENT:
-    Portfolios
-        bookabench DONE
-        getting trashed DONE
-        game
-        gravity DONE
-        horse
-        balls DONE
-        countdown DONE
-        password DONE
-        artworks DONE
-        article editior DONE
-
     Balls 2 (working title)
 
     Canvas Castle
@@ -43,5 +29,3 @@ CONTENT:
         Doctor Who? Games? I want to add some new stuff
 
     Laser Cutting Stuff, somehow.
-
-    Get Carli & Co. Back Up
