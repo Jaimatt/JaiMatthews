@@ -7,7 +7,8 @@
         "portfolio" : false,
         "category" : "_site",
         "img" : "assets/thumbnails/tmn3.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "The JaiRell Experience",
@@ -17,7 +18,8 @@
         "portfolio" : false,
         "category" : "_site",
         "img" : "assets/thumbnails/IMG_3616.jpg",
-        "img_top" : true
+        "img_top" : true,
+        "featured" : false
     },
     {
         "title" : "Book-a-Bench",
@@ -28,7 +30,8 @@
         "portfolio" : "read/bookabench",
         "category" : "_site",
         "img" : "assets/thumbnails/bab_tall.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : true
     },
     {
         "title" : "Carli & Co.",
@@ -39,7 +42,8 @@
         "portfolio" : false,
         "category" : "_site",
         "img" : "assets/thumbnails/vaccine.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Getting Trashed",
@@ -49,7 +53,8 @@
         "portfolio" : "read/gettingtrashed",
         "category" : "_site",
         "img" : "gettingtrashed/assets/image.jpg",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Stress Detector",
@@ -59,7 +64,8 @@
         "portfolio" : false,
         "category" : "_site",
         "img" : "stressdetector/Assets/SIK_Arduino_Uno.jpg",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Canvas Castle",
@@ -69,7 +75,8 @@
         "portfolio" : "read/canvascastle",
         "category" : "_game",
         "img" : "assets/thumbnails/sky.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : true
     },
     {
         "title" : "Gravity",
@@ -79,7 +86,8 @@
         "portfolio" : "read/gravity",
         "category" : "_game",
         "img" : "gravity/assets/gi1.png",
-        "img_top" : true
+        "img_top" : true,
+        "featured" : false
     },
     {
         "title" : "Balls",
@@ -89,7 +97,8 @@
         "portfolio" : "read/balls",
         "category" : "_game",
         "img" : "balls/shatter.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : true
     },
     {
         "title" : "Countdown Generator",
@@ -99,7 +108,8 @@
         "portfolio" : "read/countdown",
         "category" : "_game",
         "img" : "assets/thumbnails/IMG_3613.jpg",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "The Password Company",
@@ -109,7 +119,8 @@
         "portfolio" : "read/password",
         "category" : "_game",
         "img" : "assets/thumbnails/IMG_3612.jpg",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Women in Video Games",
@@ -119,7 +130,8 @@
         "portfolio" : false,
         "category" : "_text",
         "img" : "assets/thumbnails/zelda.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Evil Villain",
@@ -129,7 +141,8 @@
         "portfolio" : false,
         "category" : "_text",
         "img" : "assets/thumbnails/kettle.png",
-        "img_top" : true
+        "img_top" : true,
+        "featured" : false
     },
     {
         "title" : "Documents",
@@ -139,7 +152,8 @@
         "portfolio" : false,
         "category" : "_misc",
         "img" : "assets/thumbnails/docs.jpg",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Artworks",
@@ -149,7 +163,8 @@
         "portfolio" : "read/artworks",
         "category" : "_misc",
         "img" : "assets/thumbnails/17.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : true
     },
     {
         "title" : "Article Editor",
@@ -159,7 +174,8 @@
         "portfolio" : "read/editor",
         "category" : "_misc",
         "img" : "assets/thumbnails/article.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     },
     {
         "title" : "Old Website",
@@ -169,6 +185,7 @@
         "portfolio" : false,
         "category" : "_misc",
         "img" : "assets/thumbnails/icon-00.png",
-        "img_top" : false
+        "img_top" : false,
+        "featured" : false
     }
 ]

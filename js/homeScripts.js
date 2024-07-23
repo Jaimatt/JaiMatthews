@@ -9,32 +9,48 @@ function retrieve(url) {
 }
 
 function loadPage(links) {
-    for (i = 0; i < links.length; i++) {
-        if (links[i].img_top) {
-            img_top = "top"
-        } else {
-            img_top = ""
-        }
-        hypertext = `<div onclick="highlight(this)" class="link ${links[i].category}" 
-            data-href="${links[i].href}"
-            data-linkid="${i}"
-            data-portfolio="${links[i].portfolio}"
-        >
-            <img src="${links[i].img}" class="${img_top}">
-            <div class="topText">
-                <h1>${links[i].title}</h1>
-                <p>${links[i].subt}</p>
-            </div>
-            <p class="date">${links[i].date}</p>
-        </div>`
-        document.querySelector('.linkBox').innerHTML += hypertext
+    iterator = 0;
+    for (x of links) {
+        document.querySelector('.linkBox').innerHTML += projectHTML(x,iterator++)
+        
+        // Code for Featured Items:
+
+        // if (x.featured) {
+        //     x.category = navCategories[0]
+        //     document.querySelector('.linkBox').innerHTML += projectHTML(x,iterator++)
+        // }
     }
+}
+
+function projectHTML(linkInfo,id) {
+    if (linkInfo.img_top) {
+        img_top = "top"
+    } else {
+        img_top = ""
+    }
+    hypertext = `<div onclick="highlight(this)" class="link ${linkInfo.category}" 
+        data-href="${linkInfo.href}"
+        data-linkid="${id}"
+        data-portfolio="${linkInfo.portfolio}"
+    >
+        <img src="${linkInfo.img}" class="${img_top}">
+        <div class="topText">
+            <h1>${linkInfo.title}</h1>
+            <p>${linkInfo.subt}</p>
+        </div>
+        <p class="date">${linkInfo.date}</p>
+    </div>`
+    return hypertext
 }
 
 // other shit
 
 navCategories = ['_site','_game','_text','_misc']
 ncText = ['Websites','Toys & Games','Writing','Miscellaneous']
+
+// navCategories = ['_featured','_game','_site','_misc']
+// ncText = ['Featured','Toys & Games','Websites','Miscellaneous']
+
 
 function nav(index) {
     if (document.querySelectorAll('.alink').length > 0) {
@@ -47,18 +63,19 @@ function nav(index) {
     }
     nbItems[index].classList.add('selected')
 
-    projectLinks = document.getElementsByClassName('link')
-
-    j = 0
-    for (i = 0; i < projectLinks.length; i++) {
-        if (projectLinks[i].classList.contains(navCategories[index])) {
-            projectLinks[i].style.animationDelay = j / 10 + 's'
-            projectLinks[i].style.display = 'inline-block'
-            j += 1
+    projectLinks = document.getElementsByClassName('link')    
+        
+    iterator = 0
+    for (link of projectLinks) {
+        if (link.classList.contains(navCategories[index])) {
+            link.style.animationDelay = iterator / 10 + 's'
+            link.style.display = 'inline-block'
+            iterator++
         } else {
-            projectLinks[i].style.display = 'none'
+            link.style.display = 'none'
         }
     }
+
 
     history.replaceState({}, null, 'index.html?page='+index)
     document.getElementById('title').innerText = ncText[index] + " | Jai Matthews"
@@ -72,7 +89,7 @@ window.addEventListener('resize', function(event){
 function sizeChange() {
     nbItems = document.getElementsByClassName('nbItem')
     sTitle = document.getElementById('secondary')
-    ncIcons = ['language','casino','edit','more_horiz']
+    ncIcons = ['star','casino','edit','more_horiz']
 
     if (window.innerWidth < 500) {
         index = 0

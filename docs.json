@@ -6,12 +6,6 @@
         "download" : false
     },
     {
-        "title" : "Books Spreadsheet",
-        "link" : "docs/books.html",
-        "icon" : "excel",
-        "download" : false
-    },
-    {
         "title" : "Super Mario Odyssey Timer",
         "link" : "docs/smo.html",
         "icon" : "code",
@@ -26,12 +20,6 @@
     {
         "title" : "Book-a-Bench Embed",
         "link" : "bookabench.html",
-        "icon" : "code",
-        "download" : false
-    },
-    {
-        "title" : "Carli & Co. Embed",
-        "link" : "cnc.html",
         "icon" : "code",
         "download" : false
     },
@@ -69,6 +57,30 @@
         "title" : "Doctor Who Episode List",
         "link" : "docs/doctorwho.html",
         "icon" : "excel",
+        "download" : false
+    },
+    {
+        "title" : "Ferris Wheel Instructions",
+        "link" : "docs/ferris_instructions.pdf",
+        "icon" : "pdf",
+        "download" : false
+    },
+    {
+        "title" : "TARDIS Instructions",
+        "link" : "docs/tardis_instructions.pdf",
+        "icon" : "pdf",
+        "download" : false
+    },
+    {
+        "title" : "Birds Instructions",
+        "link" : "docs/birds_instructions.pdf",
+        "icon" : "pdf",
+        "download" : false
+    },
+    {
+        "title" : "Sunflower Instructions",
+        "link" : "docs/flower_instructions.pdf",
+        "icon" : "pdf",
         "download" : false
     }
 ]
