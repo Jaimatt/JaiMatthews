@@ -68,7 +68,7 @@ function changeImg(me,i,full) {
     }
 }
 
-const accessTokenEnc = 'SUdRV1JOWkFHdzJSemt4V0VGdk9WVXpRM0J4T0dkUWJ6VTNTQzFvTlZBNVVWWTBaQTFoWVVHcGZhemcyV1dOclJtMVZNbGhPVVVOdmMzUkZRekUwZGpZNU9IaGplWE5mZDI1MlpBbVkwZUVFdE1FbFZWVWhKWkFXdzRUMnhKUVhCVFltSnBkME13WDB4NFVYcDZSekZGTjB3ME0yNVBja0ZXT1VFWkQ=';
+const accessTokenEnc = 'SUdRV1JOYUhGVE0yeFVZVWhpTmxsT1NFRkVSR2hEWXpKQ1dFOTZSazFOZG1SRFpBWEUwYVVwWkFkMkZ0Um10MVVDMXhTa2hwZDBSV1pBRE5SUWpSbVlYUmpXalpBQ2MySjZha0o1Y1ZRNU5qVmhlbEJKVDFreFJqSlZOMjFJUTNSMlIxbDVjM0JEWkFVeEVjbTVpZGxCdWMzVnlkWEUwTFVoaVluTVpE';
 const apiUrl = `https://graph.instagram.com/v12.0/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{media_type,media_url,thumbnail_url}&access_token=${window.atob(accessTokenEnc)}`;
 
 mediaBox = document.querySelector('.media')

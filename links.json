@@ -145,6 +145,17 @@
         "featured" : false
     },
     {
+        "title" : "Etsy Store",
+        "subt" : "My new laser-cutting etsy store.",
+        "date" : "2024 - Present",
+        "href" : "https://jaimandela.etsy.com/",
+        "portfolio" : false,
+        "category" : "_misc",
+        "img" : "assets/thumbnails/etsyA.jpg",
+        "img_top" : false,
+        "featured" : true
+    },
+    {
         "title" : "Documents",
         "subt" : "Miscellaneous online documents",
         "date" : "Jun 2020 - Present",
@@ -156,11 +167,11 @@
         "featured" : false
     },
     {
-        "title" : "Artworks",
-        "subt" : "Landscape & other artworks.",
-        "date" : "Dec 2020 - Present",
-        "href" : "art",
-        "portfolio" : "read/artworks",
+        "title" : "Instagram Feed",
+        "subt" : "Display of Instagram posts.",
+        "date" : "2020 - Present",
+        "href" : "instagram",
+        "portfolio" : "read/instagram",
         "category" : "_misc",
         "img" : "assets/thumbnails/17.png",
         "img_top" : false,

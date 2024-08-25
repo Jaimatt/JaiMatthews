@@ -1,5 +1,11 @@
 [
     {
+        "change" : "Changes to Links",
+        "date" : "25 August 2024",
+        "description" : "Added link to new Etsy store in the 'Miscellaneous' section. Also, generalised the 'artworks' section the 'instagram pages' section.",
+        "important" : false
+    },
+    {
         "change" : "Removed Old Website",
         "date" : "13 June 2024",
         "description" : "Removed functionality for the old version website, which could previously be accessed from the 'Miscellaneous' section. It was inevitable.",
