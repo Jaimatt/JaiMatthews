@@ -39,10 +39,10 @@ document.body.innerHTML = `
 function darkUpdate() {
 
     if (document.querySelector('.switch').querySelector('input').checked) {
-        document.querySelector('#colourTheme').href = `${goHomeEr}themes/darkMain.css`
+        document.querySelector('#colourTheme').href = `/${goHomeEr}themes/darkMain.css`
         setCookie('dark','true')
     } else {
-        document.querySelector('#colourTheme').href = `${goHomeEr}themes/lightMain.css`
+        document.querySelector('#colourTheme').href = `/${goHomeEr}themes/lightMain.css`
         setCookie('dark','false')
     }
 }
