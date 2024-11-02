@@ -33,6 +33,7 @@
         "category" : "_site",
         "img" : "assets/thumbnails/bab_tall.png",
         "img_top" : false,
+        "listed" : true,
         "featured" : true
     },
     {
@@ -81,6 +82,7 @@
         "category" : "_game",
         "img" : "assets/thumbnails/sky.png",
         "img_top" : false,
+        "listed" : true,
         "featured" : true
     },
     {
@@ -104,6 +106,7 @@
         "category" : "_game",
         "img" : "balls/shatter.png",
         "img_top" : false,
+        "listed" : true,
         "featured" : true
     },
     {
@@ -163,6 +166,7 @@
         "category" : "_misc",
         "img" : "assets/thumbnails/etsy.jpg",
         "img_top" : false,
+        "listed" : true,
         "featured" : true
     },
     {
@@ -186,6 +190,7 @@
         "category" : "_misc",
         "img" : "assets/thumbnails/17.png",
         "img_top" : false,
+        "listed" : true,
         "featured" : true
     },
     {
