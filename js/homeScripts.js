@@ -11,6 +11,7 @@ function retrieve(url) {
 function loadPage(links) {
     iterator = 0;
     for (x of links) {
+        if (!x.listed) continue
         document.querySelector('.linkBox').innerHTML += projectHTML(x,iterator++)
         
         // Code for Featured Items:

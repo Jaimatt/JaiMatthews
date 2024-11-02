@@ -1,15 +1,15 @@
-if (window.location.href.includes('/read/')) {
-    goHomeEr = '../'
-} else {
-    goHomeEr = ''
-}
+// if (window.location.href.includes('/read/')) {
+//     goHomeEr = '../'
+// } else {
+//     goHomeEr = ''
+// }
 
 footer = `
 <div class="footer">
     <div class="bunch">
-        <a href="${goHomeEr}read/changelog">Change Log</a>
-        <a href="${goHomeEr}read/terms">Terms & Conditions</a>
-        <a href="${goHomeEr}read/contact">Contact</a>
+        <a href="/read/changelog">Change Log</a>
+        <a href="/read/terms">Terms & Conditions</a>
+        <a href="/read/contact">Contact</a>
         <a href="https://www.instagram.com/jaimatthews1/" target="_blank">Instagram</a>
     </div>
     <div class="bunch bunch2">
@@ -39,10 +39,10 @@ document.body.innerHTML = `
 function darkUpdate() {
 
     if (document.querySelector('.switch').querySelector('input').checked) {
-        document.querySelector('#colourTheme').href = `/${goHomeEr}themes/darkMain.css`
+        document.querySelector('#colourTheme').href = `/themes/darkMain.css`
         setCookie('dark','true')
     } else {
-        document.querySelector('#colourTheme').href = `/${goHomeEr}themes/lightMain.css`
+        document.querySelector('#colourTheme').href = `/themes/lightMain.css`
         setCookie('dark','false')
     }
 }
