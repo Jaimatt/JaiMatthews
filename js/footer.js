@@ -8,7 +8,7 @@ footer = `
 <div class="footer">
     <div class="bunch">
         <a href="/read/changelog">Change Log</a>
-        <a href="/read/terms">Terms & Conditions</a>
+        <a href="/read/about">About Site</a>
         <a href="/read/contact">Contact</a>
         <a href="https://www.instagram.com/jaimatthews1/" target="_blank">Instagram</a>
     </div>

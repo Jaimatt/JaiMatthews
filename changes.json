@@ -1,8 +1,14 @@
 [
     {
+        "change" : "About Site",
+        "date" : "16 December 2024",
+        "description" : "The footer page 'terms and conditions' has been replaced with a more sensible 'about' page featuring more useful information.",
+        "important" : false
+    },
+    {
         "change" : "Welcome & Featured Projects",
         "date" : "15 December 2024",
-        "description" : "When loading up the website, you are greeted to an animated welcome, then taken to a 'Featured Projects' page. This is the new home page, and from here you can navigate to the existing home page.",
+        "description" : "When loading up the website, you are greeted to an animated welcome, then taken to a 'Featured Projects' page. This is the new home page, and from here you can navigate to the old home page.",
         "important" : false
     },
     {

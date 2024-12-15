@@ -13,15 +13,14 @@ function loadPage(site,links) {
 }
 
 function projectHTML(site,linkInfo,id) {
-    if (linkInfo.img_top) {
-        img_top = "top"
-    } else {
-        img_top = ""
-    }
-    if (linkInfo.href != '') { openButton = `
-        <a href="${linkInfo.href}"><p>Open</p></a>` } else {
-            openButton = `<a title="Unavailable"><p class="notLinked">Open</p></a>`
-        }
+    if (linkInfo.img_top) img_top = "top"
+    else img_top = ""
+
+    if (linkInfo.href != '') openButton = `<a href="${linkInfo.href}"><p>Open</p></a>`
+    else openButton = `<a title="Unavailable"><p class="notLinked">Open</p></a>`
+
+    iIcon = ""
+    if (linkInfo.portfolio) iIcon = `<a href=${linkInfo.portfolio}><p class="square"><i class="fa fa-info" aria-hidden="true"></i></p></a>`
     if (site == "all") {
         hypertext = `<div onclick="highlight(this)" class="link ${linkInfo.category}" 
             data-href="${linkInfo.href}"
@@ -43,10 +42,7 @@ function projectHTML(site,linkInfo,id) {
                 <p>${linkInfo.subt}</p>
             </div>
             <p class="date">${linkInfo.date}</p>
-            <div id="buttons" class="linkButton linkButtonShrunk">
-                <a href=${linkInfo.portfolio}><p class="square"><i class="fa fa-info" aria-hidden="true"></i></p></a>
-                ${openButton}
-            </div>
+            <div id="buttons" class="linkButton linkButtonShrunk">${iIcon}${openButton}</div>
         </div>`
     }
     return hypertext
@@ -118,7 +114,7 @@ function showAllLinks() {
 function sizeChange() {
     nbItems = document.getElementsByClassName('nbItem')
     sTitle = document.getElementById('secondary')
-    ncIcons = ['star','casino','edit','more_horiz']
+    ncIcons = ['casino','language','more_horiz','edit']
 
     if (window.innerWidth < 500) {
         index = 0
