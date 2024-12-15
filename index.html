@@ -51,7 +51,7 @@
 <script src="js/homeScripts.js"></script>
 <script src="js/canvas.js"></script>
 <script>
-    if(!getCookie("explored")) {
+    if(getCookie("explored") != 'true') {
         landing()
     } else {
         touchdown()
