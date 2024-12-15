@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">All Projects | Jai Matthews</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <canvas></canvas>
+    <a href=""><img src='assets/icon.png' class="icon"></a><br>
+    <div class="heading">
+        <p>The incomplete works of Jai Matthews.</p>
+    </div>
+    <div class="navbar">
+        <li onclick="nav(0)" id="nav0" class="nbItem"></li>
+        <li onclick="nav(1)" id="nav1" class="nbItem"></li>
+        <li onclick="nav(2)" id="nav2" class="nbItem"></li>
+        <li onclick="nav(3)" id="nav3" class="nbItem"></li>
+    </div>
+    <p class="nbSecondary" id="secondary">Websites</p>
+    <div class="linkBox"></div>
+    <a href="index.html">
+        <button class="moreProjects"><i class="fa fa-arrow-left"></i> Return to Featured Projects</button>
+    </a>
+    <div class="fadeOut"></div>
+</body>
+<footer></footer>
+</html>
+<script src="js/cookies.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/homeScripts.js"></script>
+<script src="js/canvas.js"></script>
+<script>
+    retrieve("all","links.json")
+</script>

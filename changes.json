@@ -1,5 +1,11 @@
 [
     {
+        "change" : "Welcome & Featured Projects",
+        "date" : "15 December 2024",
+        "description" : "When loading up the website, you are greeted to an animated welcome, then taken to a 'Featured Projects' page. This is the new home page, and from here you can navigate to the existing home page.",
+        "important" : false
+    },
+    {
         "change" : "Changes to Links",
         "date" : "25 August 2024",
         "description" : "Added link to new Etsy store in the 'Miscellaneous' section. Also, generalised the 'artworks' section, ranaming it to the 'instagram posts' section.",

@@ -24,6 +24,7 @@ body {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     min-height: calc(100vh - 50px);
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -31,6 +32,7 @@ body {
 p { color: var(--text);}
 .icon {
     width: 100px;
+    transition-duration: 500ms;
 }
 .icon.small {
     width: 50px;
@@ -45,6 +47,7 @@ p { color: var(--text);}
 }
 .wholeDocument {
     flex: 1;
+    margin-bottom: 75px;
 }
 .footer {
     background-color: var(--main);
@@ -173,7 +176,7 @@ input:checked + .slider:before {
     animation-duration: 1s;
     transition-duration: 300ms;
     user-select: none;
-
+    margin-bottom: 30px;
 
 }
 .nbItem {
@@ -210,15 +213,63 @@ input:checked + .slider:before {
     font-size: 20px;
     color: var(--text);
 }
+.moreProjects {
+    padding: 5px;
+    height: 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: var(--main);
+    text-align: center;
+    color: white;
+    transition-duration: 300ms;
+    outline: none;
+    border: none;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+.moreProjects:hover {
+    background-color: var(--mainLight);
+    transform: translateY(-5px);
+}
 .linkBox {
-    margin-top: 30px;
-    padding: 10px;
-    margin-bottom: 30px;
+    /* margin-top: 30px; */
+    padding: 0px 10px;
+    margin-bottom: 20px;
+}
+.homeCenter {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    margin-top: -50px;
+}
+.featuredTitle {
+    color: var(--main);
+    font-size: 25px;
+    font-weight: 400;
+}
+.featuredLinkBox {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 0px;
+}
+.featuredWindow {
+    background-color: var(--foreground);
+    border-radius: 30px;
+    padding: 20px 20px;
+    width: 800px;
+    max-width: 95%;
+    margin-top: 20px;
 }
 
 @keyframes fadeIn {
     0% { opacity: 0; transform: translate(0px, -20px); }
     100% { opacity: 1; transform: translate(0px, 0px); }
+}
+
+.fadeIn {
+    animation: fadeIn 2s;
+    animation-fill-mode:backwards;
 }
 
 .link {
@@ -239,11 +290,8 @@ input:checked + .slider:before {
     animation: fadeIn 1s;
     animation-fill-mode:backwards;
     user-select: none;
-
-
-
 }
-.link img, .alink img {
+.link img, .alink img, .flink img {
     position: absolute;
     filter: opacity(0.5) brightness(1.1);
     top: 50%;
@@ -253,14 +301,19 @@ input:checked + .slider:before {
     image-rendering: pixelated;
     transition-duration: 300ms;
 }
-.link img.top, .alink img.top {
+.flink img {
+    width: 300px;
+    object-fit: cover;
+    height: 400px;
+}
+.link img.top, .alink img.top, .flink img.top {
     top: 0;
     transform: translateY(0);
 }
-.link .topText, .alink .topText {
+.link .topText, .alink .topText, .flink .topText {
     position: absolute;
 }
-.link h1, .alink h1 {
+.link h1, .alink h1, .flink h1 {
     padding-left: 25px;
     font-size: 17px;
     margin-top: 20px;
@@ -268,7 +321,7 @@ input:checked + .slider:before {
     transition-duration: 300ms;
     color: var(--text);
 }
-.link p:not(.linkButton p), .alink p:not(.linkButton p) {
+.link p:not(.linkButton p), .alink p:not(.linkButton p), .flink p:not(.linkButton p) {
     font-size: 14px;
     margin-top: 0;
     padding-left: 25px;
@@ -276,7 +329,7 @@ input:checked + .slider:before {
     transition-duration: 300ms;
     color: var(--text);
 }
-.link .date, .alink .date {
+.link .date, .alink .date, .flink .date {
     position: absolute;
     bottom: 0;
     text-align: right;
@@ -347,7 +400,28 @@ input:checked + .slider:before {
 .alink:not(.shrinking) .date {
     padding-right: 28px;
 }
-
+.flink {
+    max-width: 300px;
+    width: calc(100vw - 40px);
+    height: 400px;
+    background-color: var(--foreground);
+    margin: 5px;
+    display: none;
+    border-radius: 30px;
+    vertical-align: middle;
+    text-align: left;
+    position: relative;
+    transition-duration: 300ms;
+    overflow: hidden;
+    color: var(--text);
+    animation: fadeIn 1s;
+    animation-fill-mode:backwards;
+    user-select: none;
+}
+.flink:hover {
+    box-shadow: var(--mainLight) 0px 7px 0px;
+    transform: translate(0px, -7px);
+}
 .linkButton {    
     position: absolute;
     bottom: 0;
@@ -394,6 +468,18 @@ input:checked + .slider:before {
     transform: translate(0px,-7px);
     /* box-shadow: #000000 0px 5px 5px; */
 }
+.linkButtonShrunk p {
+    line-height: 20px;
+    height: 20px;
+    font-size: 14px;
+    width: 60px;
+}
+.linkButtonShrunk p.square {
+    width: 20px;
+}
+
+
+
 @keyframes fadeAcross {
     0% { opacity: 0; transform: translate(20px, 0px); }
     100% { opacity: 1; transform: translate(0px, 0px); }

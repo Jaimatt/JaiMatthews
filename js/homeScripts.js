@@ -1,53 +1,80 @@
 // load media
 
-retrieve("links.json")
-
-function retrieve(url) {
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => { loadPage(data); goToUrlParam() })
-}
-
-function loadPage(links) {
+function loadPage(site,links) {
+    console.log(links)
     iterator = 0;
     for (x of links) {
         if (!x.listed) continue
-        document.querySelector('.linkBox').innerHTML += projectHTML(x,iterator++)
-        
-        // Code for Featured Items:
-
-        // if (x.featured) {
-        //     x.category = navCategories[0]
-        //     document.querySelector('.linkBox').innerHTML += projectHTML(x,iterator++)
-        // }
+        if (site == "all" || x.featured) {
+            document.querySelector('.linkBox').innerHTML += projectHTML(site,x,iterator++)
+        }
+        if (site == "home") showAllLinks()
     }
 }
 
-function projectHTML(linkInfo,id) {
+function projectHTML(site,linkInfo,id) {
     if (linkInfo.img_top) {
         img_top = "top"
     } else {
         img_top = ""
     }
-    hypertext = `<div onclick="highlight(this)" class="link ${linkInfo.category}" 
-        data-href="${linkInfo.href}"
-        data-linkid="${id}"
-        data-portfolio="${linkInfo.portfolio}"
-    >
-        <img src="${linkInfo.img}" class="${img_top}">
-        <div class="topText">
-            <h1>${linkInfo.title}</h1>
-            <p>${linkInfo.subt}</p>
-        </div>
-        <p class="date">${linkInfo.date}</p>
-    </div>`
+    if (linkInfo.href != '') { openButton = `
+        <a href="${linkInfo.href}"><p>Open</p></a>` } else {
+            openButton = `<a title="Unavailable"><p class="notLinked">Open</p></a>`
+        }
+    if (site == "all") {
+        hypertext = `<div onclick="highlight(this)" class="link ${linkInfo.category}" 
+            data-href="${linkInfo.href}"
+            data-linkid="${id}"
+            data-portfolio="${linkInfo.portfolio}"
+        >
+            <img src="${linkInfo.img}" class="${img_top}">
+            <div class="topText">
+                <h1>${linkInfo.title}</h1>
+                <p>${linkInfo.subt}</p>
+            </div>
+            <p class="date">${linkInfo.date}</p>
+        </div>`
+    } else if (site == "home") {
+        hypertext = `<div class="flink">
+            <img src="${linkInfo.img}" class="${img_top}">
+            <div class="topText">
+                <h1>${linkInfo.title}</h1>
+                <p>${linkInfo.subt}</p>
+            </div>
+            <p class="date">${linkInfo.date}</p>
+            <div id="buttons" class="linkButton linkButtonShrunk">
+                <a href=${linkInfo.portfolio}><p class="square"><i class="fa fa-info" aria-hidden="true"></i></p></a>
+                ${openButton}
+            </div>
+        </div>`
+    }
     return hypertext
+}
+
+// animate the landing
+
+function landing() {
+    document.querySelector('.footer').style.display = 'none'
+    document.querySelector('.featuredWindow').style.display = 'none'
+    setCookie("explored",false)
+}
+
+function touchdown() {
+    document.querySelector('.homeCenter').classList.remove('homeCenter')
+    document.querySelector('.footer').style.display = 'inline-block'
+    document.querySelector('.featuredWindow').style.display = 'inline-block'
+    document.querySelector('#linkIn').style.display = 'none'
+    document.querySelector('#incomplete').style.display = 'none'
+    document.querySelector('.icon').classList.add('small')
+    retrieve("home","links.json")
+    setCookie("explored",true)
 }
 
 // other shit
 
-navCategories = ['_site','_game','_text','_misc']
-ncText = ['Websites','Toys & Games','Writing','Miscellaneous']
+navCategories = ['_game','_site','_misc','_text']
+ncText = ['Toys & Games','Websites','Miscellaneous','Writing']
 
 // navCategories = ['_featured','_game','_site','_misc']
 // ncText = ['Featured','Toys & Games','Websites','Miscellaneous']
@@ -64,7 +91,7 @@ function nav(index) {
     }
     nbItems[index].classList.add('selected')
 
-    projectLinks = document.getElementsByClassName('link')    
+    projectLinks = document.getElementsByClassName('link')
         
     iterator = 0
     for (link of projectLinks) {
@@ -78,14 +105,15 @@ function nav(index) {
     }
 
 
-    history.replaceState({}, null, 'index.html?page='+index)
+    history.replaceState({}, null, 'projects.html?page='+index)
     document.getElementById('title').innerText = ncText[index] + " | Jai Matthews"
     sizeChange()
 }
 
-window.addEventListener('resize', function(event){
-    sizeChange()
-});
+function showAllLinks() {
+    projectLinks = document.getElementsByClassName('flink')
+    for (link of projectLinks) link.style.display = 'inline-block'
+}
   
 function sizeChange() {
     nbItems = document.getElementsByClassName('nbItem')
@@ -111,14 +139,14 @@ function sizeChange() {
         sTitle.style.display = 'none'
     }
 }
-sizeChange()
 
 function highlight(me) {
     if (document.querySelectorAll('.alink').length > 0) {
         escape()
     }
 
-    document.querySelector('.navbar').style.pointerEvents = 'none'
+    try { document.querySelector('.navbar').style.pointerEvents = 'none' }
+    catch{}
 
     me.classList.add('invis')
     popup = me.cloneNode(true)
@@ -161,7 +189,8 @@ function highlight(me) {
 }
 
 function lowlight(me) {
-    document.querySelector('.navbar').style.pointerEvents = 'unset'
+    try { document.querySelector('.navbar').style.pointerEvents = 'unset' }
+    catch{}
 
     me.style.height = '150px'
     me.style.boxShadow = 'none'
@@ -203,4 +232,21 @@ function goToUrlParam() {
     } else {
         nav(0)
     }
+}
+
+// get links
+
+function retrieve(site,url) {
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => { 
+            loadPage(site,data); 
+            if (site == "all") {
+                goToUrlParam() 
+                window.addEventListener('resize', function(event){
+                    sizeChange()
+                });
+                sizeChange()
+            }  
+        })
 }

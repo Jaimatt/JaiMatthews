@@ -20,23 +20,40 @@
 </head>
 <body>
     <canvas></canvas>
-    <a href=""><img src='assets/icon.png' class="icon"></a><br>
-    <div class="heading">
-        <p>The incomplete works of Jai Matthews.</p>
+    <div class="homeCenter">
+        <a href=""><img src='assets/icon.png' class="fadeIn icon"></a><br>
+        <div id="incomplete" class="fadeIn heading" style="animation-delay: 0.2s;">
+            <p>The incomplete works of Jai Matthews.</p>
+        </div>
+        <a class="fadeIn" style="animation-delay: 0.6s;" id="linkIn">
+            <button onclick="touchdown()" class="moreProjects">Explore <i class="fa fa-arrow-right"></i></button>
+        </a>
     </div>
-    <div class="navbar">
-        <li onclick="nav(0)" id="nav0" class="nbItem"></li>
-        <li onclick="nav(1)" id="nav1" class="nbItem"></li>
-        <li onclick="nav(2)" id="nav2" class="nbItem"></li>
-        <li onclick="nav(3)" id="nav3" class="nbItem"></li>
+
+    <div class="featuredWindow">
+        <h1 class="featuredTitle"><i class="fa fa-star"></i> Featured Projects</h1>
+        <div class="linkBox featuredLinkBox">
+
+
+
+
+
+        </div><br>
+        <a id="linkTo" href="projects.html">
+            <button class="moreProjects">See All Projects <i class="fa fa-arrow-right"></i></button>
+        </a>
     </div>
-    <p class="nbSecondary" id="secondary">Websites</p>
-    <div class="linkBox"></div>
     <div class="fadeOut"></div>
 </body>
-<footer></footer>
 </html>
 <script src="js/cookies.js"></script>
 <script src="js/footer.js"></script>
 <script src="js/homeScripts.js"></script>
 <script src="js/canvas.js"></script>
+<script>
+    if(!getCookie("explored")) {
+        landing()
+    } else {
+        touchdown()
+    }
+</script>
