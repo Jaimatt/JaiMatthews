@@ -1,5 +1,11 @@
 [
     {
+        "change" : "Return to Home Page",
+        "date" : "21 December 2024",
+        "description" : "When returning to the home page, you're now taken to either the home page or the featured page; whichever you were last on.",
+        "important" : false
+    },
+    {
         "change" : "About Site",
         "date" : "16 December 2024",
         "description" : "The footer page 'terms and conditions' has been replaced with a more sensible 'about' page featuring more useful information.",
@@ -14,7 +20,7 @@
     {
         "change" : "Changes to Links",
         "date" : "25 August 2024",
-        "description" : "Added link to new Etsy store in the 'Miscellaneous' section. Also, generalised the 'artworks' section, ranaming it to the 'instagram posts' section.",
+        "description" : "Added link to new Etsy store in the 'Miscellaneous' section. Also, generalised the 'artworks' page by ranaming it to the 'instagram posts' page.",
         "important" : false
     },
     {
@@ -26,7 +32,7 @@
     {
         "change" : "Portfolios & Projects",
         "date" : "12 June 2024",
-        "description" : "As promised, the portfolio articles are finished and on the website. Click on a project's (i) button to read them. This is also available for the unreleased Canvas Castle game. I've also brought back the Carli & Co. website, just without its dynamic code. And the project 'Horse' has been removed from the website.",
+        "description" : "As promised, the portfolio articles are finished and on the website. Click on a project's <i class='fa fa-info' aria-hidden='true'></i> button to read them. This is also available for the unreleased Canvas Castle game. I've also brought back the Carli & Co. website, just without its dynamic code. And the project 'Horse' has been removed from the website.",
         "important" : false
     },
     {
@@ -44,7 +50,7 @@
     {
         "change" : "Portfolio & Removals",
         "date" : "5 March 2024",
-        "description" : "Added a feature called 'Portfolio', where you can read information about many projects. Content is not yet available, but (i) button present for select projects. Additionally, Carli&Co and BookABench are no longer accessible due to hosting difficulties. Hopefully this is temporary.",
+        "description" : "Added a feature called 'Portfolio', where you can read information about many projects. Content is not yet available, but <i class='fa fa-info' aria-hidden='true'></i> button present for select projects. Additionally, Carli&Co and BookABench are no longer accessible due to hosting difficulties. Hopefully this is temporary.",
         "important" : false
     },
     {

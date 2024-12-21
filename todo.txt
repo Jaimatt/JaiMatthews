@@ -5,12 +5,10 @@ ADJUSTMENTS:
 
     Lower resolution of some images to allow for quick loading
 
+    Make text more legible
+
 CHANGES:
-    Create a featured posts page.
 
-    Make TOYS AND GAMES the first page?
-
-    Begin the website with an animation (the incomplete works of Jai Matthews) before continuing to the site.
 
 DYNAMIC/HTTPS FEATURES:
     (long term) create and use a content management system.

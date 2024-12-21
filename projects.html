@@ -32,7 +32,7 @@
     </div>
     <p class="nbSecondary" id="secondary">Websites</p>
     <div class="linkBox"></div>
-    <a href="index.html">
+    <a onclick="setCookie('explored','featured'); window.location.href = 'index.html';">
         <button class="moreProjects"><i class="fa fa-arrow-left"></i> Return to Featured Projects</button>
     </a>
     <div class="fadeOut"></div>
@@ -44,5 +44,6 @@
 <script src="js/homeScripts.js"></script>
 <script src="js/canvas.js"></script>
 <script>
+    setCookie("explored","allpost")
     retrieve("all","links.json")
 </script>

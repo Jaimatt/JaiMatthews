@@ -53,7 +53,7 @@ function projectHTML(site,linkInfo,id) {
 function landing() {
     document.querySelector('.footer').style.display = 'none'
     document.querySelector('.featuredWindow').style.display = 'none'
-    setCookie("explored",false)
+    setCookie("explored","landing")
 }
 
 function touchdown() {
@@ -64,7 +64,7 @@ function touchdown() {
     document.querySelector('#incomplete').style.display = 'none'
     document.querySelector('.icon').classList.add('small')
     retrieve("home","links.json")
-    setCookie("explored",true)
+    setCookie("explored","featured")
 }
 
 // other shit

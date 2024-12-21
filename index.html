@@ -51,9 +51,11 @@
 <script src="js/homeScripts.js"></script>
 <script src="js/canvas.js"></script>
 <script>
-    if(getCookie("explored") != 'true') {
+    if (getCookie("explored") != 'featured' && getCookie("explored") != "allpost") {
         landing()
-    } else {
+    } else if (getCookie("explored") == "featured") {
         touchdown()
+    } else if (getCookie("explored") == "allpost") {
+        window.location.href = "projects.html"
     }
 </script>

@@ -74,6 +74,18 @@
         "featured" : false
     },
     {
+        "title" : "Ember",
+        "subt" : "Interactive Animations",
+        "date" : "Jan 2024",
+        "href" : false,
+        "portfolio" : false,
+        "category" : "_game",
+        "img" : "balls/shatter.png",
+        "img_top" : false,
+        "listed" : false,
+        "featured" : false
+    },
+    {
         "title" : "Canvas Castle",
         "subt" : "JavaScript Platformer",
         "date" : "Coming Soon",
@@ -171,7 +183,7 @@
     },
     {
         "title" : "Documents",
-        "subt" : "Miscellaneous online documents",
+        "subt" : "Miscellaneous online documents' portal",
         "date" : "Jun 2020 - Present",
         "href" : "docs",
         "portfolio" : false,
@@ -199,7 +211,7 @@
         "date" : "31 Dec 2023",
         "href" : "read/articleEditor",
         "portfolio" : "read/editor",
-        "category" : "_misc",
+        "category" : "_text",
         "img" : "assets/thumbnails/article.png",
         "img_top" : false,
         "listed" : true,
@@ -207,7 +219,7 @@
     },
     {
         "title" : "Old Website",
-        "subt" : "Archaic version of this site",
+        "subt" : "Old version of this site",
         "date" : "Jun 2022 - Apr 2023",
         "href" : false,
         "portfolio" : false,
