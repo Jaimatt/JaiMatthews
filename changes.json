@@ -1,6 +1,6 @@
 [
     {
-        "change" : "Return to Home Page",
+        "change" : "Home Page Redirects",
         "date" : "21 December 2024",
         "description" : "When returning to the home page, you're now taken to either the home page or the featured page; whichever you were last on.",
         "important" : false
