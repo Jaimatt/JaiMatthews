@@ -79,6 +79,9 @@ function retrieve(url) {
     fetch(url)
         .then((response) => response.json())
         .then((data) => loadMedia(data))
+        .catch((error) => {
+            document.querySelector("#message").innerText = "An error occurred. That's not good."
+        })
 }
 
 function loadMedia(data) {

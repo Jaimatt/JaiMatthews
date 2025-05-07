@@ -1,5 +1,17 @@
 [
     {
+        "title" : "Portfolio Articles",
+        "subt" : "Series of articles about my projects",
+        "date" : "2024 - Present",
+        "href" : "read/portfolios",
+        "portfolio" : false,
+        "category" : "_text",
+        "img" : "assets/thumbnails/article.png",
+        "img_top" : false,
+        "listed" : true,
+        "featured" : false
+    },
+    {
         "title" : "Mystery Nights",
         "subt" : "With Aidan de Sousa, series of Escape Room puzzles",
         "date" : "2019 - 2023",

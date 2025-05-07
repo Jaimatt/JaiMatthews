@@ -1,5 +1,11 @@
 [
     {
+        "change" : "Portfolios Page",
+        "date" : "7 May 2025",
+        "description" : "Added link to 'written' section that lists all the portfolio articles for each of my projects. This also involved editing some of the JSON retrieval code. Minor change to Instagram page.",
+        "important" : false
+    },
+    {
         "change" : "Home Page Redirects",
         "date" : "21 December 2024",
         "description" : "When returning to the home page, you're now taken to either the home page or the featured page; whichever you were last on.",

@@ -63,7 +63,7 @@ function touchdown() {
     document.querySelector('#linkIn').style.display = 'none'
     document.querySelector('#incomplete').style.display = 'none'
     document.querySelector('.icon').classList.add('small')
-    retrieve("home","links.json")
+    bootUp("home","links.json")
     setCookie("explored","featured")
 }
 
@@ -232,17 +232,37 @@ function goToUrlParam() {
 
 // get links
 
-function retrieve(site,url) {
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => { 
-            loadPage(site,data); 
-            if (site == "all") {
-                goToUrlParam() 
-                window.addEventListener('resize', function(event){
-                    sizeChange()
-                });
-                sizeChange()
-            }  
-        })
+// function bootUp(site,url) {
+//     fetch(url)
+//         .then((response) => response.json())
+//         .then((data) => { 
+//             loadPage(site,data); 
+//             if (site == "all") {
+//                 goToUrlParam() 
+//                 window.addEventListener('resize', function(event){
+//                     sizeChange()
+//                 });
+//                 sizeChange()
+//             }  
+//         })
+// }
+
+async function bootUp(site,url) {
+    data = await fetchData(url);
+
+    loadPage(site,data); 
+    if (site == "all") {
+        goToUrlParam() 
+        window.addEventListener('resize', function(event){
+            sizeChange()
+        });
+        sizeChange()
+    }  
+}
+
+async function fetchData(url) {
+    // console.log(fetch(url))
+    data = await (await fetch(url)).json()
+    
+    return data
 }
