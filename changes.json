@@ -1,8 +1,8 @@
 [
     {
-        "change" : "Portfolios Page",
+        "change" : "Project Pages Page",
         "date" : "7 May 2025",
-        "description" : "Added link to 'written' section that lists all the portfolio articles for each of my projects. This also involved editing some of the JSON retrieval code. Minor change to Instagram page.",
+        "description" : "Added link to 'written' section that lists all the project articles for each of my projects. This also involved editing some of the JSON retrieval code. Minor change to Instagram page.",
         "important" : false
     },
     {
@@ -54,7 +54,7 @@
         "important" : false
     },
     {
-        "change" : "Portfolio & Removals",
+        "change" : "Project Info & Removals",
         "date" : "5 March 2024",
         "description" : "Added a feature called 'Portfolio', where you can read information about many projects. Content is not yet available, but <i class='fa fa-info' aria-hidden='true'></i> button present for select projects. Additionally, Carli&Co and BookABench are no longer accessible due to hosting difficulties. Hopefully this is temporary.",
         "important" : false

@@ -1,9 +1,9 @@
 [
     {
-        "title" : "Portfolio Articles",
+        "title" : "Project Pages",
         "subt" : "Series of articles about my projects",
         "date" : "2024 - Present",
-        "href" : "read/portfolios",
+        "href" : "read/projectpages",
         "portfolio" : false,
         "category" : "_text",
         "img" : "assets/thumbnails/article.png",
