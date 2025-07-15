@@ -196,7 +196,7 @@ function lowlight(me) {
     original = document.querySelectorAll("[data-linkId='"+linkId+"']")[0]
 
     me.style.left = (original.offsetLeft - 10) + 'px'
-    me.style.top = (original.offsetTop - 10 - window.scrollY) + 'px'
+    me.style.top = (original.offsetTop - window.scrollY - 10 + 40) + 'px'
 
     original.classList.remove('invis')
 

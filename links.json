@@ -1,12 +1,25 @@
 [
     {
+        "title" : "Passage",
+        "subt" : "2025 FGRL Game Jam Submission",
+        "date" : "Jul 2025",
+        "href" : "https://renshirolotosoraizel.itch.io/passage",
+        "portfolio" : "read/passage",
+        "category" : "_game",
+        "img" : "assets/thumbnails/passage.png",
+        "img_top" : false,
+        "listed" : true,
+        "featured" : false
+    },
+
+    {
         "title" : "Project Pages",
         "subt" : "Series of articles about my projects",
         "date" : "2024 - Present",
         "href" : "read/projectpages",
         "portfolio" : false,
         "category" : "_text",
-        "img" : "assets/thumbnails/article.png",
+        "img" : "assets/thumbnails/projectpages.png",
         "img_top" : false,
         "listed" : true,
         "featured" : false
