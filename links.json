@@ -1,5 +1,18 @@
 [
     {
+        "title" : "Jai Matthews Website",
+        "subt" : "The website you're on right now!",
+        "date" : "May 2023",
+        "href" : false,
+        "portfolio" : "read/portfoliocomingsoon",
+        "category" : "_site",
+        "img" : "assets/icon-square.png",
+        "img_top" : false,
+        "listed" : true,
+        "featured" : false
+    },
+
+    {
         "title" : "Passage",
         "subt" : "2025 FGRL Game Jam Submission",
         "date" : "Jul 2025",
@@ -9,7 +22,7 @@
         "img" : "assets/thumbnails/passage.png",
         "img_top" : false,
         "listed" : true,
-        "featured" : false
+        "featured" : true
     },
 
     {
@@ -22,7 +35,7 @@
         "img" : "assets/thumbnails/projectpages.png",
         "img_top" : false,
         "listed" : true,
-        "featured" : false
+        "featured" : true
     },
     {
         "title" : "Mystery Nights",
@@ -59,7 +72,7 @@
         "img" : "assets/thumbnails/bab_tall.png",
         "img_top" : false,
         "listed" : true,
-        "featured" : true
+        "featured" : false
     },
     {
         "title" : "Carli & Co.",
@@ -120,7 +133,7 @@
         "img" : "assets/thumbnails/sky.png",
         "img_top" : false,
         "listed" : true,
-        "featured" : true
+        "featured" : false
     },
     {
         "title" : "Gravity",
@@ -227,7 +240,7 @@
         "category" : "_misc",
         "img" : "assets/thumbnails/17.png",
         "img_top" : false,
-        "listed" : true,
+        "listed" : false,
         "featured" : false
     },
     {

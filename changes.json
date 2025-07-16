@@ -1,11 +1,16 @@
 [
     {
+        "change" : "Content Changes",
+        "date" : "16 July 2025",
+        "description" : "Finally added information to Mystery Night website (2 years late!), and unfortunately removed instagram posts page for reasons related to Instragram API. Also, a couple other content changes.",
+        "important" : false
+    },
+    {
         "change" : "Passage",
         "date" : "15 July 2025",
         "description" : "Added 'Passage' - a submission for a game jam I participated in. Also, fixed several visual bugs on the website.",
         "important" : false
     },
-
     {
         "change" : "Project Pages Page",
         "date" : "7 May 2025",

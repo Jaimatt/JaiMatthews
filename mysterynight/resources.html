@@ -127,9 +127,10 @@
         <div id="mn3rd" class="resourcesBox">
             <img id="rdImg" src="assets/MNIcon-08.png" style="filter: invert(100%);" width="300px">
             <img id="rdImg" src="assets/MNIcon-10.png" style="filter: drop-shadow(0px 0px 5px black);" width="300px"><br>
-            <h2>Unavailable</h2>
-            <p>Resources for Mystery Nights 3 and 4 are unavailable to download at this time.</p>
-            <p>You can still download the <a href="documents/MN3_Poster.png">Mystery Night 3 Poster</a> and the <a href="documents/MN4_Poster.png">Mystery Night 4 Poster</a>.</p>
+            <img id="rdImg" src="assets/MNIcon-11.png" width="300px"><br>
+            <h2>Resources Unavailable</h2>
+            <p>Sadly, resources for Mystery Nights 3 - 5 are unavailable to download at this time.</p>
+            <p>You can still download the <a href="documents/MN3_Poster.png">Mystery Night 3 Poster</a>, the <a href="documents/MN4_Poster.png">Mystery Night 4 Poster</a>, and the <a href="documents/MN5_Poster.png">Mystery Night 5 Poster</a>.</p>
         </div>
 
         <!-- <div id="mn4rd" class="resourcesBox">
@@ -151,7 +152,7 @@
     var urlParams = new URLSearchParams(queryString);
     pageId = urlParams.get('pageId')
 
-    if (pageId == 4) {
+    if (pageId >= 3) {
         pageId = 3
     }
 

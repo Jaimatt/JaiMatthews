@@ -1,11 +1,5 @@
 [
     {
-        "title" : "TV Show Rankings",
-        "link" : "docs/shows.html",
-        "icon" : "excel",
-        "download" : false
-    },
-    {
         "title" : "Super Mario Odyssey Timer",
         "link" : "docs/smo.html",
         "icon" : "code",
@@ -60,26 +54,8 @@
         "download" : false
     },
     {
-        "title" : "Ferris Wheel Instructions",
-        "link" : "docs/ferris_instructions.pdf",
-        "icon" : "pdf",
-        "download" : false
-    },
-    {
-        "title" : "TARDIS Instructions",
-        "link" : "docs/tardis_instructions.pdf",
-        "icon" : "pdf",
-        "download" : false
-    },
-    {
-        "title" : "Birds Instructions",
-        "link" : "docs/birds_instructions.pdf",
-        "icon" : "pdf",
-        "download" : false
-    },
-    {
-        "title" : "Sunflower Instructions",
-        "link" : "docs/flower_instructions.pdf",
+        "title" : "Laser Cutting Instructions",
+        "link" : "docs/instructions.pdf",
         "icon" : "pdf",
         "download" : false
     }
