@@ -1,17 +1,28 @@
 [
     {
+        "title" : "Game of the Year",
+        "subt" : "Annual video game ranking",
+        "date" : "2022 - Present",
+        "href" : "read/gameoftheyear",
+        "portfolio" : false,
+        "category" : "_text",
+        "img" : "assets/thumbnails/joycon.png",
+        "img_top" : false,
+        "listed" : true,
+        "featured" : false
+    },
+    {
         "title" : "Jai Matthews Website",
         "subt" : "The website you're on right now!",
         "date" : "May 2023",
         "href" : false,
-        "portfolio" : "read/portfoliocomingsoon",
+        "portfolio" : "read/website",
         "category" : "_site",
         "img" : "assets/icon-square.png",
         "img_top" : false,
         "listed" : true,
         "featured" : false
     },
-
     {
         "title" : "Passage",
         "subt" : "2025 FGRL Game Jam Submission",
@@ -240,7 +251,7 @@
         "category" : "_misc",
         "img" : "assets/thumbnails/17.png",
         "img_top" : false,
-        "listed" : false,
+        "listed" : true,
         "featured" : false
     },
     {

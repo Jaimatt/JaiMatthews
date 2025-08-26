@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="../assets/icon.png">
+
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link id="colourTheme" rel="stylesheet" href="themes/lightMain.css">
+    <link rel="stylesheet" href="../article.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas></canvas>
+    <a href="../index.html"><img src='../assets/icon.png' class="icon small"></a>
+    <br>
+    <div class="article">
+        <h1>My Website!</h1>
+        <h2>Jai Matthews ⋅ July 2025</h2>
+        <p>I've recently decided to list my website itself amongst the list of projects ...that are on my website. Perhaps it doesn't make a lot of sense, but it's what I'm going with!</p>
+        <p>The benefits of doing so are twofold. First, I am able to properly credit the fact that this website itself is a major project of mine and the result of countless hours of work. But second, its listing comes with this very post in which I can discuss this website's history, how it was developed, and what programming has gone into it.</p>
+        <p>I should preface this with a warning that some of this information may soon become outdated. I'm frequently changing how certain features work (as you will soon see!), meaning some of the below may one day not be completely accurate.</p>
+        <h3>The Genesis &amp; My Braincells</h3>
+        <p>As with far too many things in my life, this all began with a truly awful joke. A my braincells joke! For the uninitiated, a my braincells joke would look a bit like this:</p>
+        <h7>me: whats the time</h7>
+        <h7>my braincells: time to get a watch</h7>
+        <p>Or possibly this:</p>
+        <h7>me: i am having brain surgery</h7>
+        <h7>my braincells: uh oh</h7>
+        <p>Perhaps even this:</p>
+        <h7>me: i love my braincells</h7>
+        <h7>my braincells: i hate you</h7>
+        <p>And you get the gist. A few years ago, Mark Gurney created a website that served as a compendium of my braincells jokes. It was a peculiar project, but it encouraged me to have a go making my own websites to publish online. I had made one or two rudimentary websites before for school projects, but had thus far never made them just for fun or to publish them online.</p>
+        <p>So, using a sketchy now-defunct domain registrar, Mark helped get me set up with jaimatthews.cf and before long I had a page that linked to my various projects. The way it works is fairly simple, the code is just hosted using GitHub Pages, meaning this is a static website.</p>
+        <img src="../assets/portfolio/web_a.png" class="standard">
+        <h6>How the website once looked!</h6>
+        <h3>The Old Website (*shudders*)</h3>
+        <p>The "old website", as I now call it, was launched in 2022. There's a project listing for it on my home page, but you can't access the original version anymore. It was my first effort to create a useful user interface to be able to navigate between different projects in an easy manner.</p>
+        <p>Truthfully, there's no too much to say about this website. It was designed specifically with my own laptop screen size in mind, so had very poor CSS. The layout was confusing, and it was difficult to maintain as I had to make several changes to several HTML pages for every update.</p>
+        <img src="../assets/portfolio/web_b.png" class="standard">
+        <img src="../assets/portfolio/web_c.png" class="standard">
+        <h6>Some screenshots of the old website</h6>
+        <p>Clearly, it needed to change.</p>
+        <h3>A Fresh Look</h3>
+        <p>The old website lasted about a year. For most of that time, I knew it needed to go. But I couldn't figure out what it should become.</p>
+        <p>Then I discovered the website of Maddy Thorson, the developer of the video game Celeste, and loved the layout. Hers was fundamentally just a list, broken down into different sections, where every project would be listed with a simple title, description, and background photo. It was a much simpler system than I had been using, and I thought it would be a perfect site to model my new one from. Also, because I recreated the website from nothing, I took care to ensure the CSS was written in a way that could handle mobile visits.</p>
+        <p>And that's how I ended up with my four lists of projects on the home page.&nbsp;</p>
+        <img src="../assets/portfolio/web_d.png" class="standard">
+        <h6>I even copied her "incomplete works" title!</h6>
+        <img src="../assets/portfolio/web_e.png" class="standard">
+        <h6>The inspiration should be clear.</h6>
+        <h3>Those Dots</h3>
+        <p>Of course, over time I continued to have more Ideas and wanted to implement them into the site.</p>
+        <p>Everybody seems to mention the 'dots' on the website (try clicking on this page!). This is actually code stolen from another project of mine - balls - where I did simple animations using the same dots. One day I decided to experiment adding them to my website, and it just stuck.</p>
+        <p>The way it works if fairly simple, there's just a canvas on top of this page and some JavaScript code that animates the balls. I discuss how it works in more detail <a href="balls" target="_blank">here</a>.</p>
+        <img src="../assets/portfolio/web_f.png" class="standard">
+        <h6>The ever-present canvas.</h6>
+        <h3>Storing a List of Projects</h3>
+        <p>Static websites come with their frustrations. Storing information is a database is out of the question, so you'll have to be a little bit more creative. This has become a relevant struggle for me several times, but the most crucial is storing all the 'projects' that appear on the home page.</p>
+        <p>My first solution was, to put it one way, a bit shit. All of the projects' HTML was entered in by hand. If I wanted to change it in any way, I would change the HTML itself. And if I wanted to add a new project, I would copy the whole segment of HTML and replace the key parts of it. So, not great.</p>
+        <img src="../assets/portfolio/web_g.png" class="standard">
+        <h6>The naive approach</h6>
+        <p>My next solution was to use JavaScript to create the actual HTML elements. I would store the projects in a JavaScript list containing all of their crucial information, then a function would go through and 'create' the projects to go on the page.</p>
+        <p>This model was far better, because it allowed me to add and modify projects more easily.</p>
+        <img src="../assets/portfolio/web_h.png" class="standard">
+        <h6>The JS code</h6>
+        <p>Nowadays, it's stored in a very similar manner. I still use similar JavaScript code to create the page, but the data itself is stored in a separate JSON file in order to keep different features of the website separate. This solution is the easiest of all when it comes to making changes.</p>
+        <img src="../assets/portfolio/web_i.png" class="standard">
+        <h6>Storing projects in JSON</h6>
+        <h3>CSS &amp; Cookies</h3>
+        <p>A slightly more recent change was the entire website's colours. When I created the "new" website, I replaced the existing colour scheme with a lighter one. Some people were unhappy about this, so I sought to create a 'dark mode' that would more closely mimic the old design.</p>
+        <p>This led me to redo the colours of the website, storing them all as variables, where colours represented different purposes or levels in a hierarchy. This way, other themes could exist for the <em>whole</em> website that simply use analogous colours to the main one. In this process, I also simplified and 'flattened' the design of the website so that it could be more easily transformed.</p>
+        <img src="../assets/portfolio/web_j.png" class="standard">
+        <img src="../assets/portfolio/web_k.png" class="standard">
+        <h6>The simplification of the design</h6>
+        <img src="../assets/portfolio/web_l.png" class="standard">
+        <h6>The colour variables.</h6>
+        <p>So now there was a toggle in the footer to switch between the different themes. But how would the website remember which theme to use? My first thought was to pass the theme through the URL (e.g. "jaimatthews.com/read/website?theme=light"). This idea was quickly shut down, and for good reason. Instead, I began to look into cookies. I had recently learnt that, to my surprise, these were a feature of static websites. So after a few headaches I had a system that could remember your theme preference from page to page just by loading the one JS file.</p>
+        <p>Having opened to door to cookies, I had other ideas too! For instance, if you go back to the home page, you won't be taken through the welcome animation again - the website remembers you've already seen it. Of course, if you close your browser and reopen it the cookies will clear and you can experience the animated afresh.</p>
+        <h3>Adding the Project Pages</h3>
+        <p>Over time, I began to realise that my website was full of random projects without much explanation. To resolve this, I began to create pages (much like this one!) that could lend context to a project. These are accessible using the (i) button on a project</p>
+        <img src="../assets/portfolio/web_m.png" class="standard">
+        <h6>The button just here!</h6>
+        <p>In keeping with my mission to make the website as maintainable as possible, information about which projects have pages is also stored in the aforementioned JSON file.</p>
+        <h3>What's Next</h3>
+        <p>There remains plenty of things to do for this website! As you probably know, I write all of the HTML, CSS and JavaScript for this website myself. This is something I intend to continue doing for the foreseeable future. But I want to add a backend to the website too. The main reasons I haven't thus far are time &amp; money. Writing a whole secure backend will take time, and hosting it will cost much more money than I'm currently spending. But I'm certain that one day I will get around to doing it. When the time comes, I will store projects in a database, and I'll create a rudimentary system to manage the content from a backend developer version of the website.</p>
+        <p>I've also considered Wordpress, I even got a bit of experience using it during my Mathematics and Computer Science degree, but ultimately I have decided it's not the best fit for my website.</p>
+        <p>And I'm hoping that many more projects make their way onto my website as I continue to work on creating new things!</p>
+        <p>-Jai</p>
+        <p class="goHome"><i class="fa fa-caret-left" aria-hidden="true"> </i> <a href="../index.html">Return Home</a> </p>
+    </div>
+</body>
+</html>
+<script src="../js/cookies.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/textScripts.js"></script>
+<script src="../js/canvas.js"></script>

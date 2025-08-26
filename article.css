@@ -180,6 +180,16 @@
     margin-bottom: 10px !important;
     font-weight: 500 !important;
 }
+.article h7, .ql-editor h7 {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: var(--mainText) !important;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    font-weight: 500 !important;
+}
+
 .articleEdit .editorBox {
     width: 100%;
 }

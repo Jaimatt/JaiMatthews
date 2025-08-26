@@ -1,5 +1,11 @@
 [
     {
+        "change" : "MORE Content Changes",
+        "date" : "26 August 2025",
+        "description" : "Added project pages for Passage and for this Website itself. Also, added 'Game of the Year' project, which I have been working on for a while. And changed my mind about the instagram page, which is back up and running (using a slightly awkward - hopefully temporary - bit of code!)",
+        "important" : false
+    },
+    {
         "change" : "Content Changes",
         "date" : "16 July 2025",
         "description" : "Finally added information to Mystery Night website (2 years late!), and unfortunately removed instagram posts page for reasons related to Instragram API. Also, a couple other content changes.",
@@ -48,7 +54,7 @@
         "important" : false
     },
     {
-        "change" : "Portfolios & Projects",
+        "change" : "Projects & Project Pages",
         "date" : "12 June 2024",
         "description" : "As promised, the portfolio articles are finished and on the website. Click on a project's <i class='fa fa-info' aria-hidden='true'></i> button to read them. This is also available for the unreleased Canvas Castle game. I've also brought back the Carli & Co. website, just without its dynamic code. And the project 'Horse' has been removed from the website.",
         "important" : false

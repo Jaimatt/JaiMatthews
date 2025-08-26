@@ -47,7 +47,7 @@
         listElement = document.querySelector('ul')
 
         for (i = 0; i < data.length; i++) {
-            if (!data[i].portfolio) continue
+            if (!data[i].portfolio || !data[i].listed) continue
             listElement.innerHTML += 
             `<li>
             <a href="../${data[i].portfolio}">${data[i].title}</a>
