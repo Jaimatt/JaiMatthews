@@ -3,25 +3,28 @@ ADJUSTMENTS:
 
     Change the popup animation for mobile devices
 
-    Lower resolution of some images to allow for quick loading
+    Lower resolution of some images to allow for quick loading, especially on the home page.
 
-    Make text more legible
+    Make text more legible. What does this mean???
 
 CHANGES:
-
+    <none>
 
 DYNAMIC/HTTPS FEATURES:
     (long term) create and use a content management system.
+        Should handle all URLS
+        Generalise project pages into one "page"
+        Autofix instagram API
+        Store projects, chanegs etc in database - have system to ammend them.
+        ...and more! (much more!)
 
-    Header
+    Header file.
 
 CONTENT:
-    Balls 2 (working title)
+    Ember
 
-    Canvas Castle
+    Canvas Castle... maybe someday
 
     Written Pieces
         Updated editior
         Paul Spragg (when the time comes!)
-        Women Preface
-        Doctor Who? Games? I want to add some new stuff
