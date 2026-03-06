@@ -28,42 +28,34 @@
     </div>
 </body>
 </html>
+<script src="../changes.js"></script>
 <script>
-    retrieve("../changes.json")
-        function retrieve(url) {
-            fetch(url)
-                .then((response) => response.json())
-                .then((data) => loadPage(data))
+    changeBox = document.querySelector('#changes')
+
+    for (i = 0; i < changes.length; i++) {
+        if (changes[i].important) {
+            ihtml = '<span>*important</span>'
+            change = `
+            <div class="changeItem important" style="animation-delay: ${i / 5}s;">
+                <p class="span"><i class="fa fa-info-circle" aria-hidden="true"></i> Important</p>
+                <h3>${changes[i].change}</h3>
+                <h5>${changes[i].date}</h5>
+                <p>${changes[i].description}</p>
+            </div>
+            `
+        } else {
+            change = `
+            <div class="changeItem" style="animation-delay: ${i / 5}s;">
+                <h3>${changes[i].change}</h3>
+                <h5>${changes[i].date}</h5>
+                <p>${changes[i].description}</p>
+            </div>
+            `
         }
-
-        function loadPage(changes) {
-        changeBox = document.querySelector('#changes')
-
-        for (i = 0; i < changes.length; i++) {
-            if (changes[i].important) {
-                ihtml = '<span>*important</span>'
-                change = `
-                <div class="changeItem important" style="animation-delay: ${i / 5}s;">
-                    <p class="span"><i class="fa fa-info-circle" aria-hidden="true"></i> Important</p>
-                    <h3>${changes[i].change}</h3>
-                    <h5>${changes[i].date}</h5>
-                    <p>${changes[i].description}</p>
-                </div>
-                `
-            } else {
-                change = `
-                <div class="changeItem" style="animation-delay: ${i / 5}s;">
-                    <h3>${changes[i].change}</h3>
-                    <h5>${changes[i].date}</h5>
-                    <p>${changes[i].description}</p>
-                </div>
-                `
-            }
-            changeBox.innerHTML += change
-        }
-
-        applyAnimations();
+        changeBox.innerHTML += change
     }
+
+    applyAnimations();
 
 </script>
 <script src="../js/cookies.js"></script>

@@ -18,12 +18,8 @@ function begin() {
 
     setTimeout(function() {
         document.querySelector('#screen2').style.display = 'none'
-        document.body.classList.add("fadeOut")
     }, 400)
 
-    setTimeout(function() {
-        window.location.href = "open.html";
-    }, 1300)
 }
 
 function howTo() {

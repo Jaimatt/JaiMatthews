@@ -1,18 +1,30 @@
 // load media
 
-function loadPage(site,links) {
-    console.log(links)
+function loadPage() {
     iterator = 0;
     for (x of links) {
         if (!x.listed) continue
-        if (site == "all" || x.featured) {
-            document.querySelector('.linkBox').innerHTML += projectHTML(site,x,iterator++)
-        }
-        if (site == "home") showAllLinks()
+        if (x.old) document.querySelector('.oldlinkBox').innerHTML += projectHTML(x,iterator++)
+        else document.querySelector('.linkBox').innerHTML += projectHTML(x,iterator++)
+    }
+
+    projectLinks = document.querySelector('.linkBox').getElementsByClassName('link')
+        
+    iterator = 0
+    for (link of projectLinks) {
+        link.style.animationDelay = iterator / 10 + 's'
+        link.style.display = 'inline-block'
+        iterator++
+    }
+
+    projectLinks = document.querySelector('.oldlinkBox').getElementsByClassName('link')
+        
+    for (link of projectLinks) {
+        link.style.display = 'none'
     }
 }
 
-function projectHTML(site,linkInfo,id) {
+function projectHTML(linkInfo,id) {
     if (linkInfo.img_top) img_top = "top"
     else img_top = ""
 
@@ -21,120 +33,28 @@ function projectHTML(site,linkInfo,id) {
 
     iIcon = ""
     if (linkInfo.portfolio) iIcon = `<a href=${linkInfo.portfolio}><p class="square"><i class="fa fa-info" aria-hidden="true"></i></p></a>`
-    if (site == "all") {
-        hypertext = `<div onclick="highlight(this)" class="link ${linkInfo.category}" 
-            data-href="${linkInfo.href}"
-            data-linkid="${id}"
-            data-portfolio="${linkInfo.portfolio}"
-        >
-            <img src="${linkInfo.img}" class="${img_top}">
-            <div class="topText">
-                <h1>${linkInfo.title}</h1>
-                <p>${linkInfo.subt}</p>
-            </div>
-            <p class="date">${linkInfo.date}</p>
-        </div>`
-    } else if (site == "home") {
-        hypertext = `<div class="flink">
-            <img src="${linkInfo.img}" class="${img_top}">
-            <div class="topText">
-                <h1>${linkInfo.title}</h1>
-                <p>${linkInfo.subt}</p>
-            </div>
-            <p class="date">${linkInfo.date}</p>
-            <div id="buttons" class="linkButton linkButtonShrunk">${iIcon}${openButton}</div>
-        </div>`
-    }
+    
+    hypertext = `<div onclick="highlight(this)" class="link ${linkInfo.category}" 
+        data-href="${linkInfo.href}"
+        data-linkid="${id}"
+        data-portfolio="${linkInfo.portfolio}"
+    >
+        <img src="${linkInfo.img}" class="${img_top}">
+        <div class="topText">
+            <h1>${linkInfo.title}</h1>
+            <p>${linkInfo.subt}</p>
+        </div>
+        <p class="date">${linkInfo.date.getDate()} ${month[linkInfo.date.getMonth()]} ${linkInfo.date.getFullYear()}</p>
+    </div>`
     return hypertext
 }
-
-// animate the landing
-
-function landing() {
-    document.querySelector('.footer').style.display = 'none'
-    document.querySelector('.featuredWindow').style.display = 'none'
-    setCookie("explored","landing")
-}
-
-function touchdown() {
-    document.querySelector('.homeCenter').classList.remove('homeCenter')
-    document.querySelector('.footer').style.display = 'inline-block'
-    document.querySelector('.featuredWindow').style.display = 'inline-block'
-    document.querySelector('#linkIn').style.display = 'none'
-    document.querySelector('#incomplete').style.display = 'none'
-    document.querySelector('.icon').classList.add('small')
-    bootUp("home","links.json")
-    setCookie("explored","featured")
-}
-
 // other shit
 
-navCategories = ['_game','_site','_misc','_text']
-ncText = ['Toys & Games','Websites','Miscellaneous','Writing']
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+togg = false
 
 // navCategories = ['_featured','_game','_site','_misc']
 // ncText = ['Featured','Toys & Games','Websites','Miscellaneous']
-
-
-function nav(index) {
-    if (document.querySelectorAll('.alink').length > 0) {
-        lowlight(document.querySelectorAll('.alink')[0])
-    }
-
-    nbItems = document.getElementsByClassName('nbItem')
-    for (i = 0; i < nbItems.length; i++) {
-        nbItems[i].classList.remove('selected')
-    }
-    nbItems[index].classList.add('selected')
-
-    projectLinks = document.getElementsByClassName('link')
-        
-    iterator = 0
-    for (link of projectLinks) {
-        if (link.classList.contains(navCategories[index])) {
-            link.style.animationDelay = iterator / 10 + 's'
-            link.style.display = 'inline-block'
-            iterator++
-        } else {
-            link.style.display = 'none'
-        }
-    }
-
-
-    history.replaceState({}, null, 'projects.html?page='+index)
-    document.getElementById('title').innerText = ncText[index] + " | Jai Matthews"
-    sizeChange()
-}
-
-function showAllLinks() {
-    projectLinks = document.getElementsByClassName('flink')
-    for (link of projectLinks) link.style.display = 'inline-block'
-}
-  
-function sizeChange() {
-    nbItems = document.getElementsByClassName('nbItem')
-    sTitle = document.getElementById('secondary')
-    ncIcons = ['casino','language','more_horiz','edit']
-
-    if (window.innerWidth < 500) {
-        index = 0
-        for (i = 0; i < nbItems.length; i++) {
-            nbItems[i].innerHTML = `<span class="material-symbols-outlined"> ${ncIcons[i]} </span>`
-            nbItems[i].classList.add('grown')
-            if (nbItems[i].classList.contains('selected')) {
-                index = i
-            }
-        }
-        sTitle.style.display = 'block'
-        sTitle.innerText = ncText[index]
-    } else {
-        for (i = 0; i < nbItems.length; i++) {
-            nbItems[i].innerHTML = ncText[i]
-            nbItems[i].classList.remove('grown')
-        }
-        sTitle.style.display = 'none'
-    }
-}
 
 function highlight(me) {
     if (document.querySelectorAll('.alink').length > 0) {
@@ -196,7 +116,7 @@ function lowlight(me) {
     original = document.querySelectorAll("[data-linkId='"+linkId+"']")[0]
 
     me.style.left = (original.offsetLeft - 10) + 'px'
-    me.style.top = (original.offsetTop - window.scrollY + 40) + 'px'
+    me.style.top = (original.offsetTop - window.scrollY - 10) + 'px'
 
     original.classList.remove('invis')
 
@@ -220,49 +140,33 @@ function topFunction() {
 }
 
 function goToUrlParam() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    pageId = parseInt(urlParams.get('page'))
-    if (pageId <= 3 && pageId >= 0) {
-        nav(pageId)
-    } else {
-        nav(0)
-    }
+    nav()
 }
 
 // get links
 
-// function bootUp(site,url) {
-//     fetch(url)
-//         .then((response) => response.json())
-//         .then((data) => { 
-//             loadPage(site,data); 
-//             if (site == "all") {
-//                 goToUrlParam() 
-//                 window.addEventListener('resize', function(event){
-//                     sizeChange()
-//                 });
-//                 sizeChange()
-//             }  
-//         })
-// }
+function toggold() {
+    togg = !togg
+    if (togg) {
+        document.querySelector(".expand").innerHTML = `<p>Hide Older Projects <i class="fa fa-chevron-down" aria-hidden="true" id="toggold"></i></p>`
 
-async function bootUp(site,url) {
-    data = await fetchData(url);
+        projectLinks = document.querySelector('.oldlinkBox').getElementsByClassName('link')
+        
+        iterator = 0
+        for (link of projectLinks) {
+            link.style.animationDelay = iterator / 10 + 's'
+            link.style.display = 'inline-block'
+            iterator++
+        }
 
-    loadPage(site,data); 
-    if (site == "all") {
-        goToUrlParam() 
-        window.addEventListener('resize', function(event){
-            sizeChange()
-        });
-        sizeChange()
-    }  
-}
+    } else {
+        document.querySelector(".expand").innerHTML = `<p>Show Older Projects <i class="fa fa-chevron-right" aria-hidden="true" id="toggold"></i></p>`
+        
+        projectLinks = document.querySelector('.oldlinkBox').getElementsByClassName('link')
+        
+        for (link of projectLinks) {
+            link.style.display = 'none'
+        }
 
-async function fetchData(url) {
-    // console.log(fetch(url))
-    data = await (await fetch(url)).json()
-    
-    return data
+    }
 }

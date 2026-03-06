@@ -26,7 +26,9 @@ animate()
 document.addEventListener('mousemove', event => {
     screenMouse.s = Math.sqrt((screenMouse.x - event.clientX)**2 + (screenMouse.y - event.clientY)**2)
 
-    mouseEffect()
+    if (m) {
+        m.update()
+    }
     
     screenMouse.y = event.clientY
     screenMouse.x = event.clientX

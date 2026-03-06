@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Practice</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Fascinate&family=Lusitana:wght@400;700&family=Pacifico&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <h1>Professional Practice</h1>
+            <p>This website exists to chronicle the activities participated in during Assessment 1.1 "Employability Profile", as part of the Adelaide University course "Professional Practice" undertaken in semester 1, 2026.</p>
+        </div>
+        <div class="buttons">
+            <select id="sel" onchange="refresh()">
+                <option value="a" selected>Sort by Date</option>
+                <option value="b">Sort by Title</option>
+            </select>
+            <select id="sel2" onchange="refresh()">
+                <option value="nor" selected>Normal</option>
+                <option value="rev">Reversed</option>
+            </select>
+
+            <!-- <button>Sort by Date</button> -->
+            <!-- <button onclick="refresh()">Refresh</button> -->
+            <button onclick="img()">Toggle Images</button>
+            <!-- <button class="square"><i class="fa fa-search" aria-hidden="true"></i></button> -->
+        </div>
+        <div class="links"></div>
+        <div class="footer">
+            <a onclick="act()">Back to Top</a>
+            <a target="_blank" href="https://jaimatthews.com/">Jai Matthews</a>
+            <a target="_blank" href="https://adelaideuni.edu.au/">Adelaide University</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="script.js"></script>

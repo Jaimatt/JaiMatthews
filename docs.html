@@ -31,43 +31,33 @@
     </div>
 </body>
 </html>
+<script src="docs.js"></script>
 <script>
     //for icon, choose from:
     //excel, powerpoint, word, text, pdf, audio, video, code, archive
     //these all link to the relevant font awesome icons
-
-
-    retrieve("docs.json")
-
-    function retrieve(url) {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => loadDocs(data))
-    }
     
-    function loadDocs(documents) {
-        //alphabetise
-        documents.sort(compare);
+    //alphabetise
+    documents.sort(compare);
 
-        //get HTML element
-        docsList = document.querySelector('.docsList')
-        
-        //for each document
-        for (i = 0; i < documents.length; i++) {
+    //get HTML element
+    docsList = document.querySelector('.docsList')
+    
+    //for each document
+    for (i = 0; i < documents.length; i++) {
 
-            //make download-only ones have 'download'
-            if (documents[i].download) d = ' download'
-            else d = ''
+        //make download-only ones have 'download'
+        if (documents[i].download) d = ' download'
+        else d = ''
 
-            //insert HTML into page
-            docsList.innerHTML += `<div>
-                    <i class="fa fa-file-${documents[i].icon}-o"></i>
-                    <a target="_blank" href="${documents[i].link}"${d}><p>${documents[i].title}</p></a>  
-                </div>`
-        }
-
-        applyAnimations();
+        //insert HTML into page
+        docsList.innerHTML += `<div>
+                <i class="fa fa-file-${documents[i].icon}-o"></i>
+                <a target="_blank" href="${documents[i].link}"${d}><p>${documents[i].title}</p></a>  
+            </div>`
     }
+
+    applyAnimations();
 
     //sort() compare function for getting object title
     function compare(a, b) {

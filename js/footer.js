@@ -10,7 +10,6 @@ footer = `
         <a href="/read/changelog">Change Log</a>
         <a href="/read/about">About Site</a>
         <a href="/read/contact">Contact</a>
-        <a href="https://www.instagram.com/jaimatthews1/" target="_blank">Instagram</a>
     </div>
     <div class="bunch bunch2">
         <p>Jai Matthews, 2023</p>
